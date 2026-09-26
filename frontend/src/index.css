@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pd-primary: #1565c0;
+  --pd-secondary: #0d47a1;
+  --pd-accent: #00acc1;
+  --pd-bg: #f8fafc;
+  --pd-surface: #ffffff;
+  --pd-text: #1a1a2e;
+  --pd-text-secondary: #64748b;
+  --pd-border: #e2e8f0;
+  --pd-success: #2e7d32;
+  --pd-warning: #e65100;
+  --pd-error: #c62828;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--pd-bg);
+  color: var(--pd-text);
+  line-height: 1.6;
+}
+
+/* Network visualization canvas */
+.cy-container {
+  width: 100%;
+  height: 600px;
+  border: 1px solid var(--pd-border);
+  border-radius: 8px;
+  background: #0f1729;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--pd-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Code blocks */
+pre, code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.875rem;
+}
+
+/* Plotly responsive */
+.js-plotly-plot, .plotly {
+  width: 100% !important;
+}
