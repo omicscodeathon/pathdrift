@@ -1,0 +1,33 @@
+{
+  "dataset_id": "demo_preprocessing",
+  "species": "human",
+  "data_type": "normalized",
+  "n_genes_before": 40,
+  "n_genes_after": 40,
+  "n_samples_before": 12,
+  "n_samples_after": 12,
+  "removed_duplicate_genes": 0,
+  "removed_low_expression_genes": 0,
+  "missing_values_handled": 0,
+  "normalized": true,
+  "log_transformed": true,
+  "pca_components": 3,
+  "hierarchical_clustering": true,
+  "batch_effects": {
+    "detected": false,
+    "method": "none",
+    "reason": "no metadata"
+  },
+  "sample_qc": {
+    "passed": true,
+    "removed": [],
+    "min_library_size": 60.0
+  },
+  "gene_qc": {
+    "passed": true,
+    "removed": [],
+    "min_variance": 0.42424242424242425
+  },
+  "output_file": "data\\processed\\demo_preprocessing_processed.csv",
+  "log_path": "data\\processed\\demo_preprocessing_preprocessing_log.txt"
+}

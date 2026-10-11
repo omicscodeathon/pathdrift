@@ -8,10 +8,12 @@ import numpy as np
 import pandas as pd
 import sys
 import os
+from pathlib import Path
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 
 from app.bio.preprocessing import PreprocessingPipeline, PreprocessingLog
+from app.bio.identifiers import enforce_ensembl_gene_ids
 
 
 def make_test_expression(n_genes: int = 200, n_samples: int = 20, seed: int = 42) -> pd.DataFrame:
@@ -101,3 +103,46 @@ class TestPreprocessingPipeline:
                                           low_expr_threshold=0, min_gene_variance=0)
         cleaned, log = pipeline.run(self.expr, meta_no_batch, 'test_batch', 'human')
         assert any('batch' in w.lower() for w in log.warnings)
+
+    def test_public_gene_id_policy_keeps_species_ensembl_ids_only(self):
+        expression = pd.DataFrame(
+            [[1.0, 2.0], [3.0, 4.0], [5.0, 6.0], [7.0, 8.0]],
+            index=['ENSMUSG00000017146.4', 'RatActivatedNeu', 'ENSG00000141510', 'ENSG00000002586.20_PAR_Y'],
+            columns=['sample_a', 'sample_b'],
+        )
+
+        filtered, excluded = enforce_ensembl_gene_ids(expression, 'mouse')
+
+        assert filtered.index.tolist() == ['ENSMUSG00000017146']
+        assert excluded == ['ENSG00000002586_PAR_Y', 'ENSG00000141510', 'RatActivatedNeu']
+
+    def test_human_par_y_ensembl_suffix_is_preserved(self):
+        expression = pd.DataFrame(
+            [[1.0, 2.0]],
+            index=['ENSG00000002586.20_PAR_Y'],
+            columns=['sample_a', 'sample_b'],
+        )
+
+        filtered, excluded = enforce_ensembl_gene_ids(expression, 'human')
+
+        assert filtered.index.tolist() == ['ENSG00000002586_PAR_Y']
+        assert excluded == []
+
+    def test_root_preprocessing_module_detects_data_type_and_writes_outputs(self):
+        from src.preprocessing.pipeline import detect_input_data_type, run_preprocessing_pipeline
+
+        expr = pd.DataFrame(
+            np.random.poisson(2, size=(40, 12)),
+            index=[f'ENSG{idx:011d}' for idx in range(40)],
+            columns=[f'SAMPLE_{idx:03d}' for idx in range(12)],
+        )
+
+        data_type = detect_input_data_type(expr)
+        assert data_type in {'raw_counts', 'normalized'}
+
+        out_dir = Path('data/processed')
+        summary = run_preprocessing_pipeline(expr, metadata_df=None, dataset_id='demo_preprocessing', species='human', output_dir=str(out_dir))
+
+        assert summary['data_type'] == data_type
+        assert (out_dir / 'demo_preprocessing_processed.csv').exists()
+        assert (out_dir / 'demo_preprocessing_summary.json').exists()

@@ -1,4 +1,6 @@
 """Orthology routes."""
+import re
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func
@@ -44,6 +46,9 @@ async def search_orthologues(
             "mouse_symbol": m.mouse_symbol,
             "orthology_type": m.orthology_type,
             "confidence": m.confidence,
+            "source_version": m.source_version,
+            "ensembl_release": int(re.search(r"release\s+(\d+)", m.source_version or "", re.IGNORECASE).group(1))
+            if re.search(r"release\s+(\d+)", m.source_version or "", re.IGNORECASE) else None,
         }
         for m in mappings
     ]

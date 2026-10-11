@@ -1,0 +1,34 @@
+{
+  "total_orthology_mappings": 25788,
+  "unique_human_genes_mapped": 19267,
+  "unique_mouse_genes_mapped": 20291,
+  "one_to_one_mappings": 17146,
+  "one_to_many_mappings": 1919,
+  "many_to_one_mappings": 1006,
+  "many_to_many_mappings": 5717,
+  "primary_one_to_one_mappings": 16092,
+  "human_network_genes": 1000,
+  "mouse_network_genes": 1000,
+  "human_network_genes_with_orthologs": 756,
+  "mouse_network_genes_with_orthologs": 874,
+  "unmapped_human_network_genes": 163,
+  "unmapped_mouse_network_genes": 54,
+  "source": "Ensembl Compara BioMart",
+  "source_version": "Ensembl Compara release 116",
+  "ensembl_release": 116,
+  "retrieved_at": "2026-10-06T17:04:09.419181+00:00",
+  "endpoint": "https://jun2026.archive.ensembl.org/biomart/martservice",
+  "species": [
+    "homo_sapiens",
+    "mus_musculus"
+  ],
+  "attributes": [
+    "ensembl_gene_id",
+    "external_gene_name",
+    "mmusculus_homolog_ensembl_gene",
+    "mmusculus_homolog_associated_gene_name",
+    "mmusculus_homolog_orthology_type",
+    "mmusculus_homolog_orthology_confidence"
+  ],
+  "mapping_count": 25788
+}

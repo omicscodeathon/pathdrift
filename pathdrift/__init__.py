@@ -1,0 +1,1 @@
+"""PathDrift acquisition and quality-control command-line package."""

@@ -1,0 +1,1061 @@
+model,gene_id,importance,mean_signed_weight,direction,selected_folds,selection_frequency,importance_method
+gradient_boosting,ENSG00000231768,0.047654906887180305,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000077235,0.03637116785589779,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000078596,0.03541966448236554,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000086717,0.034334571859321525,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000140459,0.03349186333460752,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000163155,0.032055452290405906,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000158373,0.024833208261043106,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000179528,0.023566601259769823,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000197872,0.022439347045477384,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000187824,0.020866746598255128,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000123500,0.020166602047887377,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000189134,0.01972206762359919,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000146278,0.019345630725960836,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000148053,0.019288153717181657,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000183807,0.019288153717181657,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000099260,0.018776930683892343,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000276043,0.018039085815548788,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000129680,0.01740908421657665,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000135218,0.017409084216576647,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000198624,0.01625185228390159,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000180660,0.016061913789159353,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000168309,0.01576794498045212,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000168477,0.0157402612457306,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000249679,0.015115807297634686,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000123243,0.014391906318929507,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000112320,0.014351193780586146,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000165152,0.014195100297013674,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000183549,0.012891423404441887,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000130988,0.012823423068901479,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000187730,0.012522501606919922,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000101871,0.012347419292443824,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000137077,0.011577978416966355,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000184384,0.011577978416966353,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000111404,0.01143578336152525,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000145777,0.011188490835995577,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000154645,0.0110259096329799,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000138131,0.010772157262785907,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000238142,0.01045974498497517,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000282840,0.010459537537582516,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000278828,0.010449426658317886,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000146374,0.010412307432710134,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000104888,0.010303719652698393,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000262097,0.009754945429339508,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000127241,0.009519650522653219,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000153902,0.008848178792827451,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000075035,0.008368406018962186,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000163710,0.008174314286843782,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000135046,0.007741595575089534,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000120738,0.007717698606864068,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000124440,0.007665042169794439,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000236548,0.00752326218952581,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000163513,0.007203428512238404,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000128918,0.00697652602521807,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000106004,0.00695839206505087,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000279965,0.00635432062182432,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000167641,0.006304764949270669,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000080166,0.005705256395510393,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000124507,0.0056991386354865664,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000100625,0.005359449167706976,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000154330,0.004987414318474206,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000163815,0.0045705413647937915,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000154736,0.004211104598806,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000182253,0.003540964287534526,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000137872,0.0034789515478167695,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000134121,0.003444814947630203,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000118507,0.0034427351008972143,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000198732,0.0032608419714678953,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000198515,0.0031724346312647688,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000225472,0.0031435680243740273,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000160877,0.003138589596324249,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000185070,0.003093879578464122,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000094963,0.0028243860236352057,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000183682,0.0025918131555403403,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000235904,0.0025456894307274523,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000149294,0.0024525763139380597,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000114656,0.002301188406360734,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000109846,0.0021034110263286722,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000151079,0.002082020059507719,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000167434,0.002065625313224904,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000141639,0.0019164401789917812,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000179889,0.0018871652223792282,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000137225,0.001703009765862238,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000197275,0.001622782121835199,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000022267,0.0016026791750809945,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000165028,0.0013931414111615853,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000164035,0.001260084202064626,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000196890,0.0012600842020646257,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000261616,0.0012594760397717504,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000158406,0.0012017794836228632,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000163827,0.0011845428558004954,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000243836,0.001139759658132882,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000108381,0.0011392017100884254,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000112096,0.001082168434288926,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000025423,0.0010624534578678251,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000197576,0.001031368218008239,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000099769,0.0009325377790085243,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000106511,0.0009190205844001444,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000264345,0.0008600930258667388,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000116711,0.0008141231174957516,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000123560,0.0007630455075715791,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000011426,0.0006902443428266745,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000025039,0.0006315079351461853,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000167191,0.0006240722707680664,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000154734,0.0006223443798686324,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000172987,0.0006012101583738829,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000146477,0.0005874017623925185,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000179270,0.0005356152425153469,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000278266,0.0005120045790777324,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000136158,0.0005107008953382571,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000284237,0.00046899405257491456,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000162616,0.0004622455921940346,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000158186,0.00044274154407861747,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000105971,0.0004372958572522349,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000161649,0.0004181707173957259,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000099953,0.0003950584890848873,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000164619,0.0003349705315028667,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000115361,0.0003209844112849768,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000163545,0.00028942955593869033,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000117707,0.00028838315382254283,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000147872,0.000256613249968006,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000069702,0.00025341001429985305,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000136732,0.00025341001429985305,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000135363,0.00020748679257036502,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000136002,0.00020729862740777533,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000287232,0.000187650779325587,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000163431,0.00017440115603828562,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000114378,0.00016967655122431883,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000159387,0.00015425217474869692,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000150281,0.00014655571547916808,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000123096,0.00013896456617984836,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000136826,0.00012572662716165827,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000157152,0.00012572662716165824,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000248144,0.0001230294269887758,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000229694,0.00011375038239118075,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000126524,0.00010430958720360575,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000257135,9.815622532027856e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000122592,9.311310225908765e-05,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000125740,9.115159122052422e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000260025,8.290437032519193e-05,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000137691,7.622140186430175e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000165269,6.892283707608162e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000101938,5.642077901098176e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000090006,5.107760992417253e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000105974,5.013740165304547e-05,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000234899,4.178926578907661e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000232434,4.1275914699729995e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000133800,3.7198716664638914e-05,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000177363,3.613171826403734e-05,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000137960,3.3493395609788465e-05,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000135917,2.8022339106768558e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000151632,2.8005998499959846e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000165092,2.533964650725887e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000162073,2.448134460241135e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000090889,1.8780604295622842e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000114698,1.5375089273693704e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000203362,1.390329482146976e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000165197,1.3619934890228818e-05,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000127564,1.2587193773743008e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000170035,1.1382300945292968e-05,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000182175,6.245721929043813e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000141338,5.346513312997966e-06,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000224786,5.1163639298440766e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000179796,5.116363929844076e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000164303,5.113338601036229e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000167702,4.18875950244604e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000187699,4.180516140221891e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000120279,3.7900771474652364e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000186642,3.7900771474652355e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000146592,3.429344095263603e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000204136,3.429344095263603e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000136425,3.1029476422991595e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000266524,3.1029476422991595e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000198947,2.807619068036292e-06,,not applicable,5,1.0,fold-local tree impurity importance
+gradient_boosting,ENSG00000261175,2.5388942449616617e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000136161,2.2986171452963677e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000162063,1.5407318930931113e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000278023,1.3940964796896993e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000157557,1.1413662844322823e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000183856,1.1413662844322823e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000267414,1.1406878052616248e-06,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000198478,9.344543675278941e-07,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000078399,0.0,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000081041,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000081377,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000091513,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000099204,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000102271,0.0,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000104332,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000105976,0.0,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000105997,0.0,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000106714,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000106809,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000109670,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000109674,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000115593,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000116194,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000117650,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000119929,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000120051,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000120688,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000124205,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000125965,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000126218,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000130032,0.0,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000131019,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000133116,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000135447,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000136114,0.0,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000136960,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000137727,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000138640,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000138685,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000139793,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000142910,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000146648,0.0,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000146966,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000147027,0.0,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000148700,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000149090,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000154721,0.0,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000154928,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000156298,0.0,,not applicable,3,0.6,fold-local tree impurity importance
+gradient_boosting,ENSG00000158966,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000160307,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000162413,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000162772,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000164434,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000164488,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000164825,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000165795,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000166265,0.0,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000166960,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000167874,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000168079,0.0,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000168497,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000168874,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000169252,0.0,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000170122,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000170271,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000171522,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000171604,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000173432,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000174099,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000175643,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000177098,0.0,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000184304,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000186871,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000187134,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000189129,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000196549,0.0,,not applicable,4,0.8,fold-local tree impurity importance
+gradient_boosting,ENSG00000198838,0.0,,not applicable,2,0.4,fold-local tree impurity importance
+gradient_boosting,ENSG00000205221,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000215386,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000225731,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000230587,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000235641,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000237248,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000239445,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000241644,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000261534,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000263400,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000270765,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000277639,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000277954,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+gradient_boosting,ENSG00000282556,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+logistic_regression,ENSG00000123500,0.09954798426959352,0.09954798426959352,higher in cancer,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000122592,0.08633507091660365,-0.08633507091660365,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000189134,0.08531143155796608,-0.08531143155796608,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000231768,0.08094908533630867,-0.08094908533630867,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000080166,0.07505512287297111,-0.09381890359121389,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000260025,0.07283461279235279,-0.07283461279235279,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000145777,0.07027397683282634,-0.07027397683282634,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000154645,0.07021060892804283,-0.07021060892804283,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000225472,0.06959427462927689,-0.08699284328659612,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000109846,0.06939105517491292,-0.06939105517491292,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000235904,0.0685967860042119,-0.08574598250526488,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000198947,0.06761144656686525,-0.06761144656686525,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000124440,0.06719825414609634,-0.06719825414609634,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000187730,0.06546124770699174,0.06546124770699174,higher in cancer,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000183682,0.0654240310910621,0.08178003886382762,higher in cancer,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000146374,0.06540151577656172,-0.06540151577656172,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000165197,0.06431741007546773,-0.06431741007546773,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000137960,0.06418917346015486,-0.06418917346015486,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000182253,0.06400385553206878,-0.06400385553206878,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000163155,0.06352627839639817,0.07940784799549772,higher in cancer,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000187824,0.062030970131743204,-0.062030970131743204,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000086717,0.060722557710345924,0.060722557710345924,higher in cancer,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000130988,0.060712318978341936,-0.060712318978341936,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000141639,0.06011272050285212,-0.07514090062856515,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000158406,0.05918900886521629,0.05918900886521629,higher in cancer,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000106004,0.05911745297662019,-0.07389681622077524,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000198732,0.05717351400649053,-0.05717351400649053,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000197872,0.05703728382372466,-0.05703728382372466,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000140459,0.056805329186331875,-0.056805329186331875,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000158373,0.05600603520393395,0.05600603520393395,higher in cancer,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000264345,0.05521912910098992,-0.09203188183498319,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000078596,0.05415194631246532,-0.05415194631246532,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000099260,0.054083952813531025,-0.054083952813531025,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000278828,0.053536526392383134,0.053536526392383134,higher in cancer,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000177363,0.05306027588464348,-0.05306027588464348,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000111404,0.0516743012266335,-0.0516743012266335,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000133800,0.049331594619386424,-0.061664493274233026,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000138131,0.048737419155937975,-0.06092177394492247,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000025039,0.0480271151322675,-0.0800451918871125,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000104888,0.046242252935435615,-0.057802816169294516,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000284237,0.045232307238084093,-0.07538717873014016,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000168079,0.044762023203555934,-0.05595252900444492,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000165152,0.044683163447607435,-0.07447193907934573,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000196549,0.0446378296452414,-0.05579728705655175,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000154330,0.04459751513526918,-0.05574689391908648,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000163710,0.044224815235047135,-0.07370802539174522,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000198515,0.043832898376258506,-0.05479112297032313,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000112320,0.04290429014796164,-0.05363036268495205,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000163431,0.04242485460615636,-0.05303106825769545,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000262097,0.04201707065607215,-0.05252133832009019,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000130032,0.04113778233193036,-0.06856297055321726,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000149294,0.041063404081731064,-0.0684390068028851,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000077235,0.04045404632281473,0.05056755790351841,higher in cancer,4,0.8,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000238142,0.039578615427500546,-0.06596435904583424,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000099953,0.03943313506742253,0.09858283766855631,higher in cancer,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000153902,0.03917634328231934,-0.06529390547053222,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000248144,0.038932803206187395,-0.06488800534364565,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000179528,0.03668338246466744,0.061138970774445724,higher in cancer,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000078399,0.03644784360542576,-0.09111960901356439,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000198624,0.036028280913279795,-0.06004713485546633,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000123243,0.035199915738656704,-0.0586665262310945,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000146477,0.03445173272450634,-0.05741955454084391,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000127241,0.03389034870560227,-0.08472587176400567,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000236548,0.03230329345214557,-0.053838822420242606,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000156298,0.031935969151004585,-0.053226615251674304,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000146278,0.030483652551996428,-0.05080608758666071,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000105974,0.030295228053299688,-0.05049204675549948,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000198838,0.029619127499065645,-0.07404781874766411,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000075035,0.02810724571122058,-0.07026811427805145,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000022267,0.027851965058272067,-0.06962991264568016,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000163815,0.02782140188165159,-0.06955350470412898,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000094963,0.026953227957990832,-0.04492204659665139,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000106511,0.02668604795394095,-0.044476746589901583,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000165028,0.026609709127130322,-0.0665242728178258,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000167434,0.02585478001913603,-0.06463695004784008,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000276043,0.02442727113670116,0.061068177841752905,higher in cancer,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000123560,0.02399154305980921,-0.05997885764952302,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000161649,0.02342516518921279,-0.05856291297303197,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000105997,0.023049458436741454,-0.057623646091853636,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000135218,0.022167403892686906,-0.05541850973171726,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000166265,0.02154841356341037,-0.05387103390852593,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000197576,0.021354184802158636,-0.10677092401079319,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000129680,0.02126997859713301,-0.053174946492832526,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000170122,0.021171848883628688,0.10585924441814344,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000282840,0.021164623007951605,-0.10582311503975803,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000158186,0.020747581582574955,-0.05186895395643738,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000025423,0.02052462265835421,0.10262311329177105,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000123096,0.019944334698128525,-0.04986083674532131,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000147027,0.019796511755529995,-0.049491279388824985,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000136114,0.01964566299830347,-0.04911415749575867,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000169252,0.019350237971517324,-0.048375594928793314,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000105971,0.01935021418257309,-0.04837553545643272,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000164825,0.01934877536077596,-0.0967438768038798,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000136002,0.019311647508090835,-0.048279118770227086,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000263400,0.019284256053068584,-0.09642128026534291,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000105976,0.01901752457004961,-0.047543811425124025,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000102271,0.018885802672794716,-0.04721450668198679,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000141338,0.01868006681476935,-0.04670016703692338,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000154721,0.018597401735672047,-0.04649350433918012,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000177098,0.01833520553751318,-0.04583801384378295,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000270765,0.01783069461305655,-0.08915347306528275,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000287232,0.0177192019169262,-0.08859600958463099,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000239445,0.017393645324174874,-0.08696822662087436,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000164488,0.01717120362535195,-0.08585601812675975,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000282556,0.01686958511099356,-0.0843479255549678,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000162073,0.01683574162733985,0.08417870813669925,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000229694,0.01677066741079398,-0.08385333705396991,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000146648,0.016607973064472252,-0.041519932661180634,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000124507,0.016380779004171224,0.08190389502085613,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000237248,0.01616362076657358,-0.0808181038328679,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000179796,0.01605339930527256,-0.08026699652636281,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000261616,0.01582211948701314,-0.0791105974350657,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000131019,0.015681250097324552,-0.07840625048662277,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000138640,0.01548174341014959,-0.07740871705074795,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000163545,0.015320443382382287,0.07660221691191144,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000172987,0.015307291060922514,-0.07653645530461257,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000278266,0.015185582398781811,-0.07592791199390905,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000257135,0.01516181175284165,-0.07580905876420825,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000114656,0.015087179767074957,0.07543589883537478,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000139793,0.015053317138323691,-0.07526658569161845,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000203362,0.015051596328576935,0.07525798164288468,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000125965,0.014950440142126337,-0.07475220071063168,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000164434,0.014931514669330643,-0.07465757334665321,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000151079,0.014926047594270877,-0.07463023797135439,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000234899,0.014916956793937508,-0.07458478396968754,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000278023,0.014763842686494449,0.07381921343247225,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000146966,0.014743727977533663,-0.07371863988766832,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000115361,0.014732187029268779,-0.07366093514634389,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000119929,0.014483385417081922,-0.07241692708540962,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000135447,0.014332381791688765,-0.07166190895844382,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000167874,0.01432802008293967,-0.07164010041469834,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000235641,0.014233291282587093,-0.07116645641293547,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000243836,0.014196121615481436,-0.07098060807740718,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000137225,0.01416555899038214,-0.0708277949519107,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000261534,0.014066662671039348,-0.07033331335519674,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000165795,0.013972420706823441,-0.0698621035341172,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000164303,0.013946515873205442,-0.06973257936602721,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000163827,0.013909187950897716,-0.06954593975448858,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000081041,0.013905843187836478,-0.06952921593918239,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000148053,0.013902687810378327,-0.06951343905189164,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000112096,0.013855005696268036,-0.06927502848134018,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000124205,0.013848346761126899,-0.06924173380563449,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000151632,0.013845337287664383,-0.06922668643832192,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000164619,0.013744084873128707,-0.06872042436564353,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000115593,0.01372373776863547,-0.06861868884317734,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000147872,0.013686578735597291,-0.06843289367798645,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000183856,0.01354357165688293,0.06771785828441465,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000099769,0.013427430006851626,0.06713715003425813,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000165269,0.013426855598410201,-0.067134277992051,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000157152,0.01336804694597821,-0.06684023472989105,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000184384,0.013317397342574455,-0.06658698671287228,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000109670,0.013240007303464682,-0.06620003651732341,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000187699,0.013235081311112066,-0.06617540655556033,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000154734,0.013188627367964511,-0.06594313683982256,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000136425,0.01315932777873315,-0.06579663889366574,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000011426,0.013158358969380076,0.06579179484690038,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000120688,0.01307186751281456,-0.0653593375640728,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000230587,0.013061536070653737,-0.06530768035326869,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000116711,0.013055944005152479,-0.06527972002576239,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000241644,0.013000100802661296,-0.06500050401330648,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000159387,0.012982935975168045,-0.06491467987584022,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000179889,0.01291427926099733,0.06457139630498665,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000108381,0.012889949300626789,-0.06444974650313394,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000168874,0.012887761416143978,-0.06443880708071989,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000162616,0.012843410129946674,-0.06421705064973338,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000157557,0.012803910915804245,-0.06401955457902123,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000137872,0.012795614829740388,-0.06397807414870194,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000166960,0.012777595126081079,-0.0638879756304054,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000162413,0.012749734612680974,-0.06374867306340487,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000114378,0.012749665473378502,-0.06374832736689251,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000162772,0.012747170601701257,-0.06373585300850629,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000197275,0.012737641515543338,0.06368820757771669,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000126524,0.012734642860857607,-0.06367321430428803,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000117650,0.012723247376790144,0.06361623688395072,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000137727,0.012701729011715832,-0.06350864505857916,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000168309,0.012684750409119917,-0.06342375204559958,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000261175,0.012666538829743376,-0.06333269414871688,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000198478,0.012659765852612734,-0.06329882926306367,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000137077,0.012624487440686154,-0.06312243720343078,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000160307,0.0125878461015187,-0.0629392305075935,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000118507,0.01257414029728762,-0.0628707014864381,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000267414,0.012567852045579513,-0.06283926022789757,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000277954,0.012536884520419414,-0.06268442260209707,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000187134,0.012496976374928824,-0.06248488187464412,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000120738,0.012466723207987435,-0.06233361603993717,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000167702,0.012464963990875755,0.06232481995437878,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000136732,0.012464517357302139,-0.062322586786510696,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000160877,0.012420631219010736,0.06210315609505368,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000162063,0.012417755719616815,0.06208877859808407,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000136161,0.012327093757891972,-0.061635468789459864,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000154736,0.012273644605036535,-0.061368223025182675,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000183807,0.01224722238509946,-0.0612361119254973,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000125740,0.012153734813400357,-0.06076867406700179,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000167191,0.012060419598704493,-0.060302097993522465,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000225731,0.011987214673281753,-0.059936073366408764,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000104332,0.011970171029541968,-0.05985085514770984,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000168497,0.01192434389463701,-0.05962171947318506,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000106714,0.011904607476913711,-0.05952303738456855,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000175643,0.011894956267059126,0.05947478133529563,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000277639,0.01189240507582182,-0.05946202537910909,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000179270,0.011876994698578697,-0.059384973492893484,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000170271,0.011844542739249233,-0.05922271369624616,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000184304,0.01182516856323777,-0.059125842816188844,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000180660,0.011803194520309469,-0.05901597260154734,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000173432,0.011790470330410616,-0.058952351652053085,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000224786,0.011713314633558387,-0.05856657316779194,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000164035,0.011681412886628821,-0.058407064433144106,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000127564,0.011560076862640035,0.05780038431320018,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000126218,0.011521833007467423,-0.057609165037337116,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000171604,0.011458459414243302,0.05729229707121651,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000101871,0.011420832800163448,-0.05710416400081724,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000120279,0.011397833405632737,-0.05698916702816369,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000158966,0.011327052956459627,-0.056635264782298134,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000081377,0.011305624787753283,-0.05652812393876642,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000266524,0.011268852772826665,-0.056344263864133326,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000171522,0.0112624134956967,-0.056312067478483496,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000135046,0.01109884567261053,-0.05549422836305264,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000249679,0.011072482878864077,-0.05536241439432039,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000128918,0.010971203619892966,-0.05485601809946483,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000186642,0.010963180501669745,-0.054815902508348724,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000091513,0.010913639366711938,-0.05456819683355969,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000136826,0.010897602805970274,-0.05448801402985137,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000183549,0.010832628414877699,-0.05416314207438849,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000135363,0.010696300414237922,-0.05348150207118961,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000109674,0.010632344290014379,0.0531617214500719,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000135917,0.010601569911842034,-0.053007849559210174,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000069702,0.010593100302269487,-0.052965501511347435,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000204136,0.010544597441737117,-0.05272298720868558,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000133116,0.010525516411227964,-0.05262758205613982,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000196890,0.010410327511929215,0.05205163755964608,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000168477,0.010346404450500713,-0.05173202225250356,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000174099,0.010253553039713982,-0.05126776519856991,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000150281,0.010220866223636094,-0.05110433111818047,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000090889,0.010141571549618669,0.05070785774809334,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000186871,0.010065093945365835,0.05032546972682917,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000167641,0.010053149248053662,-0.05026574624026831,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000189129,0.010050248080097765,-0.050251240400488825,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000279965,0.009895135632977,-0.049475678164885004,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000165092,0.009881184495163082,-0.049405922475815406,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000100625,0.009862498619894935,0.04931249309947467,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000163513,0.009836719877315053,-0.049183599386575266,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000182175,0.009829077582525063,-0.049145387912625314,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000148700,0.009747826987869159,-0.0487391349393458,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000134121,0.009725554591624011,-0.048627772958120055,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000205221,0.009681574080011102,-0.04840787040005551,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000215386,0.009658229783041995,-0.048291148915209976,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000154928,0.009624842797071077,-0.04812421398535539,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000138685,0.009571151103678835,-0.047855755518394175,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000232434,0.009532519666525066,0.04766259833262533,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000149090,0.00941222460930291,-0.04706112304651455,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000137691,0.009234279974365878,-0.04617139987182939,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000120051,0.009201263178058496,-0.046006315890292485,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000099204,0.009026751826598487,-0.04513375913299243,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000117707,0.008899250492301662,-0.04449625246150831,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000142910,0.00865949093492606,-0.0432974546746303,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000146592,0.008618124953777343,-0.04309062476888671,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000170035,0.008560205633064949,-0.042801028165324745,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000116194,0.008464410436797102,-0.04232205218398551,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000136960,0.008353418765756633,-0.041767093828783165,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000101938,0.008245375083377892,-0.041226875416889464,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000090006,0.008070215804987565,-0.04035107902493782,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000114698,0.008018340005237375,-0.04009170002618687,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000185070,0.007740012123393697,-0.038700060616968485,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000136158,0.006214775331116778,-0.03107387665558389,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+logistic_regression,ENSG00000106809,0.0055344916190557415,-0.027672458095278706,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+random_forest,ENSG00000278828,0.019999999999999997,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000086717,0.017999999999999995,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000158373,0.017999999999999995,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000158406,0.014666666666666661,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000123500,0.01333333333333333,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000163155,0.01333333333333333,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000154645,0.012666666666666665,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000187730,0.012666666666666665,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000235904,0.012666666666666665,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000137960,0.012,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000225472,0.012,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000077235,0.011999999999999997,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000168079,0.011333333333333334,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000187824,0.011333333333333332,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000260025,0.011333333333333332,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000112320,0.010666666666666668,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000109846,0.010666666666666666,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000138131,0.010666666666666666,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000198732,0.010666666666666666,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000197872,0.010000000000000004,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000111404,0.01,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000231768,0.01,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000099260,0.009999999999999998,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000122592,0.009999999999999998,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000179528,0.009999999999999997,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000189134,0.009333333333333336,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000124440,0.009333333333333332,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000182253,0.008666666666666668,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000130988,0.008666666666666666,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000198515,0.008666666666666666,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000248144,0.008666666666666666,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000141639,0.008000000000000002,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000145777,0.008000000000000002,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000177363,0.008000000000000002,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000123243,0.008,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000163710,0.008,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000099953,0.007999999999999998,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000183682,0.007999999999999998,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000198947,0.007333333333333336,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000104888,0.007333333333333335,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000127241,0.007333333333333335,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000130032,0.007333333333333335,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000078596,0.007333333333333333,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000080166,0.007333333333333333,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000140459,0.007333333333333333,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000165197,0.006666666666666668,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000238142,0.006666666666666668,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000236548,0.006666666666666666,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000147027,0.006666666666666665,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000146477,0.006000000000000001,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000141338,0.006,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000196549,0.006,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000262097,0.006,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000276043,0.006,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000284237,0.006,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000133800,0.005999999999999999,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000203362,0.005999999999999995,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000105974,0.005333333333333336,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000106004,0.005333333333333334,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000156298,0.005333333333333334,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000163815,0.005333333333333334,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000166960,0.005333333333333334,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000025039,0.005333333333333333,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000105997,0.004666666666666669,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000153902,0.004666666666666668,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000163431,0.004666666666666668,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000094963,0.004666666666666667,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000129680,0.004666666666666667,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000164619,0.004666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000172987,0.004666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000234899,0.004666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000264345,0.004666666666666667,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000025423,0.004666666666666666,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000102271,0.0046666666666666645,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000135363,0.0046666666666666645,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000146278,0.004000000000000002,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000090889,0.004000000000000001,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000146592,0.004000000000000001,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000149294,0.004000000000000001,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000198624,0.004000000000000001,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000198838,0.004000000000000001,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000022267,0.004,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000142910,0.004,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000158186,0.004,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000161649,0.004,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000166265,0.004,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000287232,0.004,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000108381,0.003999999999999999,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000114656,0.003999999999999998,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000011426,0.003333333333333334,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000078399,0.003333333333333334,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000123560,0.003333333333333334,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000154721,0.003333333333333334,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000160877,0.003333333333333334,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000165152,0.003333333333333334,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000119929,0.003333333333333333,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000125740,0.003333333333333333,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000135046,0.003333333333333333,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000146374,0.003333333333333333,,not applicable,5,1.0,fold-local tree impurity importance
+random_forest,ENSG00000154330,0.003333333333333333,,not applicable,4,0.8,fold-local tree impurity importance
+random_forest,ENSG00000165028,0.003333333333333333,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000167874,0.003333333333333333,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000170271,0.003333333333333333,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000225731,0.003333333333333333,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000106511,0.0026666666666666683,,not applicable,3,0.6,fold-local tree impurity importance
+random_forest,ENSG00000136158,0.002666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000069702,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000090006,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000099769,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000106809,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000120279,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000123096,0.002666666666666667,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000135917,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000136161,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000136826,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000137691,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000137727,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000137872,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000146648,0.002666666666666667,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000149090,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000150281,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000151632,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000154734,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000154928,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000160307,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000162063,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000162073,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000163545,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000163827,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000164035,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000167191,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000167434,0.002666666666666667,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000168309,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000173432,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000183807,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000196890,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000232434,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000241644,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000249679,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000261616,0.002666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000105976,0.0026666666666666666,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000136002,0.0026666666666666666,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000165269,0.0026666666666666666,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000205221,0.0026666666666666666,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000277639,0.002666666666666666,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000146966,0.0026666666666666653,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000197576,0.0026666666666666644,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000261534,0.002000000000000002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000101938,0.002000000000000001,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000177098,0.002000000000000001,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000109674,0.0020000000000000005,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000116194,0.0020000000000000005,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000118507,0.0020000000000000005,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000170122,0.0020000000000000005,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000175643,0.0020000000000000005,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000183856,0.0020000000000000005,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000186871,0.0020000000000000005,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000187699,0.0020000000000000005,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000229694,0.0020000000000000005,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000235641,0.0020000000000000005,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000277954,0.0020000000000000005,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000100625,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000101871,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000105971,0.002,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000112096,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000114698,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000116711,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000126524,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000135447,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000136425,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000137225,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000138640,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000138685,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000148053,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000151079,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000162772,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000165795,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000167641,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000168497,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000169252,0.002,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000180660,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000204136,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000230587,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000257135,0.002,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000162413,0.0019999999999999996,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000239445,0.0019999999999999996,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000267414,0.0019999999999999996,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000282840,0.0019999999999999996,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000136114,0.0013333333333333352,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000279965,0.0013333333333333344,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000135218,0.001333333333333334,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000081041,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000081377,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000091513,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000104332,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000106714,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000109670,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000115361,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000120738,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000124507,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000125965,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000131019,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000147872,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000148700,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000154736,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000158966,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000162616,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000163513,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000164303,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000164488,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000164825,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000168874,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000171604,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000179270,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000179796,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000179889,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000186642,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000187134,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000243836,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000278023,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000278266,0.0013333333333333335,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000185070,0.001333333333333333,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000261175,0.001333333333333333,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000170035,0.0013333333333333318,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000164434,0.0006666666666666674,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000075035,0.000666666666666667,,not applicable,2,0.4,fold-local tree impurity importance
+random_forest,ENSG00000099204,0.000666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000120051,0.000666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000182175,0.000666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000183549,0.000666666666666667,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000115593,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000117650,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000124205,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000126218,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000128918,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000133116,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000136960,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000139793,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000157152,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000157557,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000159387,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000167702,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000168477,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000171522,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000197275,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000224786,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000237248,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000263400,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000266524,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000270765,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000282556,0.0006666666666666668,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000120688,1.1842378929334982e-18,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000117707,9.572589634545792e-19,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000165092,6.348830926004596e-19,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000174099,5.507384998111149e-19,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000184304,2.549401019509618e-19,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000114378,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000127564,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000134121,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000136732,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000137077,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000184384,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000189129,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000198478,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+random_forest,ENSG00000215386,0.0,,not applicable,1,0.2,fold-local tree impurity importance
+svm,ENSG00000123500,0.029450789075823703,0.029450789075823703,higher in cancer,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000231768,0.02407398192792598,-0.02407398192792598,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000122592,0.023451937612549704,-0.023451937612549704,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000080166,0.02338883822535371,-0.029236047781692136,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000189134,0.022622964021981842,-0.022622964021981842,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000235904,0.021543380413498285,-0.026929225516872858,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000260025,0.019584117001147643,-0.019584117001147643,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000225472,0.01946729590982827,-0.02433411988728534,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000154645,0.019346576434692515,-0.019346576434692515,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000163155,0.017781083013660284,0.022226353767075355,higher in cancer,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000198947,0.01774339068881011,-0.01774339068881011,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000137960,0.01750876745958283,-0.01750876745958283,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000183682,0.017498577341578486,0.021873221676973108,higher in cancer,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000145777,0.017364399154419674,-0.017364399154419674,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000109846,0.01680553528873707,-0.01680553528873707,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000182253,0.016418060306814853,-0.016418060306814853,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000146374,0.016301922079485606,-0.016301922079485606,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000086717,0.016163503962187575,0.016163503962187575,higher in cancer,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000264345,0.01591557474448629,-0.026525957907477152,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000124440,0.015868032464312613,-0.015868032464312613,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000158406,0.015652757624106964,0.015652757624106964,higher in cancer,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000187730,0.015582272180808283,0.015582272180808283,higher in cancer,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000106004,0.015429086805773071,-0.01928635850721634,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000141639,0.014773765612776074,-0.018467207015970093,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000130988,0.014690959031704203,-0.014690959031704203,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000158373,0.014037728555528997,0.014037728555528997,higher in cancer,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000198732,0.013642285337718284,-0.013642285337718284,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000187824,0.013134026566503212,-0.013134026566503212,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000284237,0.012894420971859732,-0.021490701619766222,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000165152,0.012595048999996547,-0.02099174833332758,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000278828,0.012528331081826424,0.012528331081826424,higher in cancer,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000025039,0.012383206542808585,-0.02063867757134764,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000078596,0.012028646244300023,-0.012028646244300023,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000165197,0.012001938151790062,-0.012001938151790062,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000197872,0.011538621631053545,-0.011538621631053545,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000099953,0.011336864055355916,0.02834216013838979,higher in cancer,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000099260,0.010930118271075897,-0.010930118271075897,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000133800,0.010811967522249007,-0.013514959402811258,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000140459,0.010541851602037165,-0.010541851602037165,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000149294,0.010523759072953682,-0.0175395984549228,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000154330,0.010214529781136825,-0.01276816222642103,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000111404,0.010114463152943454,-0.010114463152943454,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000163710,0.010016505904502367,-0.016694176507503943,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000177363,0.009828419703336123,-0.009828419703336123,higher in healthy,5,1.0,fold-local absolute standardized coefficient
+svm,ENSG00000078399,0.009808511667870872,-0.02452127916967718,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000138131,0.009788059983876964,-0.012235074979846206,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000163431,0.009503353540244334,-0.011879191925305418,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000168079,0.009498376920235604,-0.011872971150294506,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000196549,0.009425317674351645,-0.011781647092939556,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000198515,0.009249951702023003,-0.011562439627528754,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000112320,0.008795302078822375,-0.01099412759852797,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000153902,0.008785529748591783,-0.014642549580986305,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000248144,0.008765593867417366,-0.014609323112362274,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000127241,0.008681388919602262,-0.021703472299005655,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000262097,0.008675391187184934,-0.010844238983981166,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000238142,0.008379802869996704,-0.013966338116661174,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000156298,0.008318313367273178,-0.013863855612121964,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000198838,0.008297884441829287,-0.020744711104573217,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000104888,0.008272097028052414,-0.010340121285065517,higher in healthy,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000198624,0.008094185605432869,-0.013490309342388115,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000179528,0.007820878335604051,0.01303479722600675,higher in cancer,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000130032,0.007759940188710862,-0.012933233647851436,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000123243,0.007471187836111931,-0.012451979726853218,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000077235,0.007468572729733283,0.009335715912166604,higher in cancer,4,0.8,fold-local absolute standardized coefficient
+svm,ENSG00000022267,0.007373951237869797,-0.018434878094674492,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000236548,0.0073394353849066535,-0.012232392308177756,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000075035,0.007319081753772672,-0.01829770438443168,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000170122,0.006681038029309909,0.033405190146549545,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000165028,0.0064781228003290515,-0.01619530700082263,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000276043,0.006385468824818457,0.01596367206204614,higher in cancer,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000163815,0.006361612780618034,-0.015904031951545085,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000146477,0.006303556189081259,-0.010505926981802098,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000197576,0.006249930505892092,-0.03124965252946046,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000025423,0.006077914144298427,0.030389570721492135,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000263400,0.0060768644066542836,-0.03038432203327142,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000287232,0.0060247399974417745,-0.030123699987208874,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000146278,0.006009691207127751,-0.010016152011879585,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000282840,0.0059727416270833385,-0.02986370813541669,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000164488,0.005886471846704352,-0.029432359233521763,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000270765,0.005884991995816897,-0.029424959979084484,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000239445,0.005763488921526635,-0.028817444607633178,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000105974,0.00538224314510727,-0.008970405241845449,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000282556,0.005352200916295147,-0.026761004581475734,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000151079,0.005169624937286371,-0.025848124686431856,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000164825,0.005113839013350175,-0.02556919506675088,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000172987,0.005061503515468092,-0.02530751757734046,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000106511,0.0050103495638112346,-0.008350582606352058,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000136114,0.005003869388066247,-0.012509673470165617,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000137225,0.0049774088330113014,-0.024887044165056507,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000167434,0.004867384286380848,-0.01216846071595212,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000166265,0.004723704122172215,-0.011809260305430537,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000237248,0.004711608830396119,-0.023558044151980595,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000105997,0.004691044038396995,-0.011727610095992488,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000162073,0.0046695753926908785,0.023347876963454393,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000094963,0.004631007525427216,-0.007718345875712026,higher in healthy,3,0.6,fold-local absolute standardized coefficient
+svm,ENSG00000161649,0.004507881511025915,-0.011269703777564788,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000123560,0.004477788352941656,-0.01119447088235414,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000167874,0.004454877144033769,-0.022274385720168842,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000261616,0.004420585490395815,-0.022102927451979077,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000124507,0.004368189403617102,0.02184094701808551,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000169252,0.004365822234878833,-0.010914555587197082,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000229694,0.004326655083861793,-0.021633275419308963,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000129680,0.004278212022826124,-0.010695530057065309,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000114656,0.004254819129820904,0.02127409564910452,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000243836,0.004232467064221807,-0.021162335321109036,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000105976,0.00421715300158745,-0.010542882503968625,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000131019,0.004216723903608374,-0.02108361951804187,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000138640,0.004082001349436722,-0.020410006747183608,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000148053,0.004081009913706711,-0.020405049568533555,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000139793,0.004077695047986439,-0.020388475239932195,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000261534,0.00406815760802603,-0.020340788040130148,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000124205,0.004060698504614676,-0.02030349252307338,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000203362,0.004058563367286659,0.020292816836433292,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000154721,0.004039040046341627,-0.010097600115854068,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000164303,0.003952649882839753,-0.019763249414198762,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000234899,0.003942028608277537,-0.019710143041387684,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000179796,0.003939780974708243,-0.019698904873541218,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000278023,0.0038925391488186466,0.019462695744093234,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000146966,0.0038870827580465605,-0.0194354137902328,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000168309,0.003878828377462734,-0.01939414188731367,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000257135,0.003821293233492104,-0.01910646616746052,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000163545,0.00381460349974945,0.01907301749874725,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000157152,0.0037673390332191277,-0.018836695166095638,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000119929,0.003722750138907867,-0.018613750694539334,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000164434,0.003722474021580049,-0.018612370107900244,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000151632,0.0037181910413907776,-0.018590955206953887,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000146648,0.0036471388556384076,-0.00911784713909602,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000183856,0.0035988166189623028,0.017994083094811514,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000135218,0.0035943589375840037,-0.00898589734396001,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000184384,0.0035942916013736352,-0.017971458006868175,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000168874,0.003539034139885286,-0.01769517069942643,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000241644,0.0034631073427815766,-0.017315536713907884,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000137872,0.003441413568979834,-0.01720706784489917,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000141338,0.003441129200232959,-0.008602823000582398,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000235641,0.0034406146520908677,-0.017203073260454338,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000165795,0.0034198847572332776,-0.017099423786166388,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000278266,0.003408271776429804,-0.01704135888214902,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000170271,0.0034072350097946956,-0.01703617504897348,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000157557,0.003391867568376404,-0.01695933784188202,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000125965,0.0033918539027965842,-0.01695926951398292,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000120688,0.0033871132006558584,-0.016935566003279293,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000135447,0.003373359211058182,-0.01686679605529091,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000183807,0.00334421968365102,-0.0167210984182551,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000104332,0.0033395789668848293,-0.016697894834424146,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000114378,0.0033318291551169914,-0.016659145775584958,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000011426,0.003315593553806142,0.01657796776903071,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000147027,0.003310369958720217,-0.008275924896800542,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000154736,0.0033054206037780227,-0.016527103018890113,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000137727,0.0032986567543992853,-0.016493283771996426,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000115361,0.0032859315554333206,-0.016429657777166602,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000115593,0.0032857909636390932,-0.016428954818195465,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000123096,0.003272659863120389,-0.008181649657800973,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000184304,0.0032700840386527116,-0.01635042019326356,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000109670,0.0032393061292272122,-0.016196530646136062,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000187134,0.003206501982669535,-0.016032509913347676,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000099769,0.003202803157139974,0.01601401578569987,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000117650,0.003190454368655672,0.01595227184327836,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000164035,0.0031694325284522297,-0.01584716264226115,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000158186,0.0031657490678469284,-0.007914372669617321,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000162413,0.0031635621271604354,-0.015817810635802176,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000101871,0.0031612148506019134,-0.015806074253009568,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000165269,0.0031424698850289617,-0.01571234942514481,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000154734,0.0031261973307957136,-0.01563098665397857,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000116711,0.0031166089743138964,-0.015583044871569482,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000164619,0.0031053616299782294,-0.015526808149891148,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000136161,0.003065774735180633,-0.015328873675903163,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000168497,0.0030288972950038777,-0.015144486475019389,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000167191,0.003028560774640356,-0.015142803873201778,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000175643,0.0030168369325800143,0.01508418466290007,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000230587,0.0029994264861974403,-0.0149971324309872,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000126524,0.0029860096982402573,-0.014930048491201286,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000160307,0.0029664263179576397,-0.0148321315897882,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000081377,0.0029653153497660656,-0.014826576748830327,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000106714,0.002951631765301569,-0.014758158826507845,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000112096,0.0029105970571919855,-0.014552985285959927,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000118507,0.0028883187478659046,-0.014441593739329524,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000136732,0.002868550656466952,-0.01434275328233476,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000147872,0.002853991891427013,-0.014269959457135065,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000277639,0.0028434113945650153,-0.014217056972825076,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000102271,0.0028325243580464812,-0.007081310895116203,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000127564,0.0028316489768516603,0.014158244884258302,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000162063,0.0028235089706313294,0.014117544853156647,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000173432,0.0028078626608748526,-0.014039313304374263,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000125740,0.002806596899349416,-0.01403298449674708,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000081041,0.0027880308164514316,-0.013940154082257157,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000167702,0.0027782236698223836,0.013891118349111917,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000179889,0.0027608962474178376,0.013804481237089189,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000180660,0.0027549650216603617,-0.01377482510830181,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000277954,0.0027290542519940136,-0.013645271259970069,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000197275,0.0027255918376360364,0.013627959188180182,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000171604,0.002694541576568113,0.013472707882840565,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000109674,0.002667061306048895,0.013335306530244475,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000187699,0.0026582497676733196,-0.013291248838366599,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000174099,0.0026551681101454794,-0.013275840550727397,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000135046,0.002655160259828169,-0.013275801299140846,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000160877,0.0026249715993570595,0.013124857996785297,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000120279,0.002574815403130085,-0.012874077015650427,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000108381,0.002539509560127716,-0.01269754780063858,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000126218,0.0025370941297146368,-0.012685470648573184,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000267414,0.002532863798953301,-0.012664318994766504,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000198478,0.0025321368240375265,-0.012660684120187633,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000105971,0.002531667738289476,-0.00632916934572369,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000182175,0.002521869252823894,-0.01260934626411947,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000261175,0.002517121417142361,-0.012585607085711804,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000154928,0.002513326575145892,-0.01256663287572946,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000069702,0.002494843763393402,-0.01247421881696701,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000162616,0.0024715582351541782,-0.01235779117577089,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000224786,0.0024260287137964766,-0.012130143568982383,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000177098,0.002414746794469851,-0.006036866986174628,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000158966,0.0024090989971109747,-0.012045494985554874,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000150281,0.002396069697234237,-0.011980348486171187,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000167641,0.0023921924154007117,-0.011960962077003558,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000163827,0.002387234154851775,-0.011936170774258875,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000135363,0.002383304958002808,-0.01191652479001404,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000225731,0.002380358514475693,-0.011901792572378465,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000137691,0.0023785706630563962,-0.011892853315281981,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000215386,0.002348155368593145,-0.011740776842965725,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000137077,0.0023073484318765864,-0.011536742159382933,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000148700,0.0022945951234113445,-0.011472975617056722,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000159387,0.0022286938003902943,-0.011143469001951472,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000090889,0.00221092925875686,0.0110546462937843,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000136002,0.0022089946232286576,-0.0055224865580716445,higher in healthy,2,0.4,fold-local absolute standardized coefficient
+svm,ENSG00000120738,0.0021818164991791447,-0.010909082495895724,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000186871,0.00216542982583744,0.0108271491291872,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000149090,0.002159569068413292,-0.01079784534206646,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000196890,0.00214466041651449,0.01072330208257245,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000249679,0.0020975491921076932,-0.010487745960538466,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000232434,0.002084290184938403,0.010421450924692016,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000091513,0.002069448876322922,-0.01034724438161461,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000099204,0.00205064827656973,-0.010253241382848652,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000162772,0.0020307492031064705,-0.010153746015532353,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000185070,0.0019315376131984422,-0.009657688065992211,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000166960,0.0019225187590526701,-0.00961259379526335,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000163513,0.0019095539651188373,-0.009547769825594186,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000146592,0.0019004122042110619,-0.00950206102105531,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000136425,0.0018909544765417653,-0.009454772382708827,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000179270,0.0018897831558175558,-0.009448915779087779,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000128918,0.0018845816757272066,-0.009422908378636033,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000279965,0.001881957567711629,-0.009409787838558146,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000170035,0.0018803395019123738,-0.009401697509561869,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000133116,0.0018654508859016188,-0.009327254429508094,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000135917,0.0018176513504817812,-0.009088256752408905,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000266524,0.0018166993861258355,-0.009083496930629178,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000168477,0.0017841199131029602,-0.008920599565514801,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000100625,0.0017618352770722649,0.008809176385361325,higher in cancer,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000189129,0.0017529002243843299,-0.008764501121921649,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000171522,0.0017247191236303447,-0.008623595618151724,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000136826,0.0017246004112123382,-0.008623002056061691,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000134121,0.001691192072048485,-0.008455960360242425,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000186642,0.0016142759828822605,-0.008071379914411302,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000138685,0.0016092161665049343,-0.008046080832524671,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000183549,0.0015824331940475628,-0.007912165970237814,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000165092,0.00150765715474863,-0.007538285773743151,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000142910,0.0014846796464479417,-0.007423398232239708,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000090006,0.001458127625047691,-0.0072906381252384545,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000117707,0.001450348118985979,-0.007251740594929895,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000114698,0.0012918239414321383,-0.006459119707160691,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000116194,0.0012009109298389369,-0.006004554649194685,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000136158,0.0011904915773909717,-0.005952457886954859,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000204136,0.0011698797520393017,-0.005849398760196509,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000120051,0.001163681933247614,-0.00581840966623807,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000101938,0.0009480531721019802,-0.004740265860509901,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000106809,0.0007993564386996838,-0.003996782193498419,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000136960,0.0006132941518060705,-0.003066470759030353,higher in healthy,1,0.2,fold-local absolute standardized coefficient
+svm,ENSG00000205221,0.00048126322003216003,-0.0024063161001608,higher in healthy,1,0.2,fold-local absolute standardized coefficient

@@ -71,7 +71,13 @@ backend/alembic/versions/*.pyc
 *.pt
 *.pth
 models/
+# Keep the backend ORM package despite the generic ML artifact rule above.
+!backend/app/models/
+backend/app/models/*
+!backend/app/models/*.py
 uploads/
 logs/
 reports/
 .vs/
+
+/results/runs/1c782941-d15c-4c3a-a291-5172f1d23937/pathways/enrichment_results.csv

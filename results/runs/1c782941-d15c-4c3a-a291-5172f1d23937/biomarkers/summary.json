@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETED",
+  "candidate_count": 48,
+  "significant_human_deg_input_count": 6116,
+  "eligible_multi_evidence_candidate_count": 48,
+  "evidence_category_counts": {
+    "DEG-supported": 48,
+    "drift-supported": 22,
+    "interaction-loss-supported": 22,
+    "interaction-gain-supported": 48,
+    "module-associated": 11,
+    "orthology-supported": 48
+  },
+  "selection_basis": "A candidate must be a significant human DEG, include at least one additional evidence category, and have at least one cross-dimensional network support category (hub support across at least two centrality metrics, measured network drift, or observed lost/gained interactions). DEG alone, module association alone, and orthology alone do not qualify. Eligible candidates are ordered by evidence-category count, adjusted p-value, and absolute log2 fold change; no composite biomarker score is used.",
+  "clinical_validation": false,
+  "limitations": [
+    "Candidates are research-only and have not undergone independent or clinical validation.",
+    "Drift and lost/gained interaction evidence derive from related saved network comparisons and are not independent validation.",
+    "The human and mouse cancer networks differ substantially in size and density."
+  ]
+}

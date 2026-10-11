@@ -1,0 +1,62 @@
+{
+  "genes_before": 44601,
+  "genes_after": 23800,
+  "min_count": 10,
+  "min_samples_fraction": 0.2,
+  "required_samples": 4,
+  "tested_genes": 23800,
+  "method": "PyDESeq2 (DESeq2 Wald test)",
+  "fdr_method": "Benjamini-Hochberg",
+  "case_samples": 8,
+  "control_samples": 9,
+  "species": "human",
+  "comparison": "cancer_vs_healthy",
+  "case_condition": "cancer",
+  "control_condition": "healthy",
+  "case_sample_count": 8,
+  "control_sample_count": 9,
+  "case_sample_ids": [
+    "TCGA-A8-A09E-01A",
+    "TCGA-A8-A08F-01A",
+    "TCGA-A8-A091-01A",
+    "TCGA-AO-A0JI-01A",
+    "TCGA-A2-A0D4-01A",
+    "TCGA-AC-A62V-01A",
+    "TCGA-D8-A1XB-01A",
+    "TCGA-OL-A6VQ-01A"
+  ],
+  "control_sample_ids": [
+    "TCGA-GI-A2C8-11A",
+    "TCGA-E2-A1L7-11A",
+    "TCGA-BH-A1FE-11B",
+    "TCGA-BH-A1F8-11B",
+    "TCGA-BH-A0DP-11A",
+    "TCGA-BH-A0B5-11A",
+    "TCGA-BH-A1F6-11B",
+    "TCGA-BH-A0BV-11A",
+    "TCGA-BH-A18V-11A"
+  ],
+  "excluded_samples": [
+    "TCGA-A7-A0DC-01A",
+    "TCGA-A7-A0DC-01B",
+    "TCGA-A7-A0DC-11A"
+  ],
+  "total_genes_tested": 23800,
+  "significant_genes": 6116,
+  "upregulated_genes": 2915,
+  "downregulated_genes": 3201,
+  "alpha": 0.05,
+  "lfc_threshold": 1.0,
+  "invalid_gene_ids_excluded": 0,
+  "selected_method_from_data_type": {
+    "declared_data_type": "raw_counts",
+    "configured_method": "auto",
+    "selected_method": "count"
+  },
+  "expression_scale": "raw_counts",
+  "run_id": "1c782941-d15c-4c3a-a291-5172f1d23937",
+  "dataset_id": "980a07f7-4009-4554-b4df-26863fdfc705",
+  "dataset_accession": "TCGA-BRCA",
+  "input_expression_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\processed\\1bb864e8-3d1b-48d9-a5ea-a0ea20dd145e\\1c782941-d15c-4c3a-a291-5172f1d23937\\TCGA-BRCA_normalized.parquet",
+  "input_metadata_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\gdc\\TCGA-BRCA_metadata.tsv"
+}

@@ -199,6 +199,8 @@ Save as TSV to `backend/data/ensembl_human_mouse_orthologs.tsv` and re-run the s
 
 ## Data Format Requirements
 
+For details about the currently acquired public cohorts and their browsing in the Datasets page, see [Acquired datasets](docs/DATASETS.md).
+
 ### Expression Matrix
 
 - Format: CSV, TSV, TXT, or gzipped versions (.gz)
@@ -234,63 +236,111 @@ SAMPLE_003,cancer,Stage_II,batch2
 
 ## Analysis Workflow
 
-### Step 1: Create an Account
+This section describes the current application workflow. Most analyses are launched from
+**Datasets** with one action; the individual analysis pages are available when you want to run or
+inspect a stage separately.
 
-Register at `http://localhost:3000/register`.
+### 1. Start the application and create an analysis
 
-### Step 2: Upload Datasets
+1. Start the backend, Celery worker, and frontend using the instructions above. Background jobs
+   require the worker to be running.
+2. Register or sign in.
+3. On **Dashboard**, select or create a project.
+4. Select an existing analysis, or leave the analysis unselected. Choosing **Analyze dataset**
+   later will create an analysis for that dataset automatically if needed.
 
-Upload human and mouse expression matrices with metadata via **Datasets** page.
-Validate each dataset before proceeding.
+### 2. Add a dataset
 
-### Step 3: Preprocessing
+Choose either route:
 
-Configure normalization (match to your data type), filtering thresholds, and outlier detection.
-Every parameter is recorded in the analysis log.
+- **Upload your own data:** open **Datasets → Upload Dataset**, provide a name and species, select
+  the data type, and upload the expression matrix. Upload sample metadata as well; the automatic
+  DEG and network workflow depends on correctly labeled samples.
+- **Acquire public data:** open **Data Sources**, search for a disease/species, select a supported
+  accession, and download it into the project. Then confirm that it appears under **Project
+  datasets** on the **Datasets** page. A public dataset shown only in the acquired manifest is not
+  yet a project dataset for analysis.
 
-### Step 4: DEG Analysis (Baseline)
+On **Datasets**, use the validation action for the imported dataset and resolve any reported
+errors before analysis. Review the data format requirements above, especially that expression
+matrix columns and metadata `sample_id` values refer to the same samples.
 
-Run differential expression analysis. This provides the baseline comparison.
+### 3. Run the automatic workflow
 
-### Step 5: Network Construction
+1. On **Datasets**, select the analysis to attach the results to. If none is selected, the app
+   creates one when analysis starts.
+2. Find the dataset in **Project datasets** and click **Analyze dataset**.
+3. Keep the page open to follow the **Automated workflow status**. It reports each queued or
+   completed stage and displays errors rather than silently skipping failed stages.
+4. Open the result pages or **Reports** after the jobs finish.
 
-Build four networks:
-- Human healthy
-- Human cancer
-- Mouse healthy
-- Mouse cancer
+For a dataset with at least **2 healthy and 2 cancer samples**, the automatic workflow starts
+differential expression (DEG). Non-normalized data is preprocessed first; data marked
+**Already Normalized** goes directly to DEG. DEG pathway enrichment is then queued when DEG
+completes. For datasets with at least **5 healthy and 5 cancer samples**, the workflow also builds
+healthy and cancer co-expression networks, compares them with network drift, and queues drift
+pathway enrichment. Network and drift analysis is skipped for smaller groups; the page explains
+why. The automatic workflow analyzes one selected dataset at a time. Cross-species comparison
+requires separate completed human and mouse analyses and is not automatically run for a
+single-species dataset.
 
-### Step 6: Drift Detection
+### 4. Run an individual stage manually (optional)
 
-Compare healthy → cancer networks for each species.
-The Global Network Drift Score (GNDS) quantifies the magnitude of change.
+Use the Dashboard to select the project and analysis, and **Datasets** to select the dataset before
+starting a manual stage.
 
-### Step 7: Cross-Species Comparison
+1. **Preprocessing:** open **Preprocessing**, choose a normalization method appropriate for the
+   input data, review filtering and outlier options, and click **Start preprocessing**. Monitor the
+   job status until it completes. Do not apply `log2CPM` to a matrix that is already normalized.
+2. **DEG:** for the normal end-to-end workflow, click **Analyze dataset** on **Datasets**; it runs
+   preprocessing when needed and starts DEG afterward. The **Differential Expression** page is
+   for viewing saved run-scoped DEG tables.
+3. **Networks:** open **Gene Networks**, choose species, dataset, condition (Normal or Cancer),
+   and network parameters, then click **Build Network**. Build one completed network per state
+   before proceeding to drift.
+4. **Network drift:** open **Network Drift**, choose the species and its completed normal and
+   disease networks, then click **Run Drift**. The result page displays the status and drift
+   summary.
+5. **Cross-species comparison:** first provide one-to-one human–mouse orthology mappings using the
+   Orthology setup above. Complete drift analyses for both species, then open **Cross-Species
+   Comparison**, enter the human and mouse drift analysis IDs, and click **Compare Species**.
+6. **Pathway results:** open **Pathway Enrichment** or **Key Drifted Pathways**, select the saved
+   analysis run, and browse its available enrichment tables and comparisons. These pages display
+   saved run-scoped results; they do not launch a new enrichment job from the page.
+7. **Scientific drift validation (optional):** open **Validation**, enter the completed drift
+   analysis ID, choose the permutation count, and click **Run validation**. This evaluates the
+   saved drift result; it is separate from the automatic analysis stages.
+8. **Machine-learning results:** open **Run ML Results** for a completed saved run to inspect
+   available model metrics and outputs. Treat these as exploratory computational results, not
+   clinical validation.
 
-After loading orthology data, compare human and mouse drift.
-Genes are classified as conserved, species-specific, or divergent.
+### 5. Browse and download results
 
-### Step 8: Machine Learning
+1. Open **Reports** and select a saved analysis run.
+2. Review the files listed by result section.
+3. Click **Download** beside an individual artifact, or **Download all** to save the run's
+   available artifacts as a ZIP archive.
 
-Train three model types for direct comparison:
-- **Model A**: Expression features (baseline)
-- **Model B**: Network drift features
-- **Model C**: Combined
+Run-scoped pages such as **Differential Expression**, **Gene Networks**, **Network Drift**,
+**Pathway Enrichment**, and **Run ML Results** display evidence recorded for the selected saved
+run when that result category is present. A missing result means the stage was not run, is not
+available for that run, or did not complete; it should not be interpreted as a biological
+negative finding.
 
-Use stratified cross-validation. Keep your validation dataset completely independent.
+---
 
-### Step 9: Validation
+## Run-scoped Analysis Results
 
-Use an external, independent dataset for validation.
-Never use validation data during training or feature selection.
+Run-scoped results are available as individual pages in the **Biological Analysis** sidebar section:
 
-### Step 10: Pathway Analysis
+- Differential Expression
+- Gene Networks
+- Network Explorer
+- Modules
+- Module Explorer
+- Integrated Analysis
 
-Run over-representation analysis on drifting genes using GO, KEGG, or Reactome.
-
-### Step 11: Report
-
-Generate a downloadable PDF report with all results, parameters, and methodology.
+Choose a project and analysis run to view the corresponding differential expression, network, module, or integrated results. Completed runs are discovered from their manifests under `results/runs`, and each page reads the saved artifacts for that run without rerunning the analysis. The cross-study mouse DEG comparison is explicitly exploratory.
 
 ---
 

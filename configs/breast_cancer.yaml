@@ -1,0 +1,102 @@
+project:
+  name: BRCA Network Drift 2026
+  owner_username: researcher2026
+
+datasets:
+  human:
+    source: gdc
+    project: TCGA-BRCA
+    accession: TCGA-BRCA
+    workflow: STAR - Counts
+    species: human
+    tissue: Breast
+    platform: GDC STAR - Counts
+    data_type: raw_counts
+    version: GRCh38 / GENCODE v36 / STAR - Counts
+    source_download_date: "2026-10-04"
+    expression_file: data/pathdrift/raw/gdc/tcga_brca_real_expression.tsv.gz
+    metadata_file: data/pathdrift/raw/gdc/tcga_brca_real_metadata.tsv
+    expression_sha256: 32f1d5d42c7b65b2ec8826e7406cf3e9aa93027caf459cc8d37345da229571ba
+    metadata_sha256: 28e8544382739e326a1977f36f90f81d51c97fe63aa338670c5a88f0b1e00286
+  mouse:
+    source: geo
+    accession: GSE155577
+    organism: Mus musculus
+    species: mouse
+    tissue: Mammary tumor
+    platform: GPL15103
+    data_type: normalized
+    version: GSE155577 / GPL15103
+    source_download_date: "2026-10-04"
+    expression_file: data/pathdrift/raw/geo/GSE155577_expression.tsv.gz
+    metadata_file: data/pathdrift/raw/geo/GSE155577_metadata.tsv
+    expression_sha256: d5e80e7a36ce35a8b071164a0dd5ee655c10fd4cebe2e65bc088ac87585d1b0e
+    metadata_sha256: 42ec5aad7340c3a0d7a2056294a5ea8c1c46c2382ea4e967910fec245f53c59d
+
+normal_reference:
+  source: gtex
+  tissue: Breast - Mammary Tissue
+  version: v10
+  enabled: false
+  primary_strategy: tcga_adjacent_normal
+  rationale: TCGA solid-tissue-normal samples are the primary within-cohort human reference. GTEx is a separate external sensitivity reference and must not be merged with TCGA as if batches were interchangeable.
+
+qc:
+  min_expression: 1.0
+  min_samples: 3
+  max_missing_fraction: 0.2
+  max_sample_missing_fraction: 0.2
+  pca_gene_limit: 2000
+  outlier_z_threshold: 3.5
+  exclude_outliers: false
+
+differential_expression:
+  enabled: true
+  human:
+    dataset_accession: TCGA-BRCA
+    case_condition: cancer
+    control_condition: healthy
+    min_samples_per_group: 3
+    case_id_column: case_submitter_id
+    excluded_case_ids:
+      - TCGA-A7-A0DC
+  mouse:
+    dataset_accession: GSE155577
+    case_condition: cancer
+    control_condition: healthy
+    min_samples_per_group: 3
+    excluded_samples:
+      - sample55
+      - sample56
+  filtering:
+    min_count: 10
+    min_samples_fraction: 0.2
+  statistics:
+    method: auto
+    multiple_testing: BH
+    alpha: 0.05
+    lfc_threshold: 1.0
+    continuous_expression_scale: log2
+
+networks:
+  enabled: true
+  method: spearman
+  min_abs_correlation: 0.7
+  max_adjusted_p_value: 0.05
+  min_gene_variance: 0.1
+  max_genes: 1000
+  centrality_sample_count: 8
+  minimum_samples: 3
+  states:
+    human:
+      - cancer
+      - healthy
+    mouse:
+      - cancer
+  exclude_cell_line_samples: true
+
+modules:
+  enabled: true
+  method: louvain
+  resolution: 1.0
+  min_module_size: 10

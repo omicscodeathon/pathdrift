@@ -6,13 +6,15 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 
-DATA_ROOT = Path(__file__).resolve().parents[4] / "data" / "pathdrift"
+BACKEND_ROOT = Path(__file__).resolve().parents[3]
+UPLOAD_ROOT = BACKEND_ROOT / "uploads"
+DATA_ROOT = UPLOAD_ROOT / "data_acquisition"
 RAW_ROOT = DATA_ROOT / "raw"
 PROCESSED_ROOT = DATA_ROOT / "processed"
 METADATA_ROOT = DATA_ROOT / "metadata"
 MANIFEST_ROOT = DATA_ROOT / "manifests"
 LOG_ROOT = DATA_ROOT / "logs"
-FRONTEND_PUBLIC_ROOT = Path(__file__).resolve().parents[4] / "frontend" / "public" / "data" / "pathdrift"
+FRONTEND_PUBLIC_ROOT = BACKEND_ROOT.parent / "frontend" / "public" / "data" / "pathdrift"
 FRONTEND_RAW_ROOT = FRONTEND_PUBLIC_ROOT / "raw"
 FRONTEND_PROCESSED_ROOT = FRONTEND_PUBLIC_ROOT / "processed"
 
@@ -29,14 +31,14 @@ def ensure_data_directories() -> Dict[str, str]:
         "frontend_raw": str(FRONTEND_RAW_ROOT),
         "frontend_processed": str(FRONTEND_PROCESSED_ROOT),
     }
-    for path in directories.values():
+    for key, path in directories.items():
+        if key.startswith("frontend_"):
+            continue
         Path(path).mkdir(parents=True, exist_ok=True)
 
     for subdir in ["gtex", "gdc", "geo", "orthology", "human", "mouse"]:
         (RAW_ROOT / subdir).mkdir(parents=True, exist_ok=True)
         (PROCESSED_ROOT / subdir).mkdir(parents=True, exist_ok=True)
-        (FRONTEND_RAW_ROOT / subdir).mkdir(parents=True, exist_ok=True)
-        (FRONTEND_PROCESSED_ROOT / subdir).mkdir(parents=True, exist_ok=True)
 
     return directories
 

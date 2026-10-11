@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETED",
+  "evidence_rows": 134,
+  "scored_gene_pairs": 134,
+  "high_risk_gene_pairs": 27,
+  "configuration": {
+    "gene_loss_weights": {
+      "network_drift": 0.5,
+      "human_expression_loss": 0.5
+    },
+    "risk_thresholds": {
+      "moderate": 0.33,
+      "high": 0.66
+    },
+    "deg_fdr_threshold": 0.05,
+    "deg_lfc_threshold": 1.0,
+    "biomarker_selection": "A candidate must be a significant human DEG, include at least one additional evidence category, and have at least one cross-dimensional network support category (hub support across at least two centrality metrics, measured network drift, or observed lost/gained interactions). DEG alone, module association alone, and orthology alone do not qualify. Eligible candidates are ordered by evidence-category count, adjusted p-value, and absolute log2 fold change; no composite biomarker score is used."
+  },
+  "limitations": [
+    "Research prioritization only, not a clinical risk estimate.",
+    "Human cancer and mouse cancer networks differ substantially in size and density.",
+    "Mouse expression is from an independent-study exploratory comparison and is reported but excluded from the score.",
+    "Absence of a one-to-one orthology record is not proof of genomic deletion.",
+    "Missing evidence is null and excluded from the normalized score; it is not replaced with zero."
+  ]
+}

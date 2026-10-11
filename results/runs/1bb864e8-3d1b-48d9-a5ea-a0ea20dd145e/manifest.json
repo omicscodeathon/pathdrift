@@ -1,0 +1,284 @@
+{
+  "run_id": "1bb864e8-3d1b-48d9-a5ea-a0ea20dd145e",
+  "project": {
+    "name": "BRCA Network Drift 2026",
+    "owner_username": "researcher2026"
+  },
+  "status": "COMPLETED",
+  "created_at": "2026-10-05T17:21:18.424941+00:00",
+  "datasets": [
+    {
+      "accession": "TCGA-BRCA",
+      "source": "GDC",
+      "species": "human",
+      "tissue": "Breast",
+      "data_type": "raw_counts",
+      "raw_expression_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\gdc\\TCGA-BRCA_expression.tsv.gz",
+      "metadata_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\gdc\\TCGA-BRCA_metadata.tsv",
+      "processed_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\processed\\1bb864e8-3d1b-48d9-a5ea-a0ea20dd145e\\TCGA-BRCA_normalized.parquet",
+      "initial_samples": 20,
+      "retained_samples": 20,
+      "initial_genes": 60660,
+      "validated_ensembl_genes": 60660,
+      "retained_genes": 44601,
+      "excluded_samples": [],
+      "excluded_genes": 16059,
+      "invalid_gene_ids": 0,
+      "duplicate_gene_rows": 0,
+      "duplicate_gene_ids_aggregated": 0,
+      "non_numeric_cells": 0,
+      "missing_cells_imputed": 0,
+      "outliers": [
+        {
+          "sample_id": "TCGA-A7-A0DC-01A",
+          "reason": "robust distance from the sample PCA centroid",
+          "metric": 6.067821125027573,
+          "threshold": 3.5,
+          "decision": "flagged_retained"
+        },
+        {
+          "sample_id": "TCGA-A7-A0DC-01B",
+          "reason": "robust distance from the sample PCA centroid",
+          "metric": 3.745657389577092,
+          "threshold": 3.5,
+          "decision": "flagged_retained"
+        },
+        {
+          "sample_id": "TCGA-GI-A2C8-11A",
+          "reason": "robust distance from the sample PCA centroid",
+          "metric": 7.221756458611668,
+          "threshold": 3.5,
+          "decision": "flagged_retained"
+        }
+      ],
+      "batch_variables": [],
+      "normalization_method": "log2cpm",
+      "normalization_data_type": "raw_counts",
+      "configuration": {
+        "min_expression": 1.0,
+        "min_samples": 3,
+        "max_missing_fraction": 0.2,
+        "max_sample_missing_fraction": 0.2,
+        "pca_gene_limit": 2000,
+        "outlier_z_threshold": 3.5,
+        "exclude_outliers": false
+      }
+    },
+    {
+      "accession": "GSE155577",
+      "source": "GEO",
+      "species": "mouse",
+      "tissue": "Mammary tumor",
+      "data_type": "normalized",
+      "raw_expression_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\geo\\GSE155577_expression.tsv.gz",
+      "metadata_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\geo\\GSE155577_metadata.tsv",
+      "processed_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\processed\\1bb864e8-3d1b-48d9-a5ea-a0ea20dd145e\\GSE155577_normalized.parquet",
+      "initial_samples": 26,
+      "retained_samples": 26,
+      "initial_genes": 47730,
+      "validated_ensembl_genes": 47729,
+      "retained_genes": 47729,
+      "excluded_samples": [],
+      "excluded_genes": 1,
+      "invalid_gene_ids": 1,
+      "duplicate_gene_rows": 0,
+      "duplicate_gene_ids_aggregated": 0,
+      "non_numeric_cells": 0,
+      "missing_cells_imputed": 0,
+      "outliers": [
+        {
+          "sample_id": "sample56",
+          "reason": "robust distance from the sample PCA centroid",
+          "metric": 9.821105855149762,
+          "threshold": 3.5,
+          "decision": "flagged_retained"
+        },
+        {
+          "sample_id": "sample55",
+          "reason": "robust distance from the sample PCA centroid",
+          "metric": 9.961982806598925,
+          "threshold": 3.5,
+          "decision": "flagged_retained"
+        }
+      ],
+      "batch_variables": [],
+      "normalization_method": "none",
+      "normalization_data_type": "normalized",
+      "configuration": {
+        "min_expression": 1.0,
+        "min_samples": 3,
+        "max_missing_fraction": 0.2,
+        "max_sample_missing_fraction": 0.2,
+        "pca_gene_limit": 2000,
+        "outlier_z_threshold": 3.5,
+        "exclude_outliers": false
+      }
+    }
+  ],
+  "qc": {
+    "datasets": {
+      "TCGA-BRCA": {
+        "initial_samples": 20,
+        "retained_samples": 20,
+        "initial_genes": 60660,
+        "validated_ensembl_genes": 60660,
+        "retained_genes": 44601,
+        "excluded_samples": [],
+        "excluded_genes": 16059,
+        "invalid_gene_ids": 0,
+        "duplicate_gene_rows": 0,
+        "duplicate_gene_ids_aggregated": 0,
+        "non_numeric_cells": 0,
+        "missing_cells_imputed": 0,
+        "outliers": [
+          {
+            "sample_id": "TCGA-A7-A0DC-01A",
+            "reason": "robust distance from the sample PCA centroid",
+            "metric": 6.067821125027573,
+            "threshold": 3.5,
+            "decision": "flagged_retained"
+          },
+          {
+            "sample_id": "TCGA-A7-A0DC-01B",
+            "reason": "robust distance from the sample PCA centroid",
+            "metric": 3.745657389577092,
+            "threshold": 3.5,
+            "decision": "flagged_retained"
+          },
+          {
+            "sample_id": "TCGA-GI-A2C8-11A",
+            "reason": "robust distance from the sample PCA centroid",
+            "metric": 7.221756458611668,
+            "threshold": 3.5,
+            "decision": "flagged_retained"
+          }
+        ],
+        "batch_variables": [],
+        "normalization_method": "log2cpm",
+        "normalization_data_type": "raw_counts",
+        "configuration": {
+          "min_expression": 1.0,
+          "min_samples": 3,
+          "max_missing_fraction": 0.2,
+          "max_sample_missing_fraction": 0.2,
+          "pca_gene_limit": 2000,
+          "outlier_z_threshold": 3.5,
+          "exclude_outliers": false
+        }
+      },
+      "GSE155577": {
+        "initial_samples": 26,
+        "retained_samples": 26,
+        "initial_genes": 47730,
+        "validated_ensembl_genes": 47729,
+        "retained_genes": 47729,
+        "excluded_samples": [],
+        "excluded_genes": 1,
+        "invalid_gene_ids": 1,
+        "duplicate_gene_rows": 0,
+        "duplicate_gene_ids_aggregated": 0,
+        "non_numeric_cells": 0,
+        "missing_cells_imputed": 0,
+        "outliers": [
+          {
+            "sample_id": "sample56",
+            "reason": "robust distance from the sample PCA centroid",
+            "metric": 9.821105855149762,
+            "threshold": 3.5,
+            "decision": "flagged_retained"
+          },
+          {
+            "sample_id": "sample55",
+            "reason": "robust distance from the sample PCA centroid",
+            "metric": 9.961982806598925,
+            "threshold": 3.5,
+            "decision": "flagged_retained"
+          }
+        ],
+        "batch_variables": [],
+        "normalization_method": "none",
+        "normalization_data_type": "normalized",
+        "configuration": {
+          "min_expression": 1.0,
+          "min_samples": 3,
+          "max_missing_fraction": 0.2,
+          "max_sample_missing_fraction": 0.2,
+          "pca_gene_limit": 2000,
+          "outlier_z_threshold": 3.5,
+          "exclude_outliers": false
+        }
+      }
+    },
+    "dataset_count": 2,
+    "initial_samples": 46,
+    "retained_samples": 46,
+    "initial_genes": {
+      "TCGA-BRCA": 60660,
+      "GSE155577": 47730
+    },
+    "retained_genes": {
+      "TCGA-BRCA": 44601,
+      "GSE155577": 47729
+    },
+    "excluded_samples": [],
+    "excluded_genes": {
+      "TCGA-BRCA": 16059,
+      "GSE155577": 1
+    },
+    "outliers": [
+      {
+        "accession": "TCGA-BRCA",
+        "sample_id": "TCGA-A7-A0DC-01A",
+        "reason": "robust distance from the sample PCA centroid",
+        "metric": 6.067821125027573,
+        "threshold": 3.5,
+        "decision": "flagged_retained"
+      },
+      {
+        "accession": "TCGA-BRCA",
+        "sample_id": "TCGA-A7-A0DC-01B",
+        "reason": "robust distance from the sample PCA centroid",
+        "metric": 3.745657389577092,
+        "threshold": 3.5,
+        "decision": "flagged_retained"
+      },
+      {
+        "accession": "TCGA-BRCA",
+        "sample_id": "TCGA-GI-A2C8-11A",
+        "reason": "robust distance from the sample PCA centroid",
+        "metric": 7.221756458611668,
+        "threshold": 3.5,
+        "decision": "flagged_retained"
+      },
+      {
+        "accession": "GSE155577",
+        "sample_id": "sample56",
+        "reason": "robust distance from the sample PCA centroid",
+        "metric": 9.821105855149762,
+        "threshold": 3.5,
+        "decision": "flagged_retained"
+      },
+      {
+        "accession": "GSE155577",
+        "sample_id": "sample55",
+        "reason": "robust distance from the sample PCA centroid",
+        "metric": 9.961982806598925,
+        "threshold": 3.5,
+        "decision": "flagged_retained"
+      }
+    ],
+    "batch_variables": [],
+    "normalization_method": {
+      "TCGA-BRCA": "log2cpm",
+      "GSE155577": "none"
+    },
+    "normal_reference": {
+      "source": "gtex",
+      "tissue": "Breast - Mammary Tissue",
+      "version": "v10",
+      "enabled": false,
+      "primary_strategy": "tcga_adjacent_normal",
+      "rationale": "TCGA solid-tissue-normal samples are the primary within-cohort human reference. GTEx is a separate external sensitivity reference and must not be merged with TCGA as if batches were interchangeable."
+    }
+  }
+}

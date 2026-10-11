@@ -1,0 +1,130 @@
+{
+  "tested_genes": 14592,
+  "genes_within_group_variance_unavailable": 623,
+  "gene_rows_returned": 15215,
+  "method": "Welch's t-test + Benjamini-Hochberg",
+  "fdr_method": "Benjamini-Hochberg",
+  "expression_scale": "log2",
+  "case_samples": 12,
+  "control_samples": 8,
+  "genes_without_within_group_variance": 623,
+  "species": "mouse",
+  "comparison": "cancer_vs_healthy_cross_study_exploratory",
+  "case_condition": "cancer",
+  "control_condition": "healthy",
+  "case_sample_count": 12,
+  "control_sample_count": 8,
+  "case_sample_ids": [
+    "GSE155577:day20:rep1",
+    "GSE155577:day20:rep2",
+    "GSE155577:day20:rep3",
+    "GSE155577:day20:rep4",
+    "GSE155577:day20:rep5",
+    "GSE155577:day20:rep6",
+    "GSE155577:day47:rep1",
+    "GSE155577:day47:rep2",
+    "GSE155577:day47:rep3",
+    "GSE155577:day47:rep4",
+    "GSE155577:day47:rep5",
+    "GSE155577:day47:rep6"
+  ],
+  "control_sample_ids": [
+    "GSE116385:Ba1",
+    "GSE116385:Ba2",
+    "GSE116385:fMaSC1",
+    "GSE116385:fMaSC2",
+    "GSE116385:LP1",
+    "GSE116385:LP2",
+    "GSE116385:ML1",
+    "GSE116385:ML2"
+  ],
+  "excluded_samples": [],
+  "total_gene_rows_returned": 15215,
+  "total_genes_tested": 14592,
+  "significant_genes": 10288,
+  "upregulated_genes": 7663,
+  "downregulated_genes": 2625,
+  "alpha": 0.05,
+  "lfc_threshold": 1.0,
+  "invalid_gene_ids_excluded": 0,
+  "selected_method_from_data_type": {
+    "declared_data_type": "normalized",
+    "configured_method": "continuous",
+    "selected_method": "continuous"
+  },
+  "status": "COMPLETED",
+  "classification": "exploratory_cross_study_not_confirmatory",
+  "biological_contrast": "GSE155577 in-vivo E-A14 tumor-derived cells vs GSE116385 normal mammary cell populations",
+  "run_id": "1c782941-d15c-4c3a-a291-5172f1d23937",
+  "dataset_id": "d40a5841-0db4-4737-9b68-54cab2c01306",
+  "case_dataset_accession": "GSE155577",
+  "control_dataset_accession": "GSE116385",
+  "input_info": {
+    "shared_genes_tested": 15215,
+    "healthy_genes_available": 24391,
+    "mouse_one_to_one_symbols_available": 17119,
+    "tumor_source_sample_count": 24,
+    "tumor_cell_line_samples_excluded": [
+      "sample56",
+      "sample55"
+    ],
+    "tumor_biological_replicates": 12,
+    "healthy_samples": 8,
+    "tumor_normalization": "GEO-provided DESeq2-normalized counts; log2(x + 1) applied",
+    "healthy_normalization": "GEO-provided RPKM; log2(x + 1) applied",
+    "paired_tumor_fraction_handling": "For each day/treatment/replicate, log2 expression was averaged across the matched EpCAM-positive and EpCAM-negative fractions to form one tumor specimen observation.",
+    "gene_mapping": "Exact case-insensitive mouse gene-symbol mapping through the local Ensembl release 116 one-to-one orthology table; duplicate symbols and IDs were excluded."
+  },
+  "source_paths": {
+    "tumor_phase2_expression": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\processed\\1bb864e8-3d1b-48d9-a5ea-a0ea20dd145e\\1c782941-d15c-4c3a-a291-5172f1d23937\\GSE155577_normalized.parquet",
+    "tumor_metadata": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\geo\\GSE155577_metadata.tsv",
+    "healthy_expression": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\pathdrift\\raw\\geo\\GSE116385\\GSE116385_expression.tsv.gz",
+    "healthy_metadata": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\pathdrift\\raw\\geo\\GSE116385\\GSE116385_metadata.tsv",
+    "mouse_one_to_one_mapping": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\pathdrift\\raw\\orthology\\ensembl_one_to_one.tsv",
+    "phase2_run_manifest": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\results\\runs\\1c782941-d15c-4c3a-a291-5172f1d23937\\manifest.json",
+    "acquisition_manifest": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\pathdrift\\manifests\\dataset_manifest.json"
+  },
+  "source_sha256": {
+    "GSE155577": {
+      "raw_expression": "d5e80e7a36ce35a8b071164a0dd5ee655c10fd4cebe2e65bc088ac87585d1b0e",
+      "metadata": "42ec5aad7340c3a0d7a2056294a5ea8c1c46c2382ea4e967910fec245f53c59d"
+    },
+    "GSE116385": {
+      "raw_expression": "6d2d1db367b2520c10da73a9339882d167d90d68131e51aa8869c9fddcb47f40",
+      "metadata": "9d39912d3c3b6a4cc0c19c6c8c45baf8bf87bfff083381f4b1d331b6b596c2a5"
+    },
+    "mouse_one_to_one_mapping": "f3cf4d77c3d488558b563fbbac94b4b7d7cf18a87aa0294beec416ea19654553"
+  },
+  "study_design_warning": "Cancer status is perfectly confounded with GEO study, assay/platform, and processing. The healthy samples are a separate RPKM cohort, so study and condition effects cannot be distinguished by this design. P-values and fold changes are exploratory only and must not be treated as confirmatory cancer-vs-normal findings.",
+  "biological_limitations": [
+    "GSE155577 tumor samples are sorted E-A14 tumor-cell fractions; GSE116385 controls are four distinct normal mammary cell populations, including fetal and adult populations.",
+    "The tumor and normal cohorts use separate GEO studies and expression quantification pipelines; no batch correction can identify condition separately from study in this design.",
+    "Tumor samples were averaged within each matched EpCAM-positive/EpCAM-negative fraction pair to avoid treating two samples from one tumor specimen as independent biological replicates.",
+    "Only exact, unique gene-symbol matches to the local Ensembl release 116 one-to-one orthology mapping and present tumor Ensembl IDs were tested; unmapped and ambiguous symbols were excluded.",
+    "The mouse cohort has no same-study healthy control samples; this analysis does not replace a matched, confirmatory mouse DEG study."
+  ],
+  "persisted_gene_rows": 15215,
+  "persisted_significant_gene_rows": 10288,
+  "figure_artifacts": [
+    {
+      "path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\results\\runs\\1c782941-d15c-4c3a-a291-5172f1d23937\\deg\\mouse\\cross_study_exploratory\\volcano.png",
+      "figure_type": "volcano",
+      "format": "png"
+    },
+    {
+      "path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\results\\runs\\1c782941-d15c-4c3a-a291-5172f1d23937\\deg\\mouse\\cross_study_exploratory\\volcano.svg",
+      "figure_type": "volcano",
+      "format": "svg"
+    },
+    {
+      "path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\results\\runs\\1c782941-d15c-4c3a-a291-5172f1d23937\\deg\\mouse\\cross_study_exploratory\\ma_plot.png",
+      "figure_type": "ma_plot",
+      "format": "png"
+    },
+    {
+      "path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\results\\runs\\1c782941-d15c-4c3a-a291-5172f1d23937\\deg\\mouse\\cross_study_exploratory\\ma_plot.svg",
+      "figure_type": "ma_plot",
+      "format": "svg"
+    }
+  ]
+}

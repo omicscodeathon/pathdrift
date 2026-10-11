@@ -1,0 +1,55 @@
+{
+  "source": "Ensembl Compara BioMart",
+  "source_version": "Ensembl Compara release 116",
+  "ensembl_release": 116,
+  "retrieved_at": "2026-10-06T17:04:09.419181+00:00",
+  "endpoint": "https://jun2026.archive.ensembl.org/biomart/martservice",
+  "species": [
+    "homo_sapiens",
+    "mus_musculus"
+  ],
+  "attributes": [
+    "ensembl_gene_id",
+    "external_gene_name",
+    "mmusculus_homolog_ensembl_gene",
+    "mmusculus_homolog_associated_gene_name",
+    "mmusculus_homolog_orthology_type",
+    "mmusculus_homolog_orthology_confidence"
+  ],
+  "mapping_count": 25788,
+  "source_metadata": {
+    "source": "Ensembl Compara BioMart",
+    "source_version": "Ensembl Compara release 116",
+    "ensembl_release": 116,
+    "retrieved_at": "2026-10-06T17:04:09.419181+00:00",
+    "endpoint": "https://jun2026.archive.ensembl.org/biomart/martservice",
+    "species": [
+      "homo_sapiens",
+      "mus_musculus"
+    ],
+    "attributes": [
+      "ensembl_gene_id",
+      "external_gene_name",
+      "mmusculus_homolog_ensembl_gene",
+      "mmusculus_homolog_associated_gene_name",
+      "mmusculus_homolog_orthology_type",
+      "mmusculus_homolog_orthology_confidence"
+    ],
+    "mapping_count": 25788
+  },
+  "run_id": "1c782941-d15c-4c3a-a291-5172f1d23937",
+  "network_ids": {
+    "human": "7f68b257-1eee-4913-af36-6ec663fb53a1",
+    "mouse": "b2a110a3-089c-459a-b3bc-cbea2f7330c0"
+  },
+  "network_gene_counts": {
+    "human": 1000,
+    "mouse": 1000
+  },
+  "primary_mapping_policy": {
+    "orthology_type": "ortholog_one2one",
+    "min_confidence": 1.0,
+    "rationale": "Direct node comparisons require a unique high-confidence human-mouse correspondence."
+  },
+  "non_one_to_one_relationships_retained": true
+}

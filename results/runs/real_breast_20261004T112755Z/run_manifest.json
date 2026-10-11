@@ -1,0 +1,195 @@
+{
+  "run_id": "real_breast_20261004T112755Z",
+  "created_at": "2026-10-04T11:37:44.959815+00:00",
+  "random_seed": 42,
+  "sources": {
+    "human": {
+      "repository": "GDC/TCGA",
+      "accession": "TCGA-BRCA",
+      "healthy_samples": 10,
+      "cancer_samples": 10,
+      "genes_after_qc": 44601
+    },
+    "mouse": {
+      "repository": "NCBI GEO",
+      "accession": "GSE155577",
+      "samples": 26,
+      "healthy_samples": 0,
+      "cancer_samples": 26,
+      "genes_after_qc": 47729,
+      "values": "study-provided normalized expression; passed through",
+      "excluded_unmapped_gene_ids": [
+        "RatActivatedNeu"
+      ]
+    }
+  },
+  "stages": {
+    "preprocessing": "completed",
+    "human_deg": {
+      "status": "completed",
+      "significant_genes": 1833,
+      "method": "Welch t-test on log2(CPM+1); BH FDR"
+    },
+    "coexpression_networks": "completed",
+    "module_detection": "completed",
+    "orthology_mapping": {
+      "status": "completed",
+      "one_to_one_pairs": 17146,
+      "ensembl_release": 116,
+      "mapping_type": "ortholog_one2one",
+      "duplicate_human_ids": 0,
+      "duplicate_mouse_ids": 0
+    },
+    "cross_species_network_alignment": {
+      "scope": "exploratory tumor-network alignment; not differential drift",
+      "n_one_to_one_orthologs_in_networks": 19,
+      "n_human_edges_mapped_to_mouse_ids": 4,
+      "n_mouse_edges": 18952,
+      "n_shared_edges": 1,
+      "edge_jaccard": 5.2756528620416775e-05
+    },
+    "pathway_enrichment": "completed",
+    "network_drift": "blocked: no mouse healthy mammary control cohort",
+    "gene_loss_risk": "blocked: requires valid cross-species healthy/disease drift and suitable covariates",
+    "ml_validation": "exploratory_internal_cv_only",
+    "external_validation": "blocked: no independent held-out cohort available"
+  },
+  "provenance": {
+    "human_raw_expression": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\pathdrift\\raw\\gdc\\tcga_brca_real_expression.tsv.gz",
+    "human_metadata": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\pathdrift\\raw\\gdc\\tcga_brca_real_metadata.tsv",
+    "mouse_raw_expression": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\pathdrift\\raw\\geo\\GSE155577_expression.tsv.gz",
+    "mouse_metadata": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\pathdrift\\raw\\geo\\GSE155577_metadata.tsv",
+    "preprocessing_logs": {
+      "human": "PathDrift Preprocessing Log\nDataset: TCGA-BRCA\nSpecies: Human\nNormalization: log2cpm\nStarted: 2026-10-04T11:27:57.681638+00:00\nGenes: 60660 → 44601\nSamples: 20 → 20\n\n=== Steps ===\n[11:27:57] Input: 60660 genes × 20 samples\n[11:27:57] Gene identifiers stripped of whitespace and Ensembl version suffixes\n[11:27:57] Low-expression filter: removed 16059 genes (threshold=1.0, min_samples=3). Remaining: 44601\n[11:27:57] Normalization: log2(CPM + 1)\n[11:27:57] Preprocessing complete: 44601 genes × 20 samples",
+      "mouse": "PathDrift Preprocessing Log\nDataset: GSE155577\nSpecies: Mouse\nNormalization: none\nStarted: 2026-10-04T11:27:57.872192+00:00\nGenes: 47730 → 47730\nSamples: 26 → 26\n\n=== Steps ===\n[11:27:57] Input: 47730 genes × 26 samples\n[11:27:57] Gene identifiers stripped of whitespace and Ensembl version suffixes\n[11:27:58] Normalization: none (data passed through as-is)\n[11:27:58] Preprocessing complete: 47730 genes × 26 samples\nIdentifier policy audit: excluded unmapped non-Ensembl feature IDs: RatActivatedNeu"
+    },
+    "network_parameters": {
+      "correlation": "spearman",
+      "threshold": 0.7,
+      "fdr": 0.05,
+      "top_n_genes": 300
+    },
+    "primary_gene_identifier": "Ensembl Gene ID",
+    "excluded_unmapped_gene_ids": {
+      "mouse": [
+        "RatActivatedNeu"
+      ]
+    },
+    "registry_path": "data/registry/datasets.yaml",
+    "gene_symbol_use": "Display labels only, through explicit Ensembl mapping output.",
+    "orthology_source": {
+      "database": "Ensembl Compara/BioMart",
+      "release": 116,
+      "mapping_type": "ortholog_one2one"
+    }
+  },
+  "ml": {
+    "status": "exploratory_internal_cv_only",
+    "n_samples": 20,
+    "cv_metrics": {
+      "mean_auroc": 1.0,
+      "std_auroc": 0.0,
+      "mean_auprc": 1.0,
+      "mean_f1": 0.9333333333333332,
+      "mean_accuracy": 0.95,
+      "fold_aurocs": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "external_validation": "not performed; no independent cohort"
+  },
+  "result_provenance": [
+    {
+      "result": "human_deg.tsv",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "human_deg.parquet",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "human_pathways.tsv",
+      "accessions": [
+        "TCGA-BRCA",
+        "GO_Biological_Process_2023"
+      ]
+    },
+    {
+      "result": "human_deg_symbol_display_mapping.tsv",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "report.html",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "networks/human_healthy/edges.parquet",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "networks/human_healthy/nodes_modules.parquet",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "networks/human_cancer/edges.parquet",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "networks/human_cancer/nodes_modules.parquet",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "networks/mouse_tumor/edges.parquet",
+      "accessions": [
+        "GSE155577"
+      ]
+    },
+    {
+      "result": "networks/mouse_tumor/nodes_modules.parquet",
+      "accessions": [
+        "GSE155577"
+      ]
+    },
+    {
+      "result": "orthology_one_to_one.tsv",
+      "accessions": [
+        "Ensembl Compara release 116"
+      ]
+    },
+    {
+      "result": "cross_species_alignment.json",
+      "accessions": [
+        "TCGA-BRCA",
+        "GSE155577",
+        "Ensembl Compara release 116"
+      ]
+    },
+    {
+      "result": "network_summary.json",
+      "accessions": [
+        "TCGA-BRCA",
+        "GSE155577"
+      ]
+    }
+  ]
+}

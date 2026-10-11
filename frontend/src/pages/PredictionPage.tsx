@@ -1,258 +1,309 @@
-/**
- * Prediction Page — Train and compare ML models.
- * Shows all three model types: expression-only, drift-only, combined.
- */
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import {
-  Box, Typography, Paper, Grid, Button, TextField, MenuItem,
-  Table, TableBody, TableCell, TableHead, TableRow, TableContainer,
-  Chip, Alert, CircularProgress, Divider, Tooltip,
+  Alert,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Chip,
+  Grid,
+  Paper,
+  Stack,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  TextField,
+  Typography,
 } from '@mui/material'
-import Plot from 'react-plotly.js'
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { useSnackbar } from 'notistack'
-import { mlApi, validationApi } from '@/api/client'
-import type { ModelMetric } from '@/types'
-import JobStatusBadge from '@/components/JobStatusBadge'
+import { useQuery } from '@tanstack/react-query'
+import { mlApi } from '@/api/client'
+
+type MLMetricRow = {
+  id: string
+  split: string
+  auroc?: number | null
+  auprc?: number | null
+  accuracy?: number | null
+  precision?: number | null
+  recall?: number | null
+  f1?: number | null
+  sensitivity?: number | null
+  specificity?: number | null
+  confusion_matrix?: { matrix?: number[][] } | null
+}
 
 export default function PredictionPage() {
-  const { enqueueSnackbar } = useSnackbar()
-  const queryClient = useQueryClient()
-  const [config, setConfig] = useState({
-    analysis_id: '',
-    name: '',
-    experiment_type: 'combined',
-    model_type: 'random_forest',
-    training_dataset_id: '',
-    validation_dataset_id: '',
-    drift_analysis_id: '',
-    cross_species_analysis_id: '',
-    random_seed: 42,
-    cv_folds: 5,
-    class_weight: 'balanced',
-  })
-  const [comparisonExpId, setComparisonExpId] = useState('')
-  const [comparisonData, setComparisonData] = useState<unknown>(null)
+  const [experimentId, setExperimentId] = useState('')
+  const [selectedId, setSelectedId] = useState('')
 
-  const runMutation = useMutation({
-    mutationKey: ['ml', 'experiment'],
-    mutationFn: () => mlApi.createExperiment(config),
-    onSuccess: () => {
-      enqueueSnackbar('ML experiment queued', { variant: 'info' })
-      queryClient.invalidateQueries({ queryKey: ['ml'] })
-    },
-    onError: () => enqueueSnackbar('Failed to start ML experiment', { variant: 'error' }),
+  const { data: experiment, isLoading: experimentLoading, isError: experimentError } = useQuery({
+    queryKey: ['ml-experiment', selectedId],
+    queryFn: () => selectedId ? mlApi.getExperiment(selectedId).then((response) => response.data) : null,
+    enabled: !!selectedId,
   })
 
-  const loadComparison = async () => {
-    try {
-      const res = await validationApi.compareModels(comparisonExpId)
-      setComparisonData(res.data)
-    } catch {
-      enqueueSnackbar('Failed to load comparison', { variant: 'error' })
-    }
-  }
+  const { data: metrics = [] as MLMetricRow[] } = useQuery({
+    queryKey: ['ml-metrics', selectedId],
+    queryFn: () => selectedId ? mlApi.getMetrics(selectedId).then((response) => response.data as MLMetricRow[]) : [],
+    enabled: !!selectedId,
+  })
 
-  const comparison = comparisonData as {
-    analysis_id: string
-    research_question: string
-    comparison: Array<{
-      experiment_id: string
-      name: string
-      experiment_type: string
-      model_type: string
-      status: string
-      metrics: ModelMetric[]
-    }>
-  } | null
+  const { data: featureImportances = [] } = useQuery({
+    queryKey: ['ml-features', selectedId],
+    queryFn: () => selectedId ? mlApi.getFeatureImportances(selectedId).then((response) => response.data as Array<{ feature: string; importance: number }>) : [],
+    enabled: !!selectedId,
+  })
 
-  // Build comparison plot data
-  const plotData = comparison?.comparison?.map(exp => {
-    const cvMetric = exp.metrics?.find(m => m.split === 'cv')
-    const valMetric = exp.metrics?.find(m => m.split === 'external_val')
+  const metricSummary = useMemo(() => {
+    const cv = metrics.find((metric) => metric.split === 'cv')
+    const external = metrics.find((metric) => metric.split === 'external_val')
     return {
-      name: exp.name,
-      type: exp.experiment_type,
-      cv_auroc: cvMetric?.auroc ?? null,
-      val_auroc: valMetric?.auroc ?? null,
-      cv_f1: cvMetric?.f1 ?? null,
+      cv,
+      external,
     }
-  }) ?? []
+  }, [metrics])
+
+  const featureCandidates = [
+    'expression_change',
+    'network_degree',
+    'network_drift',
+    'PPI_degree',
+    'PPI_disruption',
+    'module_connectivity',
+    'gene_loss_score',
+    'pathway_features',
+    'morphology_features',
+  ]
 
   return (
-    <Box>
-      <Typography variant="h4" fontWeight={700} gutterBottom>Prediction</Typography>
-      <Typography variant="body2" color="text.secondary" mb={3}>
-        Train machine learning models to predict breast cancer state.
-        Compare three feature sets: expression-only (baseline), network-drift-only, and combined.
+    <Box sx={{ maxWidth: 1200, mx: 'auto' }}>
+      <Typography variant="h4" fontWeight={800} gutterBottom>MACHINE LEARNING</Typography>
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+        Persisted model results, feature importance, and validation metrics. The training step runs on the backend and the frontend renders the saved outputs.
       </Typography>
 
-      <Alert severity="info" sx={{ mb: 3 }}>
-        <strong>Research Question:</strong> Does network-drift improve early breast cancer state prediction
-        beyond conventional gene-expression features alone?
-        Train one model of each type with the same dataset to answer this.
-      </Alert>
-
-      {/* Configuration */}
-      <Paper sx={{ p: 3, mb: 3 }} variant="outlined">
-        <Typography variant="h6" fontWeight={600} gutterBottom>Configure Experiment</Typography>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
-            <TextField label="Experiment Name" fullWidth size="small" value={config.name}
-              onChange={e => setConfig(c => ({ ...c, name: e.target.value }))} required />
-          </Grid>
-          <Grid item xs={12} sm={3}>
-            <TextField select label="Feature Type" fullWidth size="small" value={config.experiment_type}
-              onChange={e => setConfig(c => ({ ...c, experiment_type: e.target.value }))}>
-              <MenuItem value="expression_only">Expression Only (Baseline)</MenuItem>
-              <MenuItem value="drift_only">Network Drift Only</MenuItem>
-              <MenuItem value="combined">Combined</MenuItem>
-            </TextField>
-          </Grid>
-          <Grid item xs={12} sm={3}>
-            <TextField select label="Algorithm" fullWidth size="small" value={config.model_type}
-              onChange={e => setConfig(c => ({ ...c, model_type: e.target.value }))}>
-              <MenuItem value="random_forest">Random Forest</MenuItem>
-              <MenuItem value="logistic_regression">Logistic Regression</MenuItem>
-              <MenuItem value="svm">SVM</MenuItem>
-              <MenuItem value="gradient_boosting">Gradient Boosting</MenuItem>
-            </TextField>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField label="Training Dataset ID" fullWidth size="small" value={config.training_dataset_id}
-              onChange={e => setConfig(c => ({ ...c, training_dataset_id: e.target.value }))} required />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField label="Validation Dataset ID (independent)" fullWidth size="small" value={config.validation_dataset_id}
-              onChange={e => setConfig(c => ({ ...c, validation_dataset_id: e.target.value }))}
-              helperText="Must be completely independent from training data" />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField label="Drift Analysis ID (for drift/combined)" fullWidth size="small" value={config.drift_analysis_id}
-              onChange={e => setConfig(c => ({ ...c, drift_analysis_id: e.target.value }))} />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField label="Cross-Species Analysis ID (optional)" fullWidth size="small" value={config.cross_species_analysis_id}
-              onChange={e => setConfig(c => ({ ...c, cross_species_analysis_id: e.target.value }))} />
-          </Grid>
-          <Grid item xs={6} sm={2}>
-            <TextField label="CV Folds" type="number" fullWidth size="small" value={config.cv_folds}
-              onChange={e => setConfig(c => ({ ...c, cv_folds: parseInt(e.target.value) }))} />
-          </Grid>
-          <Grid item xs={6} sm={2}>
-            <TextField label="Random Seed" type="number" fullWidth size="small" value={config.random_seed}
-              onChange={e => setConfig(c => ({ ...c, random_seed: parseInt(e.target.value) }))} />
-          </Grid>
-          <Grid item xs={12} sm={8} sx={{ display: 'flex', alignItems: 'flex-end' }}>
-            <Button
-              variant="contained" size="large"
-              disabled={runMutation.isPending || !config.name || !config.training_dataset_id || !config.analysis_id}
-              onClick={() => runMutation.mutate()}
-              startIcon={runMutation.isPending ? <CircularProgress size={18} color="inherit" /> : undefined}
-            >
-              Launch Experiment
-            </Button>
-          </Grid>
-        </Grid>
+      <Paper variant="outlined" sx={{ p: 2, mb: 3 }}>
+        <Stack direction={{ xs: 'column', md: 'row' }} spacing={1.5} alignItems="center">
+          <TextField
+            fullWidth
+            size="small"
+            label="Saved experiment ID"
+            value={experimentId}
+            onChange={(event) => setExperimentId(event.target.value.trim())}
+            placeholder="Paste a completed ML experiment ID"
+          />
+          <Button variant="contained" disabled={!experimentId || experimentLoading} onClick={() => setSelectedId(experimentId)}>
+            Load results
+          </Button>
+        </Stack>
       </Paper>
 
-      {/* Model Comparison */}
-      <Paper sx={{ p: 3 }} variant="outlined">
-        <Typography variant="h6" fontWeight={600} gutterBottom>Model Comparison</Typography>
-        <Box sx={{ display: 'flex', gap: 2, mb: 3 }}>
-          <TextField label="Any Experiment ID in Analysis" size="small" value={comparisonExpId}
-            onChange={e => setComparisonExpId(e.target.value)} sx={{ flex: 1 }} />
-          <Button variant="outlined" onClick={loadComparison} disabled={!comparisonExpId}>Load Comparison</Button>
-        </Box>
+      {!selectedId && !experimentLoading && (
+        <Alert severity="info">
+          No persisted experiment is loaded yet. Paste a saved ML experiment ID to inspect feature sets, model metrics, and output artifacts.
+        </Alert>
+      )}
 
-        {comparison && (
-          <>
-            <Alert severity="info" sx={{ mb: 2 }}>
-              <strong>{comparison.research_question}</strong>
-            </Alert>
+      {experimentError && (
+        <Alert severity="error" sx={{ mb: 2 }}>
+          This experiment could not be loaded. Check that the ID belongs to a completed ML run.
+        </Alert>
+      )}
 
+      {experiment && (
+        <>
+          <Grid container spacing={2} sx={{ mb: 2 }}>
+            <Grid item xs={12} md={3}>
+              <Card variant="outlined">
+                <CardContent>
+                  <Typography variant="caption" color="text.secondary">MODEL</Typography>
+                  <Typography variant="h6" fontWeight={800}>{experiment.model_type}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <Card variant="outlined">
+                <CardContent>
+                  <Typography variant="caption" color="text.secondary">FEATURE SET</Typography>
+                  <Typography variant="h6" fontWeight={800}>{experiment.experiment_type}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <Card variant="outlined">
+                <CardContent>
+                  <Typography variant="caption" color="text.secondary">FEATURES USED</Typography>
+                  <Typography variant="h6" fontWeight={800}>{experiment.n_features_used ?? 'n/a'}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <Card variant="outlined">
+                <CardContent>
+                  <Typography variant="caption" color="text.secondary">STATUS</Typography>
+                  <Typography variant="h6" fontWeight={800}>{experiment.status}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+
+          <Paper variant="outlined" sx={{ p: 2, mb: 2 }}>
+            <Typography variant="subtitle1" fontWeight={800} sx={{ mb: 1.5 }}>Candidate biological features</Typography>
+            <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+              {featureCandidates.map((feature) => (
+                <Chip key={feature} label={feature} variant="outlined" />
+              ))}
+            </Stack>
+          </Paper>
+
+          <Grid container spacing={2} sx={{ mb: 2 }}>
+            <Grid item xs={12} md={6}>
+              <Paper variant="outlined" sx={{ p: 2, height: '100%' }}>
+                <Typography variant="subtitle1" fontWeight={800} sx={{ mb: 1.5 }}>Cross-validation metrics</Typography>
+                <TableContainer>
+                  <Table size="small">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Metric</TableCell>
+                        <TableCell align="right">Value</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {[
+                        ['ROC-AUC', metricSummary.cv?.auroc],
+                        ['PR-AUC', metricSummary.cv?.auprc],
+                        ['Accuracy', metricSummary.cv?.accuracy],
+                        ['Precision', metricSummary.cv?.precision],
+                        ['Recall', metricSummary.cv?.recall],
+                        ['F1', metricSummary.cv?.f1],
+                      ].map(([label, value]) => (
+                        <TableRow key={label as string}>
+                          <TableCell>{label}</TableCell>
+                          <TableCell align="right">{value != null ? Number(value).toFixed(3) : '—'}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Paper variant="outlined" sx={{ p: 2, height: '100%' }}>
+                <Typography variant="subtitle1" fontWeight={800} sx={{ mb: 1.5 }}>External validation metrics</Typography>
+                <TableContainer>
+                  <Table size="small">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Metric</TableCell>
+                        <TableCell align="right">Value</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {[
+                        ['ROC-AUC', metricSummary.external?.auroc],
+                        ['PR-AUC', metricSummary.external?.auprc],
+                        ['Accuracy', metricSummary.external?.accuracy],
+                        ['Precision', metricSummary.external?.precision],
+                        ['Recall', metricSummary.external?.recall],
+                        ['F1', metricSummary.external?.f1],
+                      ].map(([label, value]) => (
+                        <TableRow key={label as string}>
+                          <TableCell>{label}</TableCell>
+                          <TableCell align="right">{value != null ? Number(value).toFixed(3) : '—'}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </Paper>
+            </Grid>
+          </Grid>
+
+          <Grid container spacing={2} sx={{ mb: 2 }}>
+            <Grid item xs={12} lg={7}>
+              <Paper variant="outlined" sx={{ p: 2 }}>
+                <Typography variant="subtitle1" fontWeight={800} sx={{ mb: 1.5 }}>Top feature importances</Typography>
+                {featureImportances.length === 0 ? (
+                  <Alert severity="info">No feature-importance output is saved for this experiment yet.</Alert>
+                ) : (
+                  <TableContainer>
+                    <Table size="small">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Feature</TableCell>
+                          <TableCell align="right">Importance</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {featureImportances.slice(0, 12).map((feature) => (
+                          <TableRow key={feature.feature} hover>
+                            <TableCell>{feature.feature}</TableCell>
+                            <TableCell align="right">{Number(feature.importance).toFixed(4)}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                )}
+              </Paper>
+            </Grid>
+            <Grid item xs={12} lg={5}>
+              <Paper variant="outlined" sx={{ p: 2 }}>
+                <Typography variant="subtitle1" fontWeight={800} sx={{ mb: 1.5 }}>Saved artifacts</Typography>
+                <Stack spacing={1.5}>
+                  <Box>
+                    <Typography variant="caption" color="text.secondary">Model file</Typography>
+                    <Typography variant="body2" sx={{ wordBreak: 'break-all' }}>{experiment.model_file_path ?? 'Not saved yet'}</Typography>
+                  </Box>
+                  <Box>
+                    <Typography variant="caption" color="text.secondary">Feature importance file</Typography>
+                    <Typography variant="body2" sx={{ wordBreak: 'break-all' }}>{experiment.feature_importance_path ?? 'Not saved yet'}</Typography>
+                  </Box>
+                  <Box>
+                    <Typography variant="caption" color="text.secondary">Leakage warnings</Typography>
+                    <Typography variant="body2">{experiment.leakage_warnings?.length ? experiment.leakage_warnings.join(', ') : 'None recorded'}</Typography>
+                  </Box>
+                </Stack>
+              </Paper>
+            </Grid>
+          </Grid>
+
+          <Paper variant="outlined" sx={{ p: 2 }}>
+            <Typography variant="subtitle1" fontWeight={800} sx={{ mb: 1.5 }}>Saved validation summary</Typography>
             <TableContainer>
               <Table size="small">
                 <TableHead>
-                  <TableRow sx={{ '& th': { fontWeight: 600 } }}>
-                    <TableCell>Experiment</TableCell>
-                    <TableCell>Feature Type</TableCell>
-                    <TableCell>Algorithm</TableCell>
-                    <TableCell>Status</TableCell>
-                    <TableCell align="right">CV AUROC</TableCell>
-                    <TableCell align="right">Ext Val AUROC</TableCell>
-                    <TableCell align="right">CV F1</TableCell>
+                  <TableRow>
+                    <TableCell>Split</TableCell>
+                    <TableCell align="right">ROC-AUC</TableCell>
+                    <TableCell align="right">PR-AUC</TableCell>
+                    <TableCell align="right">Accuracy</TableCell>
+                    <TableCell align="right">Precision</TableCell>
+                    <TableCell align="right">Recall</TableCell>
+                    <TableCell align="right">F1</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {plotData.map((row, i) => (
-                    <TableRow key={i} hover>
-                      <TableCell sx={{ fontWeight: 500 }}>{comparison.comparison[i].name}</TableCell>
-                      <TableCell>
-                        <Chip size="small"
-                          label={row.type.replace('_', ' ')}
-                          color={row.type === 'combined' ? 'primary' : row.type === 'drift_only' ? 'secondary' : 'default'}
-                        />
-                      </TableCell>
-                      <TableCell>{comparison.comparison[i].model_type}</TableCell>
-                      <TableCell><JobStatusBadge status={comparison.comparison[i].status as 'completed'} /></TableCell>
-                      <TableCell align="right" sx={{ fontWeight: 700, color: (row.cv_auroc ?? 0) > 0.7 ? 'success.main' : 'text.primary' }}>
-                        {row.cv_auroc ? row.cv_auroc.toFixed(3) : '—'}
-                      </TableCell>
-                      <TableCell align="right" sx={{ fontWeight: 700 }}>
-                        {row.val_auroc ? row.val_auroc.toFixed(3) : '—'}
-                      </TableCell>
-                      <TableCell align="right">
-                        {row.cv_f1 ? row.cv_f1.toFixed(3) : '—'}
-                      </TableCell>
+                  {metrics.map((metric) => (
+                    <TableRow key={metric.id} hover>
+                      <TableCell>{metric.split}</TableCell>
+                      <TableCell align="right">{metric.auroc != null ? metric.auroc.toFixed(3) : '—'}</TableCell>
+                      <TableCell align="right">{metric.auprc != null ? metric.auprc.toFixed(3) : '—'}</TableCell>
+                      <TableCell align="right">{metric.accuracy != null ? metric.accuracy.toFixed(3) : '—'}</TableCell>
+                      <TableCell align="right">{metric.precision != null ? metric.precision.toFixed(3) : '—'}</TableCell>
+                      <TableCell align="right">{metric.recall != null ? metric.recall.toFixed(3) : '—'}</TableCell>
+                      <TableCell align="right">{metric.f1 != null ? metric.f1.toFixed(3) : '—'}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
               </Table>
             </TableContainer>
-
-            {plotData.some(r => r.cv_auroc !== null) && (
-              <Box mt={3}>
-                <Plot
-                  data={[
-                    {
-                      x: plotData.map(r => r.name),
-                      y: plotData.map(r => r.cv_auroc ?? 0),
-                      name: 'CV AUROC',
-                      type: 'bar',
-                      marker: { color: '#1565c0' },
-                    },
-                    {
-                      x: plotData.map(r => r.name),
-                      y: plotData.map(r => r.val_auroc ?? 0),
-                      name: 'External Validation AUROC',
-                      type: 'bar',
-                      marker: { color: '#00acc1' },
-                    },
-                  ]}
-                  layout={{
-                    barmode: 'group',
-                    height: 300,
-                    margin: { l: 50, r: 20, t: 20, b: 80 },
-                    yaxis: { title: 'AUROC', range: [0, 1] },
-                    shapes: [{ type: 'line', x0: -0.5, x1: plotData.length - 0.5, y0: 0.5, y1: 0.5,
-                      line: { dash: 'dash', color: '#999', width: 1 } }],
-                    paper_bgcolor: 'rgba(0,0,0,0)',
-                    plot_bgcolor: 'rgba(0,0,0,0)',
-                    legend: { orientation: 'h', y: -0.3 },
-                  }}
-                  config={{ displayModeBar: false, responsive: true }}
-                  style={{ width: '100%' }}
-                />
-                <Typography variant="caption" color="text.secondary" display="block" textAlign="center">
-                  Dashed line at AUROC = 0.5 represents random chance.
-                  External validation AUROC is the clinically relevant metric.
-                </Typography>
-              </Box>
-            )}
-          </>
-        )}
-      </Paper>
+          </Paper>
+        </>
+      )}
     </Box>
   )
 }

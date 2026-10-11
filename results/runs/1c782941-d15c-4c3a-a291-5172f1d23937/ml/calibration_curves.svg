@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480">
+<rect width="100%" height="100%" fill="white"/>
+<text x="360.0" y="28" text-anchor="middle" font-family="sans-serif" font-size="18">Out-of-fold calibration curves</text>
+<line x1="60" y1="420" x2="660" y2="420" stroke="#333"/>
+<line x1="60" y1="60" x2="60" y2="420" stroke="#333"/>
+<text x="360.0" y="468" text-anchor="middle" font-family="sans-serif" font-size="13">Mean predicted probability</text>
+<text x="16" y="240.0" transform="rotate(-90 16 240.0)" text-anchor="middle" font-family="sans-serif" font-size="13">Observed positive fraction</text>
+<polyline points="61.51,420.00 66.28,420.00 347.51,240.00 655.72,60.00 658.99,60.00" fill="none" stroke="#1f77b4" stroke-width="2"/>
+<text x="515" y="60" font-family="sans-serif" font-size="12" fill="#1f77b4">logistic_regression</text>
+<polyline points="83.22,420.00 121.22,420.00 376.72,240.00 583.00,60.00 637.50,60.00" fill="none" stroke="#ff7f0e" stroke-width="2"/>
+<text x="515" y="80" font-family="sans-serif" font-size="12" fill="#ff7f0e">random_forest</text>
+<polyline points="110.50,420.00 145.88,420.00 336.36,240.00 590.43,60.00 615.58,60.00" fill="none" stroke="#2ca02c" stroke-width="2"/>
+<text x="515" y="100" font-family="sans-serif" font-size="12" fill="#2ca02c">svm</text>
+<polyline points="62.49,420.00 65.48,420.00 423.17,240.00 650.44,60.00 656.14,60.00" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="515" y="120" font-family="sans-serif" font-size="12" fill="#d62728">gradient_boosting</text>
+</svg>

@@ -1,0 +1,49 @@
+{
+  "initial_samples": 20,
+  "retained_samples": 20,
+  "initial_genes": 60660,
+  "validated_ensembl_genes": 60660,
+  "retained_genes": 44601,
+  "excluded_samples": [],
+  "excluded_genes": 16059,
+  "invalid_gene_ids": 0,
+  "duplicate_gene_rows": 0,
+  "duplicate_gene_ids_aggregated": 0,
+  "non_numeric_cells": 0,
+  "missing_cells_imputed": 0,
+  "outliers": [
+    {
+      "sample_id": "TCGA-A7-A0DC-01A",
+      "reason": "robust distance from the sample PCA centroid",
+      "metric": 6.067821125027573,
+      "threshold": 3.5,
+      "decision": "flagged_retained"
+    },
+    {
+      "sample_id": "TCGA-A7-A0DC-01B",
+      "reason": "robust distance from the sample PCA centroid",
+      "metric": 3.745657389577092,
+      "threshold": 3.5,
+      "decision": "flagged_retained"
+    },
+    {
+      "sample_id": "TCGA-GI-A2C8-11A",
+      "reason": "robust distance from the sample PCA centroid",
+      "metric": 7.221756458611668,
+      "threshold": 3.5,
+      "decision": "flagged_retained"
+    }
+  ],
+  "batch_variables": [],
+  "normalization_method": "log2cpm",
+  "normalization_data_type": "raw_counts",
+  "configuration": {
+    "min_expression": 1.0,
+    "min_samples": 3,
+    "max_missing_fraction": 0.2,
+    "max_sample_missing_fraction": 0.2,
+    "pca_gene_limit": 2000,
+    "outlier_z_threshold": 3.5,
+    "exclude_outliers": false
+  }
+}

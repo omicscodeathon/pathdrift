@@ -11,6 +11,7 @@ celery_app = Celery(
     include=[
         "app.tasks.analysis_tasks",
         "app.tasks.ml_tasks",
+        "app.tasks.validation_tasks",
     ],
 )
 
@@ -26,6 +27,7 @@ celery_app.conf.update(
     task_routes={
         "app.tasks.analysis_tasks.*": {"queue": "analysis"},
         "app.tasks.ml_tasks.*": {"queue": "ml"},
+        "app.tasks.validation_tasks.*": {"queue": "analysis"},
     },
     task_soft_time_limit=3600,    # 1 hour soft limit
     task_time_limit=7200,          # 2 hour hard limit

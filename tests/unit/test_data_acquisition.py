@@ -28,10 +28,32 @@ def test_geo_dataset_scoring():
 
 
 def test_gene_id_normalization():
-    series = pd.Series(["ENSG00000141510.17", "TP53", "ENSG00000234567.9"])
+    series = pd.Series([
+        "ENSG00000141510.17",
+        "TP53",
+        "ENSG00000234567.9",
+        "ENSG00000002586.20_PAR_Y",
+        "ENSMUSG00000017146.4",
+        "Epb4.1",
+    ])
     normalized = normalize_gene_ids(series)
     assert normalized.iloc[0] == "ENSG00000141510"
     assert normalized.iloc[1] == "TP53"
+    assert normalized.iloc[3] == "ENSG00000002586_PAR_Y"
+    assert normalized.iloc[4] == "ENSMUSG00000017146"
+    assert normalized.iloc[5] == "Epb4.1"
+
+
+def test_preprocessing_preserves_versioned_source_gene_symbols():
+    frame = pd.DataFrame({
+        "gene_id": ["Epb4.1", "Epb4.2", "Tex19.1", "Tex19.2"],
+        "sample_a": [1.0, 2.0, 3.0, 4.0],
+    })
+
+    processed, summary = preprocess_expression_matrix(frame)
+
+    assert processed["gene_id"].tolist() == frame["gene_id"].tolist()
+    assert summary["n_genes_after"] == 4
 
 
 def test_preprocessing_and_validation():
@@ -74,26 +96,44 @@ def test_dataset_id_alias_is_normalized_in_acquired_manifest(monkeypatch, tmp_pa
     assert datasets[0]["dataset_id"] == "ds-123"
 
 
-def test_dataset_metadata_normalizes_rna_seq_and_preserves_real_matrix_shape():
-    metadata = data_acquisition._dataset_metadata_from_candidate("gtex-breast-mammary", "Breast Cancer")
+def test_public_candidates_use_real_accessions_and_data_scales():
+    candidates = {candidate["id"]: candidate for candidate in data_acquisition.build_candidate_datasets()}
 
-    assert metadata["data_type"] == "raw_counts"
-    assert metadata["accession"] == "GTEx:Breast_Mammary_Tissue"
-    assert metadata["tissue"] == "Breast / Mammary Tissue"
-    assert metadata["n_samples"] == 4
-    assert metadata["n_genes"] == 6
+    assert set(candidates) == {
+        "gdc-tcga-brca-paired",
+        "geo-mouse-gse116385-normal",
+        "geo-human-gse205725-normal",
+        "geo-mouse-gse155577",
+    }
+    assert candidates["gdc-tcga-brca-paired"]["accessions"] == ["TCGA-BRCA"]
+    assert candidates["geo-mouse-gse116385-normal"]["accessions"] == ["GSE116385"]
+    assert candidates["geo-mouse-gse155577"]["accessions"] == ["GSE155577"]
+    assert candidates["gdc-tcga-brca-paired"]["normal_controls"] is True
+    assert candidates["geo-mouse-gse116385-normal"]["sample_count"] == 8
+    assert candidates["geo-mouse-gse116385-normal"]["normal_controls"] is True
+    assert candidates["geo-mouse-gse155577"]["normal_controls"] is False
 
-    csv_text = data_acquisition._build_real_csv_text(
-        dataset_id="gtex-breast-mammary",
-        disease="Breast Cancer",
-        species="Human",
-        tissue="Breast / Mammary Tissue",
+    tcga = data_acquisition._dataset_metadata_from_candidate("gdc-tcga-brca-paired", "Breast Cancer")
+    geo = data_acquisition._dataset_metadata_from_candidate("geo-mouse-gse155577", "Breast Cancer")
+    normal_mouse = data_acquisition._dataset_metadata_from_candidate(
+        "geo-mouse-gse116385-normal", "Breast Cancer"
     )
-    rows = csv_text.strip().splitlines()
-    assert rows[0].startswith("gene_id,gene_symbol")
-    assert len(rows) == 7
-    assert rows[1].split(",")[0] == "ENSG00000141510"
-    assert len(rows[0].split(",")) == 6
+    assert tcga["data_type"] == "raw_counts"
+    assert geo["data_type"] == "normalized"
+    assert normal_mouse["data_type"] == "normalized"
+    assert tcga["accession"] == "TCGA-BRCA"
+    assert geo["accession"] == "GSE155577"
+    assert normal_mouse["accession"] == "GSE116385"
+
+
+def test_tcga_download_supports_parallel_workers():
+    import inspect
+
+    from scripts.acquire_real_breast_data import download_tcga_brca_subset
+
+    params = inspect.signature(download_tcga_brca_subset).parameters
+    assert "max_workers" in params
+    assert params["max_workers"].default >= 2
 
 
 def test_report_renderer_honors_selected_sections(tmp_path):

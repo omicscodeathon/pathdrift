@@ -36,8 +36,14 @@ from app.api.routes import (
     reports,
     jobs,
     data_import,
+    phase4,
     data_acquisition,
     gene_loss,
+    ppi,
+    runs,
+    phase3,
+    phase5,
+    phase6,
 )
 
 configure_logging()
@@ -115,6 +121,17 @@ app.include_router(pathways.router,     prefix=f"{API_PREFIX}/pathways",      ta
 app.include_router(reports.router,      prefix=f"{API_PREFIX}/reports",       tags=["Reports"])
 app.include_router(jobs.router,         prefix=f"{API_PREFIX}/jobs",          tags=["Job Management"])
 app.include_router(gene_loss.router,    prefix=f"{API_PREFIX}/gene-loss",     tags=["Gene Loss"])
+app.include_router(ppi.router,          prefix=f"{API_PREFIX}/ppi",           tags=["PPI Network"])
+app.include_router(runs.router,         prefix="/api/runs",                   tags=["Acquisition Runs"])
+app.include_router(runs.router,         prefix=f"{API_PREFIX}/runs",           tags=["Acquisition Runs"])
+app.include_router(phase3.router,       prefix="/api/runs",                   tags=["Phase 3 Analysis"])
+app.include_router(phase3.router,       prefix=f"{API_PREFIX}/runs",           tags=["Phase 3 Analysis"])
+app.include_router(phase4.router,       prefix="/api/runs",                   tags=["Phase 4 Analysis"])
+app.include_router(phase4.router,       prefix=f"{API_PREFIX}/runs",           tags=["Phase 4 Analysis"])
+app.include_router(phase5.router,       prefix="/api/runs",                   tags=["Phase 5 Analysis"])
+app.include_router(phase5.router,       prefix=f"{API_PREFIX}/runs",           tags=["Phase 5 Analysis"])
+app.include_router(phase6.router,      prefix="/api/runs",                    tags=["Phase 6 Machine Learning"])
+app.include_router(phase6.router,      prefix=f"{API_PREFIX}/runs",           tags=["Phase 6 Machine Learning"])
 
 
 @app.get("/api/health", tags=["Health"])

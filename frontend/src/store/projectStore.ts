@@ -4,6 +4,7 @@ import { persist } from 'zustand/middleware'
 interface ProjectStore {
   currentProjectId: string | null
   currentAnalysisId: string | null
+  currentRunId: string | null
   currentDatasetId: string | null
   preprocessingJobId: string | null
   degResultId: string | null
@@ -15,6 +16,7 @@ interface ProjectStore {
   pathwayResultId: string | null
   setCurrentProject: (id: string | null) => void
   setCurrentAnalysis: (id: string | null) => void
+  setCurrentRun: (id: string | null) => void
   setCurrentDataset: (id: string | null) => void
   setWorkflowIds: (ids: Partial<Pick<ProjectStore, 'currentDatasetId' | 'preprocessingJobId' | 'degResultId' | 'healthyNetworkId' | 'diseaseNetworkId' | 'humanDriftId' | 'mouseDriftId' | 'crossSpeciesId' | 'pathwayResultId'>>) => void
 }
@@ -24,6 +26,7 @@ export const useProjectStore = create<ProjectStore>()(
     (set) => ({
       currentProjectId: null,
       currentAnalysisId: null,
+      currentRunId: null,
       currentDatasetId: null,
       preprocessingJobId: null,
       degResultId: null,
@@ -36,6 +39,7 @@ export const useProjectStore = create<ProjectStore>()(
       setCurrentProject: (id) => set({
         currentProjectId: id,
         currentAnalysisId: null,
+        currentRunId: null,
         currentDatasetId: null,
         preprocessingJobId: null,
         degResultId: null,
@@ -47,6 +51,7 @@ export const useProjectStore = create<ProjectStore>()(
         pathwayResultId: null,
       }),
       setCurrentAnalysis: (id) => set({ currentAnalysisId: id }),
+      setCurrentRun: (id) => set({ currentRunId: id }),
       setCurrentDataset: (id) => set({ currentDatasetId: id }),
       setWorkflowIds: (ids) => set(ids),
     }),
@@ -55,6 +60,7 @@ export const useProjectStore = create<ProjectStore>()(
       partialize: (state) => ({
         currentProjectId: state.currentProjectId,
         currentAnalysisId: state.currentAnalysisId,
+        currentRunId: state.currentRunId,
         currentDatasetId: state.currentDatasetId,
         preprocessingJobId: state.preprocessingJobId,
         degResultId: state.degResultId,

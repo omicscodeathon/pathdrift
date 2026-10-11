@@ -1,0 +1,30 @@
+{
+  "analysis_version": "phase6-mouse-availability-1",
+  "run_id": "1c782941-d15c-4c3a-a291-5172f1d23937",
+  "species": "mouse",
+  "status": "NOT_ESTIMABLE",
+  "scientific_scope": "Mouse-only classification is assessed within individual studies; separate GEO studies are not pooled because study and disease labels would be confounded.",
+  "reason": "No individual mouse cohort contains both healthy and cancer samples in sufficient numbers for patient-independent classification. Combining cancer-only and healthy-only studies would make disease status inseparable from study, producing a misleading evaluation.",
+  "cohorts": [
+    {
+      "accession": "GSE155577",
+      "tissue": "Mammary tumor",
+      "total_samples": 26,
+      "healthy_samples": 0,
+      "cancer_samples": 26,
+      "other_label_samples": 0,
+      "reference_role": null
+    },
+    {
+      "accession": "GSE116385",
+      "tissue": "Mammary gland; multiple normal epithelial cell populations",
+      "total_samples": 8,
+      "healthy_samples": 8,
+      "cancer_samples": 0,
+      "other_label_samples": 0,
+      "reference_role": "independent_mouse_healthy_network_reference"
+    }
+  ],
+  "estimable_cohorts": [],
+  "next_step": "Add a matched mouse cancer-and-healthy cohort within the same study before running mouse-only classification."
+}

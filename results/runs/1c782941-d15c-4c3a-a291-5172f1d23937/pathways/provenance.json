@@ -1,0 +1,61 @@
+{
+  "analysis": "Local offline over-representation, optional local preranked GSEA, and ortholog-mapped pathway network comparison",
+  "reference_directory": "data/pathdrift/reference/pathways/2026-10-06",
+  "reference_libraries": {
+    "GO": {
+      "version": "GO basic ontology snapshot plus gene associations dated 2026-05-21",
+      "organism_policy": "Separate taxon-filtered human and mouse GAF annotations; ancestor propagation uses is_a and part_of.",
+      "source": "Gene Ontology Consortium"
+    },
+    "Reactome": {
+      "version": "Reactome GMT export modified 2026-06-21",
+      "organism_policy": "Human R-HSA pathways only; no mouse Reactome terms are reported.",
+      "source": "Reactome"
+    },
+    "WikiPathways": {
+      "version": "2026-09-10 species-specific GMT snapshots",
+      "organism_policy": "Separate Homo sapiens and Mus musculus collections; Entrez IDs map locally to Ensembl.",
+      "source": "WikiPathways"
+    },
+    "Ensembl": {
+      "version": "Local whole-gene ID maps; BioMart release is not encoded in the downloaded tables.",
+      "organism_policy": "Unique Entrez and symbol mappings only for source identifiers; Ensembl stable IDs remain species-specific.",
+      "source": "Ensembl BioMart"
+    }
+  },
+  "reference_sha256": {
+    "go-basic.obo": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+    "goa_human.gaf.gz": "db472faff1785878521693af62646546cea6af4a386609dd01c72c0554a46a30",
+    "goa_mouse.gaf.gz": "ea4b424447f6000a163c5a6742ebb326a02feeb0bdb64382f83a2159deb06e01",
+    "ReactomePathways.gmt.zip": "8c1dbc8578431da5d2d5118262718c60b553a9be3398e93658daa069e4a9afd4",
+    "wikipathways-20260910-gmt-Homo_sapiens.gmt": "2ef750dda56e831c04600080df96df3ef91f51665e0ad6f294945010e7747b0d",
+    "wikipathways-20260910-gmt-Mus_musculus.gmt": "8d6d68026801848e45f669ec1270290d7c0629bafe4c563236f8988f79666d06",
+    "ensembl_human_gene_ids.tsv": "88123f1dae72600e1af19b67d0102192e329e23d42ec77c1f3eb4c8dbfc374bb",
+    "ensembl_mouse_gene_ids.tsv": "ffbf6630778e1e401810df8cc28000b19a432dbb275492ef6a1cba8b703cd1e4"
+  },
+  "input_artifact_sha256": {
+    "deg/human/all_genes.csv": "977f747ec63e630e6443690c70d1765ecf40daf6bf07e1cfc2fe4c35bdf91a49",
+    "deg/human/significant_genes.csv": "ffd4b5525f4e3c881f3e12ee7e2654d0f20fbbd0fe70904566dc2a104d4e1a16",
+    "deg/mouse/cross_study_exploratory/all_genes.csv": "d4e083c1e4bc5332020a17667dd861bc2d1a28d884cf64f36d163167e4951c6a",
+    "drift/gene_drift.csv": "cf4391054cf6ea74d45cea8bb946210426b1fd7b85b0e73eb10bdbeda321e7c0",
+    "orthology/orthologs.csv": "f7d483ac67206b5097dce1dc241a88ef4d93f54ec27e7c7b833db491ae14333a",
+    "networks/human_cancer_nodes.csv": "fd24bb7544d127c6bd2c5eaab258067242b64ea1be6e83842631f19ec11181ea",
+    "networks/human_healthy/human_cancer_edges.csv": "fa74135e5d2cad6986d41b9a281ace131aacd7bddf64703e2afccc09324c7e2a",
+    "networks/mouse_cancer_nodes.csv": "771dd87ab855f3875645c8bd2b38141d7dcbb0e0c8e31a7d75e70acdbd660db0",
+    "networks/mouse_cancer_edges.csv": "8eb45910292a45761d87008358dcdcfb0a7896e0cab46d28a2158699bb8a06cc",
+    "modules/human/module_genes.csv": "de0b663b9cd1b946277d6bec0f41b923b50a1f75b7a6af4b88225e9406142951",
+    "modules/mouse/module_genes.csv": "1d7c9cf8ec5b925ccac8a173c5d82f1cb7d63fbfe3e0e65914f695de595610c9"
+  },
+  "identifier_policy": "No gene identifiers are uploaded. Gene sets and ID conversions are computed from local snapshots. Ambiguous source-symbol/Entrez mappings are excluded rather than guessed.",
+  "statistics": {
+    "ora": "Hypergeometric upper-tail test with Benjamini-Hochberg correction over all tested pathways within species, gene set, and database; genes outside the annotated library are excluded from that database's universe.",
+    "fdr_threshold": 0.05,
+    "gsea": "Local gseapy prerank against in-memory local gene sets; 1000 permutations and seed 42 when enabled."
+  },
+  "comparison": {
+    "orthology": "Ensembl Compara one-to-one rows only",
+    "module_preservation": "Maximum Jaccard similarity of ortholog-mapped within-pathway module membership.",
+    "network_edge_drift": "1 - conserved mapped within-pathway edges / union of conserved, lost, and gained mapped edges; undefined for empty unions.",
+    "key_pathway_rule": "At least one species has pathway ORA FDR <= 0.05 and the measurable within-pathway mapped edge divergence is greater than zero."
+  }
+}

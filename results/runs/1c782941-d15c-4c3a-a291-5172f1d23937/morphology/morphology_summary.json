@@ -1,0 +1,20 @@
+{
+  "status": "DESCRIPTIVE_METADATA_ONLY",
+  "source_accession": "TCGA-BRCA",
+  "source_file": "data/raw/gdc/TCGA-BRCA_metadata.tsv",
+  "selected_human_sample_count": 17,
+  "selected_human_tumor_sample_count": 8,
+  "selected_human_control_sample_count": 9,
+  "observed_pathology_fields": [
+    "ajcc_pathologic_stage",
+    "primary_diagnosis",
+    "morphology"
+  ],
+  "pathology_field_observations": 24,
+  "image_records": 0,
+  "image_derived_features": 0,
+  "mouse_pathology_status": "UNAVAILABLE",
+  "gene_or_pathway_associations": "NOT_CALCULATED",
+  "association_reason": "Clinical pathology fields are linked to only 8 human tumor samples in this run; no inferential morphology-to-gene association is reported. No pathology images or validated image-derived features are present.",
+  "interpretation": "The morphology field is an ICD-O clinical pathology code, not a measured image feature. Counts are descriptive only."
+}

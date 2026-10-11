@@ -1,104 +1,153 @@
-import { Box, Typography, Alert, Paper, Grid, Button, TextField, MenuItem, CircularProgress, Chip } from '@mui/material'
-import { useState } from 'react'
-import { useMutation } from '@tanstack/react-query'
+import { useEffect, useMemo, useState } from 'react'
+import { Alert, Box, Button, Chip, CircularProgress, Grid, LinearProgress, MenuItem, Paper, Stack, TextField, Typography } from '@mui/material'
+import { useMutation, useQuery } from '@tanstack/react-query'
 import { useSnackbar } from 'notistack'
-import { reportsApi } from '@/api/client'
+import { phase3Api } from '@/api/client'
+import { useAuthStore } from '@/store/authStore'
+import { useProjectStore } from '@/store/projectStore'
+import type { Run } from './analysis/shared'
 
-const SECTIONS = [
-  { id: 'dataset', label: 'Dataset Information' },
-  { id: 'preprocessing', label: 'Preprocessing' },
-  { id: 'deg', label: 'Differential Expression' },
-  { id: 'networks', label: 'Network Construction' },
-  { id: 'drift', label: 'Network Drift' },
-  { id: 'cross_species', label: 'Cross-Species Comparison' },
-  { id: 'ml', label: 'Machine Learning' },
-  { id: 'pathways', label: 'Pathway Analysis' },
-  { id: 'limitations', label: 'Limitations' },
-]
+type RunArtifact = { path: string; name: string; section: string; size_bytes: number }
+
+function formatFileSize(bytes: number) {
+  if (bytes < 1024) return `${bytes} B`
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`
+}
+
+function saveBlob(blob: Blob, filename: string) {
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = url
+  link.download = filename
+  document.body.appendChild(link)
+  link.click()
+  link.remove()
+  URL.revokeObjectURL(url)
+}
 
 export default function ReportsPage() {
   const { enqueueSnackbar } = useSnackbar()
-  const [analysisId, setAnalysisId] = useState('')
-  const [selectedSections, setSelectedSections] = useState(SECTIONS.map(s => s.id))
-  const [format, setFormat] = useState('pdf')
-  const [jobId, setJobId] = useState('')
+  const userId = useAuthStore((state) => state.user?.id)
+  const currentRunId = useProjectStore((state) => state.currentRunId)
+  const setCurrentRun = useProjectStore((state) => state.setCurrentRun)
+  const { data: runs = [], isLoading: runsLoading, isError: runsError } = useQuery({
+    queryKey: ['saved-analysis-runs', userId],
+    queryFn: () => phase3Api.savedRuns().then((response) => response.data as Run[]),
+  })
+  const selectedRunId = runs.some((run) => run.id === currentRunId) ? currentRunId! : ''
+  const { data: artifactResponse, isLoading: artifactsLoading, isError: artifactsError } = useQuery({
+    queryKey: ['run-artifacts', selectedRunId],
+    queryFn: () => phase3Api.artifacts(selectedRunId).then((response) => response.data as { items: RunArtifact[]; total: number }),
+    enabled: !!selectedRunId,
+  })
+  const artifacts = artifactResponse?.items ?? []
+  const groupedArtifacts = useMemo(() => artifacts.reduce<Record<string, RunArtifact[]>>((groups, artifact) => {
+    ;(groups[artifact.section] ??= []).push(artifact)
+    return groups
+  }, {}), [artifacts])
 
-  const toggleSection = (id: string) => {
-    setSelectedSections(s => s.includes(id) ? s.filter(x => x !== id) : [...s, id])
-  }
+  useEffect(() => {
+    if (!runsLoading && runs.length && !runs.some((run) => run.id === currentRunId)) {
+      setCurrentRun(runs.find((run) => run.status.toUpperCase() === 'COMPLETED')?.id ?? runs[0].id)
+    }
+  }, [currentRunId, runs, runsLoading, setCurrentRun])
 
-  const runMutation = useMutation({
-    mutationKey: ['reports', 'generate'],
-    mutationFn: () => reportsApi.generate({ analysis_id: analysisId, include_sections: selectedSections, format }),
-    onSuccess: (res) => {
-      const id = (res.data as { job_id: string }).job_id
-      setJobId(id)
-      enqueueSnackbar('Report generation queued', { variant: 'info' })
-    },
-    onError: () => enqueueSnackbar('Failed to generate report', { variant: 'error' }),
+  const downloadOneMutation = useMutation({
+    mutationFn: ({ runId, path }: { runId: string; path: string }) => phase3Api.artifact(runId, path),
+    onSuccess: (response, variables) => saveBlob(response.data as Blob, variables.path.split('/').pop() ?? 'result'),
+    onError: () => enqueueSnackbar('Could not download this result file', { variant: 'error' }),
+  })
+  const downloadAllMutation = useMutation({
+    mutationFn: (runId: string) => phase3Api.downloadAllArtifacts(runId),
+    onSuccess: (response, runId) => saveBlob(response.data, `pathdrift-results-${runId}.zip`),
+    onError: () => enqueueSnackbar('Could not download the saved results bundle', { variant: 'error' }),
   })
 
   return (
     <Box>
       <Typography variant="h4" fontWeight={700} gutterBottom>Reports</Typography>
       <Typography variant="body2" color="text.secondary" mb={3}>
-        Generate a comprehensive, reproducible research report containing actual analysis results.
-        Reports include methodology, parameters, software versions, and full result tables.
+        Browse and download saved result files from an analysis run.
       </Typography>
 
-      <Alert severity="info" sx={{ mb: 3 }}>
-        Reports contain only results generated by the system from your actual datasets.
-        No results are fabricated or pre-filled.
-      </Alert>
-
       <Paper sx={{ p: 3, mb: 3 }} variant="outlined">
-        <Typography variant="h6" fontWeight={600} gutterBottom>Configure Report</Typography>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={8}>
-            <TextField label="Analysis ID" fullWidth size="small" value={analysisId}
-              onChange={e => setAnalysisId(e.target.value)} required />
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <TextField select label="Format" fullWidth size="small" value={format}
-              onChange={e => setFormat(e.target.value)}>
-              <MenuItem value="pdf">PDF</MenuItem>
-              <MenuItem value="html">HTML</MenuItem>
-            </TextField>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="subtitle2" gutterBottom>Sections to Include:</Typography>
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-              {SECTIONS.map(s => (
-                <Chip
-                  key={s.id}
-                  label={s.label}
-                  onClick={() => toggleSection(s.id)}
-                  color={selectedSections.includes(s.id) ? 'primary' : 'default'}
-                  variant={selectedSections.includes(s.id) ? 'filled' : 'outlined'}
-                />
-              ))}
-            </Box>
-          </Grid>
-          <Grid item xs={12} sx={{ display: 'flex', gap: 2 }}>
-            <Button variant="contained" disabled={runMutation.isPending || !analysisId}
-              onClick={() => runMutation.mutate()}
-              startIcon={runMutation.isPending ? <CircularProgress size={18} color="inherit" /> : undefined}>
-              Generate Report
+        <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" alignItems={{ xs: 'stretch', sm: 'center' }} spacing={2} sx={{ mb: 2 }}>
+          <Box>
+            <Typography variant="h6" fontWeight={600}>Saved run results</Typography>
+            <Typography variant="body2" color="text.secondary">All saved tables, summaries, figures, and reports for a run.</Typography>
+          </Box>
+          {selectedRunId && artifacts.length > 0 && (
+            <Button
+              variant="contained"
+              onClick={() => downloadAllMutation.mutate(selectedRunId)}
+              disabled={downloadAllMutation.isPending}
+              startIcon={downloadAllMutation.isPending ? <CircularProgress size={18} color="inherit" /> : undefined}
+            >
+              Download all ({artifacts.length})
             </Button>
-            {analysisId && (
-              <Button variant="outlined" component="a"
-                href={reportsApi.downloadUrl(analysisId, format)}
-                target="_blank" rel="noopener">
-                Download Report
-              </Button>
-            )}
-          </Grid>
-        </Grid>
+          )}
+        </Stack>
+        {runsLoading && <LinearProgress sx={{ mb: 2 }} />}
+        {runsError && <Alert severity="error" sx={{ mb: 2 }}>Saved analysis runs could not be loaded.</Alert>}
+        {!runsLoading && !runsError && !runs.length && <Alert severity="info">No saved analysis runs are available.</Alert>}
+        {!!runs.length && (
+          <TextField
+            select
+            fullWidth
+            size="small"
+            label="Analysis run"
+            value={selectedRunId}
+            onChange={(event) => setCurrentRun(event.target.value || null)}
+            sx={{ mb: 2 }}
+          >
+            {runs.map((run) => (
+              <MenuItem key={run.id} value={run.id}>
+                {run.project_name ?? 'Saved analysis'} · {new Date(run.created_at).toLocaleString()} · {run.status}
+              </MenuItem>
+            ))}
+          </TextField>
+        )}
+        {selectedRunId && artifactsLoading && <LinearProgress sx={{ mb: 2 }} />}
+        {selectedRunId && artifactsError && <Alert severity="error" sx={{ mb: 2 }}>Saved result artifacts could not be loaded.</Alert>}
+        {selectedRunId && !artifactsLoading && !artifactsError && artifacts.length === 0 && (
+          <Alert severity="info">No downloadable result artifacts are available for this run.</Alert>
+        )}
+        {selectedRunId && !artifactsLoading && !artifactsError && artifacts.length > 0 && (
+          <>
+            <Chip size="small" label={`${artifactResponse?.total ?? artifacts.length} files`} sx={{ mb: 1.5 }} />
+            <Grid container spacing={2}>
+              {Object.entries(groupedArtifacts).map(([section, sectionArtifacts]) => (
+                <Grid item xs={12} md={6} key={section}>
+                  <Paper variant="outlined" sx={{ p: 1.5, height: '100%' }}>
+                    <Typography variant="subtitle1" fontWeight={700} sx={{ mb: 1 }}>
+                      {section.replace(/_/g, ' ')} <Typography component="span" variant="caption" color="text.secondary">({sectionArtifacts.length})</Typography>
+                    </Typography>
+                    <Stack spacing={0.75}>
+                      {sectionArtifacts.map((artifact) => (
+                        <Stack key={artifact.path} direction="row" justifyContent="space-between" alignItems="center" spacing={1}>
+                          <Box sx={{ minWidth: 0 }}>
+                            <Typography variant="body2" noWrap title={artifact.path}>{artifact.path}</Typography>
+                            <Typography variant="caption" color="text.secondary">{formatFileSize(artifact.size_bytes)}</Typography>
+                          </Box>
+                          <Button
+                            size="small"
+                            onClick={() => downloadOneMutation.mutate({ runId: selectedRunId, path: artifact.path })}
+                            disabled={downloadOneMutation.isPending}
+                          >
+                            Download
+                          </Button>
+                        </Stack>
+                      ))}
+                    </Stack>
+                  </Paper>
+                </Grid>
+              ))}
+            </Grid>
+          </>
+        )}
       </Paper>
 
-      {jobId && (
-        <Alert severity="info">Report generation job ID: <strong>{jobId}</strong>. Check back shortly to download.</Alert>
-      )}
     </Box>
   )
 }

@@ -1,0 +1,28 @@
+{
+  "networks": {
+    "human_cancer": {
+      "genes": 1000,
+      "module_assigned_genes": 137,
+      "hub_supported_genes": 1,
+      "modules": 7
+    },
+    "human_healthy": {
+      "genes": 1000,
+      "module_assigned_genes": 986,
+      "hub_supported_genes": 31,
+      "modules": 5
+    },
+    "mouse_cancer": {
+      "genes": 1000,
+      "module_assigned_genes": 999,
+      "hub_supported_genes": 11,
+      "modules": 3
+    },
+    "mouse_healthy": {
+      "genes": 1000,
+      "module_assigned_genes": 992,
+      "hub_supported_genes": 7,
+      "modules": 6
+    }
+  }
+}

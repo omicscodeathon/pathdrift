@@ -1,0 +1,29 @@
+{
+  "initial_samples": 8,
+  "retained_samples": 8,
+  "initial_genes": 24391,
+  "validated_ensembl_genes": null,
+  "validated_gene_ids": 24391,
+  "gene_identifier_type": "source",
+  "retained_genes": 11486,
+  "excluded_samples": [],
+  "excluded_genes": 12905,
+  "invalid_gene_ids": 0,
+  "duplicate_gene_rows": 0,
+  "duplicate_gene_ids_aggregated": 0,
+  "non_numeric_cells": 0,
+  "missing_cells_imputed": 0,
+  "outliers": [],
+  "batch_variables": [],
+  "normalization_method": "log2",
+  "normalization_data_type": "fpkm",
+  "configuration": {
+    "min_expression": 1.0,
+    "min_samples": 3,
+    "max_missing_fraction": 0.2,
+    "max_sample_missing_fraction": 0.2,
+    "pca_gene_limit": 2000,
+    "outlier_z_threshold": 3.5,
+    "exclude_outliers": false
+  }
+}

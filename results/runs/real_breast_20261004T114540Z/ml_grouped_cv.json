@@ -1,0 +1,86 @@
+{
+  "status": "exploratory_patient_grouped_internal_cv_only",
+  "n_samples": 19,
+  "n_patients": 18,
+  "cv_scheme": "StratifiedGroupKFold; patient IDs kept within a single fold",
+  "mean_auroc": 1.0,
+  "mean_auprc": 1.0,
+  "folds": [
+    {
+      "fold": 1,
+      "n_train": 14,
+      "n_test": 5,
+      "auroc": 1.0,
+      "auprc": 1.0,
+      "accuracy": 1.0,
+      "f1": 1.0,
+      "test_patients": [
+        "TCGA-A2-A0D4",
+        "TCGA-A7-A0DC",
+        "TCGA-AO-A0JI",
+        "TCGA-BH-A1F8"
+      ]
+    },
+    {
+      "fold": 2,
+      "n_train": 15,
+      "n_test": 4,
+      "auroc": 1.0,
+      "auprc": 1.0,
+      "accuracy": 1.0,
+      "f1": 1.0,
+      "test_patients": [
+        "TCGA-A8-A08F",
+        "TCGA-BH-A18V",
+        "TCGA-BH-A1F6",
+        "TCGA-GI-A2C8"
+      ]
+    },
+    {
+      "fold": 3,
+      "n_train": 15,
+      "n_test": 4,
+      "auroc": 1.0,
+      "auprc": 1.0,
+      "accuracy": 0.75,
+      "f1": 0.6666666666666666,
+      "test_patients": [
+        "TCGA-A8-A091",
+        "TCGA-BH-A0B5",
+        "TCGA-BH-A1FE",
+        "TCGA-OL-A6VQ"
+      ]
+    },
+    {
+      "fold": 4,
+      "n_train": 16,
+      "n_test": 3,
+      "auroc": 1.0,
+      "auprc": 1.0,
+      "accuracy": 1.0,
+      "f1": 1.0,
+      "test_patients": [
+        "TCGA-A8-A09E",
+        "TCGA-BH-A0BV",
+        "TCGA-D8-A1XB"
+      ]
+    },
+    {
+      "fold": 5,
+      "n_train": 16,
+      "n_test": 3,
+      "auroc": 1.0,
+      "auprc": 1.0,
+      "accuracy": 1.0,
+      "f1": 1.0,
+      "test_patients": [
+        "TCGA-AC-A62V",
+        "TCGA-BH-A0DP",
+        "TCGA-E2-A1L7"
+      ]
+    }
+  ],
+  "model_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\results\\runs\\real_breast_20261004T114540Z\\models\\real_breast_20261004T114540Z_human_expression_grouped_cv.joblib",
+  "external_validation": "not performed; no independent cohort",
+  "caveat": "Small exploratory cohort; metrics are not evidence of clinical performance."
+}

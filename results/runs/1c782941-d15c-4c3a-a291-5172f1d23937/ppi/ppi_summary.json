@@ -1,0 +1,6 @@
+{
+  "status": "UNAVAILABLE",
+  "reason": "No run-wide, versioned PPI reference network was acquired for this run. Co-expression edges are not treated as PPI evidence.",
+  "source": null,
+  "rows": 0
+}

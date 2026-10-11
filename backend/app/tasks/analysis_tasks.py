@@ -8,6 +8,7 @@ All tasks:
   - Save results to disk (Parquet) and record file paths in DB
 """
 import os
+import re
 import traceback
 import pandas as pd
 from datetime import datetime, timezone
@@ -100,6 +101,11 @@ def run_preprocessing(self, job_id: str, preprocessing_job_id: str):
         os.makedirs(output_dir, exist_ok=True)
         output_path = os.path.join(output_dir, f"{preprocessing_job_id}.parquet")
         cleaned_df.to_parquet(output_path)
+
+        from app.services.data_acquisition.dataset_manager import mirror_to_frontend_visible_store
+        mirror_to_frontend_visible_store(output_path)
+        if dataset.metadata_file_path and os.path.exists(dataset.metadata_file_path):
+            mirror_to_frontend_visible_store(dataset.metadata_file_path)
 
         # Update job record
         pp_job.n_genes_before = log.n_genes_before
@@ -199,7 +205,7 @@ def run_network_construction(self, job_id: str, network_id: str):
         if not network:
             raise ValueError(f"GeneNetwork {network_id} not found")
 
-        expr_df, metadata_df = _load_analysis_data(db, network.dataset_id, None)
+        expr_df, metadata_df = _load_network_analysis_data(db, network)
         # Select samples for this network's state
         state_val = network.disease_state.value if hasattr(network.disease_state, "value") else str(network.disease_state)
         sample_ids = _get_samples_for_state(metadata_df, state_val)
@@ -363,7 +369,9 @@ def run_cross_species(self, job_id: str, cs_analysis_id: str):
         _update_job(db, job_id, JobStatusEnum.RUNNING, 30, "Loading orthology mappings")
 
         from app.models import OrthologyMapping
-        mappings = db.query(OrthologyMapping).all()
+        mappings = db.query(OrthologyMapping).filter(
+            OrthologyMapping.orthology_type == "ortholog_one2one"
+        ).all()
         if not mappings:
             raise ValueError(
                 "No orthology mappings found in database. "
@@ -371,7 +379,10 @@ def run_cross_species(self, job_id: str, cs_analysis_id: str):
             )
         mapping_df = pd.DataFrame(
             [{"human_ensembl_id": m.human_ensembl_id, "mouse_ensembl_id": m.mouse_ensembl_id,
-              "human_symbol": m.human_symbol, "mouse_symbol": m.mouse_symbol}
+                            "human_symbol": m.human_symbol, "mouse_symbol": m.mouse_symbol,
+                              "orthology_type": m.orthology_type,
+                              "ensembl_release": int(re.search(r"release\s+(\d+)", m.source_version or "", re.IGNORECASE).group(1))
+                              if re.search(r"release\s+(\d+)", m.source_version or "", re.IGNORECASE) else None}
              for m in mappings]
         )
 
@@ -487,6 +498,14 @@ def _load_analysis_data(db: Session, dataset_id: str, preprocessing_job_id: str)
         metadata_df = pd.read_csv(dataset.metadata_file_path, sep=sep)
 
     return expr_df, metadata_df
+
+
+def _load_network_analysis_data(db: Session, network: GeneNetwork):
+    return _load_analysis_data(
+        db,
+        network.dataset_id,
+        network.preprocessing_job_id,
+    )
 
 
 def _split_samples_by_state(metadata_df, expr_df):

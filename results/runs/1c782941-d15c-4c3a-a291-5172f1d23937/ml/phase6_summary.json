@@ -1,0 +1,2529 @@
+{
+  "analysis_version": "phase6-biological-cv-2",
+  "run_id": "1c782941-d15c-4c3a-a291-5172f1d23937",
+  "species": "human",
+  "status": "PARTIAL",
+  "scientific_scope": "Exploratory within-cohort classification only. This small cohort does not establish clinical performance or independent generalization.",
+  "sample_counts": {
+    "total": 20,
+    "class_counts": {
+      "healthy": 10,
+      "cancer": 10
+    },
+    "independent_patient_groups": 18
+  },
+  "preprocessing": {
+    "metadata_rows": 20,
+    "matched_labeled_samples": 20,
+    "unlabeled_samples_excluded": 0,
+    "unsupported_label_samples_excluded": 0,
+    "labeled_samples_missing_from_expression": 0,
+    "duplicate_metadata_sample_ids": 0,
+    "duplicate_expression_gene_ids": 0,
+    "missing_expression_cells": 0,
+    "all_missing_features_before_fold_imputation": 0,
+    "constant_features_before_fold_filtering": 0,
+    "missing_values": "Median imputation is fitted separately inside each training fold.",
+    "constant_features": "Zero-variance filtering is fitted separately inside each training fold.",
+    "feature_selection": "ANOVA F-score top-100 selection is fitted separately inside each training fold.",
+    "scaling": "Standard scaling is fitted separately inside each training fold.",
+    "label_mapping": {
+      "healthy": 0,
+      "cancer": 1
+    },
+    "excluded_sample_ids": []
+  },
+  "data_provenance": {
+    "accession": "TCGA-BRCA",
+    "expression_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\processed\\1bb864e8-3d1b-48d9-a5ea-a0ea20dd145e\\1c782941-d15c-4c3a-a291-5172f1d23937\\TCGA-BRCA_normalized.parquet",
+    "metadata_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\gdc\\TCGA-BRCA_metadata.tsv",
+    "feature_source": "Phase 2 processed expression matrix",
+    "feature_ids": "Gene identifiers are preserved as feature names."
+  },
+  "validation_split": {
+    "name": "StratifiedGroupKFold",
+    "folds": 5,
+    "grouped_by_patient": true,
+    "feature_importance_method": "Aggregated from fold-local fitted models; full-cohort model is not used for rankings."
+  },
+  "models": {
+    "logistic_regression": {
+      "out_of_fold_metrics": {
+        "roc_auc": 0.99,
+        "pr_auc": 0.9909090909090909,
+        "accuracy": 0.95,
+        "balanced_accuracy": 0.95,
+        "sensitivity": 1.0,
+        "specificity": 0.9,
+        "precision": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "brier_score": 0.037599561783327226,
+        "threshold": 0.5,
+        "confusion_matrix": {
+          "tn": 9,
+          "fp": 1,
+          "fn": 0,
+          "tp": 10
+        }
+      },
+      "auc_95_percentile_interval": [
+        0.9464285714285714,
+        1.0
+      ],
+      "auc_interval_resampling_unit": "patient_group",
+      "fold_metrics": [
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 0.75,
+          "balanced_accuracy": 0.75,
+          "sensitivity": 1.0,
+          "specificity": 0.5,
+          "precision": 0.6666666666666666,
+          "f1": 0.8,
+          "brier_score": 0.11009575451479767,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 1,
+            "fp": 1,
+            "fn": 0,
+            "tp": 2
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.02327774301956261,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 2,
+            "fp": 0,
+            "fn": 0,
+            "tp": 2
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 3.37228426419576e-05,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 1,
+            "fp": 0,
+            "fn": 0,
+            "tp": 3
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.054437363923518944,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 2,
+            "fp": 0,
+            "fn": 0,
+            "tp": 2
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.00015322461611497922,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 3,
+            "fp": 0,
+            "fn": 0,
+            "tp": 1
+          }
+        }
+      ],
+      "calibration_curve": [
+        {
+          "mean_predicted_probability": 0.0025228543948914947,
+          "fraction_positive": 0.0
+        },
+        {
+          "mean_predicted_probability": 0.010467613391119646,
+          "fraction_positive": 0.0
+        },
+        {
+          "mean_predicted_probability": 0.47918646143258203,
+          "fraction_positive": 0.5
+        },
+        {
+          "mean_predicted_probability": 0.9928604286055666,
+          "fraction_positive": 1.0
+        },
+        {
+          "mean_predicted_probability": 0.9983113736179567,
+          "fraction_positive": 1.0
+        }
+      ],
+      "n_samples": 20,
+      "n_features_before_fold_selection": 44601,
+      "n_features_selected_per_fold": 100,
+      "feature_selection": "ANOVA F-score fitted independently inside every training fold"
+    },
+    "random_forest": {
+      "out_of_fold_metrics": {
+        "roc_auc": 0.99,
+        "pr_auc": 0.9909090909090909,
+        "accuracy": 0.95,
+        "balanced_accuracy": 0.95,
+        "sensitivity": 1.0,
+        "specificity": 0.9,
+        "precision": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "brier_score": 0.040603999565972215,
+        "threshold": 0.5,
+        "confusion_matrix": {
+          "tn": 9,
+          "fp": 1,
+          "fn": 0,
+          "tp": 10
+        }
+      },
+      "auc_95_percentile_interval": [
+        0.9464285714285714,
+        1.0
+      ],
+      "auc_interval_resampling_unit": "patient_group",
+      "fold_metrics": [
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 0.75,
+          "balanced_accuracy": 0.75,
+          "sensitivity": 1.0,
+          "specificity": 0.5,
+          "precision": 0.6666666666666666,
+          "f1": 0.8,
+          "brier_score": 0.10737500000000001,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 1,
+            "fp": 1,
+            "fn": 0,
+            "tp": 2
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.03148333333333332,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 2,
+            "fp": 0,
+            "fn": 0,
+            "tp": 2
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.010433333333333334,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 1,
+            "fp": 0,
+            "fn": 0,
+            "tp": 3
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.043375,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 2,
+            "fp": 0,
+            "fn": 0,
+            "tp": 2
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.010353331163194446,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 3,
+            "fp": 0,
+            "fn": 0,
+            "tp": 1
+          }
+        }
+      ],
+      "calibration_curve": [
+        {
+          "mean_predicted_probability": 0.038697916666666665,
+          "fraction_positive": 0.0
+        },
+        {
+          "mean_predicted_probability": 0.10203125,
+          "fraction_positive": 0.0
+        },
+        {
+          "mean_predicted_probability": 0.5278645833333333,
+          "fraction_positive": 0.5
+        },
+        {
+          "mean_predicted_probability": 0.8716666666666666,
+          "fraction_positive": 1.0
+        },
+        {
+          "mean_predicted_probability": 0.9625,
+          "fraction_positive": 1.0
+        }
+      ],
+      "n_samples": 20,
+      "n_features_before_fold_selection": 44601,
+      "n_features_selected_per_fold": 100,
+      "feature_selection": "ANOVA F-score fitted independently inside every training fold"
+    },
+    "svm": {
+      "out_of_fold_metrics": {
+        "roc_auc": 0.99,
+        "pr_auc": 0.9909090909090909,
+        "accuracy": 0.95,
+        "balanced_accuracy": 0.95,
+        "sensitivity": 1.0,
+        "specificity": 0.9,
+        "precision": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "brier_score": 0.047764137647327544,
+        "threshold": 0.5,
+        "confusion_matrix": {
+          "tn": 9,
+          "fp": 1,
+          "fn": 0,
+          "tp": 10
+        }
+      },
+      "auc_95_percentile_interval": [
+        0.9464285714285714,
+        1.0
+      ],
+      "auc_interval_resampling_unit": "patient_group",
+      "fold_metrics": [
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 0.75,
+          "balanced_accuracy": 0.75,
+          "sensitivity": 1.0,
+          "specificity": 0.5,
+          "precision": 0.6666666666666666,
+          "f1": 0.8,
+          "brier_score": 0.08721439749682273,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 1,
+            "fp": 1,
+            "fn": 0,
+            "tp": 2
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.05783824401451394,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 2,
+            "fp": 0,
+            "fn": 0,
+            "tp": 2
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.009701614186664724,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 1,
+            "fp": 0,
+            "fn": 0,
+            "tp": 3
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.06930667954961131,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 2,
+            "fp": 0,
+            "fn": 0,
+            "tp": 2
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.014759752989025036,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 3,
+            "fp": 0,
+            "fn": 0,
+            "tp": 1
+          }
+        }
+      ],
+      "calibration_curve": [
+        {
+          "mean_predicted_probability": 0.084171341278964,
+          "fraction_positive": 0.0
+        },
+        {
+          "mean_predicted_probability": 0.1431393029157547,
+          "fraction_positive": 0.0
+        },
+        {
+          "mean_predicted_probability": 0.46060128868562933,
+          "fraction_positive": 0.5
+        },
+        {
+          "mean_predicted_probability": 0.884052633452676,
+          "fraction_positive": 1.0
+        },
+        {
+          "mean_predicted_probability": 0.9259734486295343,
+          "fraction_positive": 1.0
+        }
+      ],
+      "n_samples": 20,
+      "n_features_before_fold_selection": 44601,
+      "n_features_selected_per_fold": 100,
+      "feature_selection": "ANOVA F-score fitted independently inside every training fold"
+    },
+    "gradient_boosting": {
+      "out_of_fold_metrics": {
+        "roc_auc": 1.0,
+        "pr_auc": 0.9999999999999999,
+        "accuracy": 0.95,
+        "balanced_accuracy": 0.95,
+        "sensitivity": 1.0,
+        "specificity": 0.9,
+        "precision": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "brier_score": 0.019038876268555133,
+        "threshold": 0.5,
+        "confusion_matrix": {
+          "tn": 9,
+          "fp": 1,
+          "fn": 0,
+          "tp": 10
+        }
+      },
+      "auc_95_percentile_interval": [
+        1.0,
+        1.0
+      ],
+      "auc_interval_resampling_unit": "patient_group",
+      "fold_metrics": [
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 0.75,
+          "balanced_accuracy": 0.75,
+          "sensitivity": 1.0,
+          "specificity": 0.5,
+          "precision": 0.6666666666666666,
+          "f1": 0.8,
+          "brier_score": 0.08776401466128626,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 1,
+            "fp": 1,
+            "fn": 0,
+            "tp": 2
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.0003519354537672823,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 2,
+            "fp": 0,
+            "fn": 0,
+            "tp": 2
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.00018596160454242643,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 1,
+            "fp": 0,
+            "fn": 0,
+            "tp": 3
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 0.006807677099780718,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 2,
+            "fp": 0,
+            "fn": 0,
+            "tp": 2
+          }
+        },
+        {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 1.0,
+          "brier_score": 8.47925233989657e-05,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 3,
+            "fp": 0,
+            "fn": 0,
+            "tp": 1
+          }
+        }
+      ],
+      "calibration_curve": [
+        {
+          "mean_predicted_probability": 0.004145574586323175,
+          "fraction_positive": 0.0
+        },
+        {
+          "mean_predicted_probability": 0.009137114874753908,
+          "fraction_positive": 0.0
+        },
+        {
+          "mean_predicted_probability": 0.6052914132835654,
+          "fraction_positive": 0.5
+        },
+        {
+          "mean_predicted_probability": 0.9840647596443757,
+          "fraction_positive": 1.0
+        },
+        {
+          "mean_predicted_probability": 0.9935633763067147,
+          "fraction_positive": 1.0
+        }
+      ],
+      "n_samples": 20,
+      "n_features_before_fold_selection": 44601,
+      "n_features_selected_per_fold": 100,
+      "feature_selection": "ANOVA F-score fitted independently inside every training fold"
+    }
+  },
+  "model_comparison": [
+    {
+      "model": "logistic_regression",
+      "metrics": {
+        "roc_auc": 0.99,
+        "pr_auc": 0.9909090909090909,
+        "accuracy": 0.95,
+        "balanced_accuracy": 0.95,
+        "sensitivity": 1.0,
+        "specificity": 0.9,
+        "precision": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "brier_score": 0.037599561783327226,
+        "threshold": 0.5,
+        "confusion_matrix": {
+          "tn": 9,
+          "fp": 1,
+          "fn": 0,
+          "tp": 10
+        }
+      },
+      "auc_95_percentile_interval": [
+        0.9464285714285714,
+        1.0
+      ],
+      "interval_resampling_unit": "patient_group"
+    },
+    {
+      "model": "random_forest",
+      "metrics": {
+        "roc_auc": 0.99,
+        "pr_auc": 0.9909090909090909,
+        "accuracy": 0.95,
+        "balanced_accuracy": 0.95,
+        "sensitivity": 1.0,
+        "specificity": 0.9,
+        "precision": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "brier_score": 0.040603999565972215,
+        "threshold": 0.5,
+        "confusion_matrix": {
+          "tn": 9,
+          "fp": 1,
+          "fn": 0,
+          "tp": 10
+        }
+      },
+      "auc_95_percentile_interval": [
+        0.9464285714285714,
+        1.0
+      ],
+      "interval_resampling_unit": "patient_group"
+    },
+    {
+      "model": "svm",
+      "metrics": {
+        "roc_auc": 0.99,
+        "pr_auc": 0.9909090909090909,
+        "accuracy": 0.95,
+        "balanced_accuracy": 0.95,
+        "sensitivity": 1.0,
+        "specificity": 0.9,
+        "precision": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "brier_score": 0.047764137647327544,
+        "threshold": 0.5,
+        "confusion_matrix": {
+          "tn": 9,
+          "fp": 1,
+          "fn": 0,
+          "tp": 10
+        }
+      },
+      "auc_95_percentile_interval": [
+        0.9464285714285714,
+        1.0
+      ],
+      "interval_resampling_unit": "patient_group"
+    },
+    {
+      "model": "gradient_boosting",
+      "metrics": {
+        "roc_auc": 1.0,
+        "pr_auc": 0.9999999999999999,
+        "accuracy": 0.95,
+        "balanced_accuracy": 0.95,
+        "sensitivity": 1.0,
+        "specificity": 0.9,
+        "precision": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "brier_score": 0.019038876268555133,
+        "threshold": 0.5,
+        "confusion_matrix": {
+          "tn": 9,
+          "fp": 1,
+          "fn": 0,
+          "tp": 10
+        }
+      },
+      "auc_95_percentile_interval": [
+        1.0,
+        1.0
+      ],
+      "interval_resampling_unit": "patient_group"
+    }
+  ],
+  "feature_group_comparison": [
+    {
+      "comparison": "Model A \u2014 expression-only",
+      "status": "EVALUATED",
+      "feature_groups": [
+        "normalized_expression"
+      ],
+      "reason": "Uses only Phase 2 sample-level normalized expression values.",
+      "model_metrics": {
+        "logistic_regression": {
+          "roc_auc": 0.99,
+          "f1": 0.9523809523809523,
+          "sensitivity": 1.0,
+          "specificity": 0.9
+        },
+        "random_forest": {
+          "roc_auc": 0.99,
+          "f1": 0.9523809523809523,
+          "sensitivity": 1.0,
+          "specificity": 0.9
+        },
+        "svm": {
+          "roc_auc": 0.99,
+          "f1": 0.9523809523809523,
+          "sensitivity": 1.0,
+          "specificity": 0.9
+        },
+        "gradient_boosting": {
+          "roc_auc": 1.0,
+          "f1": 0.9523809523809523,
+          "sensitivity": 1.0,
+          "specificity": 0.9
+        }
+      }
+    },
+    {
+      "comparison": "DEG-only ablation",
+      "status": "EVALUATED",
+      "feature_groups": [
+        "differential_expression"
+      ],
+      "reason": "Patient-grouped, fold-local feature generation; ROC-AUC delta vs expression-only = +0.000, PR-AUC delta = +0.000, F1 delta = -0.052. ROC-AUC 95% group-bootstrap interval: [0.9464285714285714, 1.0]. Exploratory only; candidate genes are not clinically validated biomarkers.",
+      "model_metrics": {
+        "logistic_regression": {
+          "roc_auc": 0.99,
+          "pr_auc": 0.9909090909090909,
+          "accuracy": 0.9,
+          "balanced_accuracy": 0.9,
+          "sensitivity": 0.9,
+          "specificity": 0.9,
+          "precision": 0.9,
+          "f1": 0.9,
+          "brier_score": 0.05332957741594026,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 9,
+            "fp": 1,
+            "fn": 1,
+            "tp": 9
+          }
+        }
+      },
+      "delta_from_expression_baseline": {
+        "roc_auc": 0.0,
+        "pr_auc": 0.0,
+        "f1": -0.052380952380952306
+      },
+      "roc_auc_95_percentile_interval": [
+        0.9464285714285714,
+        1.0
+      ]
+    },
+    {
+      "comparison": "Fold-local DEG + human network hubs",
+      "status": "EVALUATED",
+      "feature_groups": [
+        "fold_local_differential_expression",
+        "fold_local_human_network_hubs"
+      ],
+      "reason": "Patient-grouped, fold-local feature generation; ROC-AUC delta vs expression-only = +0.000, PR-AUC delta = +0.000, F1 delta = -0.005. ROC-AUC 95% group-bootstrap interval: [0.9464285714285714, 1.0]. Exploratory only; candidate genes are not clinically validated biomarkers.",
+      "model_metrics": {
+        "logistic_regression": {
+          "roc_auc": 0.99,
+          "pr_auc": 0.9909090909090909,
+          "accuracy": 0.95,
+          "balanced_accuracy": 0.95,
+          "sensitivity": 0.9,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 0.9473684210526315,
+          "brier_score": 0.03209775556794734,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 10,
+            "fp": 0,
+            "fn": 1,
+            "tp": 9
+          }
+        }
+      },
+      "delta_from_expression_baseline": {
+        "roc_auc": 0.0,
+        "pr_auc": 0.0,
+        "f1": -0.005012531328320802
+      },
+      "roc_auc_95_percentile_interval": [
+        0.9464285714285714,
+        1.0
+      ]
+    },
+    {
+      "comparison": "Fold-local DEG + cross-species network drift",
+      "status": "EVALUATED",
+      "feature_groups": [
+        "fold_local_differential_expression",
+        "fold_local_cross_species_network_drift"
+      ],
+      "reason": "Patient-grouped, fold-local feature generation; ROC-AUC delta vs expression-only = +0.000, PR-AUC delta = +0.000, F1 delta = -0.052. ROC-AUC 95% group-bootstrap interval: [0.9464285714285714, 1.0]. Exploratory only; candidate genes are not clinically validated biomarkers.",
+      "model_metrics": {
+        "logistic_regression": {
+          "roc_auc": 0.99,
+          "pr_auc": 0.9909090909090909,
+          "accuracy": 0.9,
+          "balanced_accuracy": 0.9,
+          "sensitivity": 0.9,
+          "specificity": 0.9,
+          "precision": 0.9,
+          "f1": 0.9,
+          "brier_score": 0.03864019506145987,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 9,
+            "fp": 1,
+            "fn": 1,
+            "tp": 9
+          }
+        }
+      },
+      "delta_from_expression_baseline": {
+        "roc_auc": 0.0,
+        "pr_auc": 0.0,
+        "f1": -0.052380952380952306
+      },
+      "roc_auc_95_percentile_interval": [
+        0.9464285714285714,
+        1.0
+      ]
+    },
+    {
+      "comparison": "Integrated fold-local candidate panel",
+      "status": "EVALUATED",
+      "feature_groups": [
+        "fold_local_differential_expression",
+        "fold_local_human_network_hubs",
+        "fold_local_cross_species_network_drift"
+      ],
+      "reason": "Patient-grouped, fold-local feature generation; ROC-AUC delta vs expression-only = -0.020, PR-AUC delta = -0.021, F1 delta = +0.000. ROC-AUC 95% group-bootstrap interval: [0.858649237472767, 1.0]. Exploratory only; candidate genes are not clinically validated biomarkers.",
+      "model_metrics": {
+        "logistic_regression": {
+          "roc_auc": 0.97,
+          "pr_auc": 0.9697979797979798,
+          "accuracy": 0.95,
+          "balanced_accuracy": 0.95,
+          "sensitivity": 1.0,
+          "specificity": 0.9,
+          "precision": 0.9090909090909091,
+          "f1": 0.9523809523809523,
+          "brier_score": 0.0559088891248228,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 9,
+            "fp": 1,
+            "fn": 0,
+            "tp": 10
+          }
+        }
+      },
+      "delta_from_expression_baseline": {
+        "roc_auc": -0.020000000000000018,
+        "pr_auc": -0.02111111111111108,
+        "f1": 0.0
+      },
+      "roc_auc_95_percentile_interval": [
+        0.858649237472767,
+        1.0
+      ]
+    }
+  ],
+  "biological_experiments": {
+    "status": "COMPLETED",
+    "scientific_scope": "Exploratory patient-grouped cross-validation. DEG ranking, human networks, hub selection, and human-mouse drift are re-estimated within each training fold. The mouse cancer network is a fixed external biological reference.",
+    "split": {
+      "name": "StratifiedGroupKFold",
+      "folds": 5,
+      "grouped_by_patient": true
+    },
+    "baseline": {
+      "model": "logistic_regression",
+      "metrics": {
+        "roc_auc": 0.99,
+        "pr_auc": 0.9909090909090909,
+        "accuracy": 0.95,
+        "balanced_accuracy": 0.95,
+        "sensitivity": 1.0,
+        "specificity": 0.9,
+        "precision": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "brier_score": 0.037599561783327226,
+        "threshold": 0.5,
+        "confusion_matrix": {
+          "tn": 9,
+          "fp": 1,
+          "fn": 0,
+          "tp": 10
+        }
+      },
+      "roc_auc_95_percentile_interval": [
+        0.9464285714285714,
+        1.0
+      ]
+    },
+    "experiments": {
+      "deg_ranked_expression": {
+        "label": "Fold-local DEG-ranked expression",
+        "status": "EVALUATED",
+        "metrics": {
+          "roc_auc": 0.99,
+          "pr_auc": 0.9909090909090909,
+          "accuracy": 0.9,
+          "balanced_accuracy": 0.9,
+          "sensitivity": 0.9,
+          "specificity": 0.9,
+          "precision": 0.9,
+          "f1": 0.9,
+          "brier_score": 0.05332957741594026,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 9,
+            "fp": 1,
+            "fn": 1,
+            "tp": 9
+          }
+        },
+        "roc_auc_95_percentile_interval": [
+          0.9464285714285714,
+          1.0
+        ],
+        "delta_from_expression_baseline": {
+          "roc_auc": 0.0,
+          "pr_auc": 0.0,
+          "f1": -0.052380952380952306
+        },
+        "folds_completed": 5,
+        "folds_total": 5,
+        "candidate_features": [
+          {
+            "gene_id": "ENSG00000122592",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.09421485783936212,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "HOXA7"
+          },
+          {
+            "gene_id": "ENSG00000106004",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.07645390000592622,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "HOXA5"
+          },
+          {
+            "gene_id": "ENSG00000260025",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.07552405918173881,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "CRIM1-DT"
+          },
+          {
+            "gene_id": "ENSG00000109846",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.07397070898810212,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "CRYAB"
+          },
+          {
+            "gene_id": "ENSG00000154645",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.07302898975573059,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "CHODL"
+          },
+          {
+            "gene_id": "ENSG00000198947",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.07208273693154155,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "DMD"
+          },
+          {
+            "gene_id": "ENSG00000124440",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.07081477626343066,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "HIF3A"
+          },
+          {
+            "gene_id": "ENSG00000149294",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.06947210255391005,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "NCAM1"
+          },
+          {
+            "gene_id": "ENSG00000187824",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.06457335513400911,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "TMEM220"
+          },
+          {
+            "gene_id": "ENSG00000133800",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.06326952006645999,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "LYVE1"
+          },
+          {
+            "gene_id": "ENSG00000130988",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.06263331861934923,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "RGN"
+          },
+          {
+            "gene_id": "ENSG00000158406",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.061553246309093534,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "H4C8"
+          },
+          {
+            "gene_id": "ENSG00000198732",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.05924263138119994,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "SMOC1"
+          },
+          {
+            "gene_id": "ENSG00000197872",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.05923763098689261,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "CYRIA"
+          },
+          {
+            "gene_id": "ENSG00000168079",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.05757355578831534,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "SCARA5"
+          },
+          {
+            "gene_id": "ENSG00000099260",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.056342568943977746,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "PALMD"
+          },
+          {
+            "gene_id": "ENSG00000177363",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.055487407362941,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "LRRN4CL"
+          },
+          {
+            "gene_id": "ENSG00000129680",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.05354675704473435,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "MAP7D3"
+          },
+          {
+            "gene_id": "ENSG00000163155",
+            "folds_selected": 4,
+            "selection_frequency": 0.8,
+            "mean_absolute_coefficient": 0.08023760282106604,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "LYSMD1"
+          },
+          {
+            "gene_id": "ENSG00000145777",
+            "folds_selected": 4,
+            "selection_frequency": 0.8,
+            "mean_absolute_coefficient": 0.07766121535677029,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "TSLP"
+          },
+          {
+            "gene_id": "ENSG00000146374",
+            "folds_selected": 4,
+            "selection_frequency": 0.8,
+            "mean_absolute_coefficient": 0.07256911152519151,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "RSPO3"
+          },
+          {
+            "gene_id": "ENSG00000182253",
+            "folds_selected": 4,
+            "selection_frequency": 0.8,
+            "mean_absolute_coefficient": 0.06830886429721117,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "SYNM"
+          },
+          {
+            "gene_id": "ENSG00000165197",
+            "folds_selected": 4,
+            "selection_frequency": 0.8,
+            "mean_absolute_coefficient": 0.0676741882422024,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "VEGFD"
+          },
+          {
+            "gene_id": "ENSG00000137960",
+            "folds_selected": 4,
+            "selection_frequency": 0.8,
+            "mean_absolute_coefficient": 0.06645332060749366,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "GIPC2"
+          },
+          {
+            "gene_id": "ENSG00000123560",
+            "folds_selected": 4,
+            "selection_frequency": 0.8,
+            "mean_absolute_coefficient": 0.06608965251607091,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "PLP1"
+          }
+        ]
+      },
+      "deg_plus_hubs": {
+        "label": "Fold-local DEG + network-hub expression",
+        "status": "EVALUATED",
+        "metrics": {
+          "roc_auc": 0.99,
+          "pr_auc": 0.9909090909090909,
+          "accuracy": 0.95,
+          "balanced_accuracy": 0.95,
+          "sensitivity": 0.9,
+          "specificity": 1.0,
+          "precision": 1.0,
+          "f1": 0.9473684210526315,
+          "brier_score": 0.03209775556794734,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 10,
+            "fp": 0,
+            "fn": 1,
+            "tp": 9
+          }
+        },
+        "roc_auc_95_percentile_interval": [
+          0.9464285714285714,
+          1.0
+        ],
+        "delta_from_expression_baseline": {
+          "roc_auc": 0.0,
+          "pr_auc": 0.0,
+          "f1": -0.005012531328320802
+        },
+        "folds_completed": 5,
+        "folds_total": 5,
+        "candidate_features": [
+          {
+            "gene_id": "ENSG00000168078",
+            "folds_selected": 3,
+            "selection_frequency": 0.6,
+            "mean_absolute_coefficient": 0.07885258538046859,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "PBK"
+          },
+          {
+            "gene_id": "ENSG00000167900",
+            "folds_selected": 3,
+            "selection_frequency": 0.6,
+            "mean_absolute_coefficient": 0.06850325818945795,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "TK1"
+          },
+          {
+            "gene_id": "ENSG00000244161",
+            "folds_selected": 3,
+            "selection_frequency": 0.6,
+            "mean_absolute_coefficient": 0.038028400091763025,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "FLNB-AS1"
+          },
+          {
+            "gene_id": "ENSG00000168061",
+            "folds_selected": 3,
+            "selection_frequency": 0.6,
+            "mean_absolute_coefficient": 0.0369157267095081,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "SAC3D1"
+          },
+          {
+            "gene_id": "ENSG00000253973",
+            "folds_selected": 3,
+            "selection_frequency": 0.6,
+            "mean_absolute_coefficient": 0.03222385223301367,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "NRIP3-DT"
+          },
+          {
+            "gene_id": "ENSG00000180747",
+            "folds_selected": 3,
+            "selection_frequency": 0.6,
+            "mean_absolute_coefficient": 0.029052182786266353,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "SMG1P3"
+          },
+          {
+            "gene_id": "ENSG00000141552",
+            "folds_selected": 3,
+            "selection_frequency": 0.6,
+            "mean_absolute_coefficient": 0.025151301013291837,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "ANAPC11"
+          },
+          {
+            "gene_id": "ENSG00000261528",
+            "folds_selected": 3,
+            "selection_frequency": 0.6,
+            "mean_absolute_coefficient": 0.020297293813509268,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "CCNYL7"
+          },
+          {
+            "gene_id": "ENSG00000108479",
+            "folds_selected": 3,
+            "selection_frequency": 0.6,
+            "mean_absolute_coefficient": 0.019136650168736818,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "GALK1"
+          },
+          {
+            "gene_id": "ENSG00000244402",
+            "folds_selected": 3,
+            "selection_frequency": 0.6,
+            "mean_absolute_coefficient": 0.018959109386609788,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "RN7SL314P"
+          },
+          {
+            "gene_id": "ENSG00000102908",
+            "folds_selected": 3,
+            "selection_frequency": 0.6,
+            "mean_absolute_coefficient": 0.009219606955557966,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "NFAT5"
+          },
+          {
+            "gene_id": "ENSG00000127564",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.09302355563743608,
+            "selected_as_deg": true,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "PKMYT1"
+          },
+          {
+            "gene_id": "ENSG00000089685",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.07020063824376362,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "BIRC5"
+          },
+          {
+            "gene_id": "ENSG00000146670",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.06223260667541756,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "CDCA5"
+          },
+          {
+            "gene_id": "ENSG00000155657",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.05194513791272438,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "TTN"
+          },
+          {
+            "gene_id": "ENSG00000181722",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.04637108431771777,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "ZBTB20"
+          },
+          {
+            "gene_id": "ENSG00000179909",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.045542296188157506,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "ZNF154"
+          },
+          {
+            "gene_id": "ENSG00000189159",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.036552587366459,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "JPT1"
+          },
+          {
+            "gene_id": "ENSG00000175793",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.03513379510624261,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "SFN"
+          },
+          {
+            "gene_id": "ENSG00000174276",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.03502532027868735,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "ZNHIT2"
+          },
+          {
+            "gene_id": "ENSG00000262814",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.03267940647576359,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "MRPL12"
+          },
+          {
+            "gene_id": "ENSG00000253116",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.02510697408859737,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": null
+          },
+          {
+            "gene_id": "ENSG00000269821",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.023603592345886937,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "KCNQ1OT1"
+          },
+          {
+            "gene_id": "ENSG00000240175",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.021424123011240255,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "MAGI1-AS1"
+          },
+          {
+            "gene_id": "ENSG00000279029",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.02068891742344396,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": null
+          }
+        ]
+      },
+      "deg_plus_drift": {
+        "label": "Fold-local DEG + cross-species drift expression",
+        "status": "EVALUATED",
+        "metrics": {
+          "roc_auc": 0.99,
+          "pr_auc": 0.9909090909090909,
+          "accuracy": 0.9,
+          "balanced_accuracy": 0.9,
+          "sensitivity": 0.9,
+          "specificity": 0.9,
+          "precision": 0.9,
+          "f1": 0.9,
+          "brier_score": 0.03864019506145987,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 9,
+            "fp": 1,
+            "fn": 1,
+            "tp": 9
+          }
+        },
+        "roc_auc_95_percentile_interval": [
+          0.9464285714285714,
+          1.0
+        ],
+        "delta_from_expression_baseline": {
+          "roc_auc": 0.0,
+          "pr_auc": 0.0,
+          "f1": -0.052380952380952306
+        },
+        "folds_completed": 5,
+        "folds_total": 5,
+        "candidate_features": [
+          {
+            "gene_id": "ENSG00000165474",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.08529201821764316,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.8397135873059829,
+            "gene_symbol": "GJB2"
+          },
+          {
+            "gene_id": "ENSG00000060718",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.08223444778203574,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.8379632721202004,
+            "gene_symbol": "COL11A1"
+          },
+          {
+            "gene_id": "ENSG00000108821",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.06849669037347418,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.7176702557381012,
+            "gene_symbol": "COL1A1"
+          },
+          {
+            "gene_id": "ENSG00000189334",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.048171201928150574,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.9079402307148552,
+            "gene_symbol": "S100A14"
+          },
+          {
+            "gene_id": "ENSG00000090539",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.04460512431681433,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.7068988233882819,
+            "gene_symbol": "CHRD"
+          },
+          {
+            "gene_id": "ENSG00000189058",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.04392869200189096,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.781636060100167,
+            "gene_symbol": "APOD"
+          },
+          {
+            "gene_id": "ENSG00000180730",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.04340323114056781,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.7199332220367279,
+            "gene_symbol": "SHISA2"
+          },
+          {
+            "gene_id": "ENSG00000012223",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.03546515589090426,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.751293524101234,
+            "gene_symbol": "LTF"
+          },
+          {
+            "gene_id": "ENSG00000186847",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.03109106194060044,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.8193296989075245,
+            "gene_symbol": "KRT14"
+          },
+          {
+            "gene_id": "ENSG00000131771",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.030761854830005497,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.53449081803005,
+            "gene_symbol": "PPP1R1B"
+          },
+          {
+            "gene_id": "ENSG00000065618",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.029823153729722267,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.7010016694490818,
+            "gene_symbol": "COL17A1"
+          },
+          {
+            "gene_id": "ENSG00000092969",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.029670834038629756,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.7557929883138564,
+            "gene_symbol": "TGFB2"
+          },
+          {
+            "gene_id": "ENSG00000125740",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.028777246678802115,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.5473706176961602,
+            "gene_symbol": "FOSB"
+          },
+          {
+            "gene_id": "ENSG00000108576",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.026193123711369615,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.624941569282137,
+            "gene_symbol": "SLC6A4"
+          },
+          {
+            "gene_id": "ENSG00000171246",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.019018115707275234,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.8015358931552589,
+            "gene_symbol": "NPTX1"
+          },
+          {
+            "gene_id": "ENSG00000138449",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.018449435517420693,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.7751252086811353,
+            "gene_symbol": "SLC40A1"
+          },
+          {
+            "gene_id": "ENSG00000130203",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.014889743080702586,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.8132220367278797,
+            "gene_symbol": "APOE"
+          },
+          {
+            "gene_id": "ENSG00000003989",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.013440048087755927,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.7796994991652755,
+            "gene_symbol": "SLC7A2"
+          },
+          {
+            "gene_id": "ENSG00000184828",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.013147871252915454,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.6506973887296438,
+            "gene_symbol": "ZBTB7C"
+          },
+          {
+            "gene_id": "ENSG00000135373",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.012971302065145194,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.8848080133555927,
+            "gene_symbol": "EHF"
+          },
+          {
+            "gene_id": "ENSG00000167741",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.012924461838048785,
+            "selected_as_deg": false,
+            "selected_as_hub": true,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.6754691579674755,
+            "gene_symbol": "GGT6"
+          },
+          {
+            "gene_id": "ENSG00000135480",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.01160882619584523,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.8565786277239475,
+            "gene_symbol": "KRT7"
+          },
+          {
+            "gene_id": "ENSG00000053747",
+            "folds_selected": 5,
+            "selection_frequency": 1.0,
+            "mean_absolute_coefficient": 0.006839739372229733,
+            "selected_as_deg": false,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.8770058015109485,
+            "gene_symbol": "LAMA3"
+          },
+          {
+            "gene_id": "ENSG00000167588",
+            "folds_selected": 4,
+            "selection_frequency": 0.8,
+            "mean_absolute_coefficient": 0.08306704789893804,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.9617696160267113,
+            "gene_symbol": "GPD1"
+          },
+          {
+            "gene_id": "ENSG00000104332",
+            "folds_selected": 4,
+            "selection_frequency": 0.8,
+            "mean_absolute_coefficient": 0.06999599548987452,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.8093071786310517,
+            "gene_symbol": "SFRP1"
+          }
+        ]
+      },
+      "integrated_biomarker_panel": {
+        "label": "Fold-local DEG + hub/drift candidate panel",
+        "status": "EVALUATED",
+        "metrics": {
+          "roc_auc": 0.97,
+          "pr_auc": 0.9697979797979798,
+          "accuracy": 0.95,
+          "balanced_accuracy": 0.95,
+          "sensitivity": 1.0,
+          "specificity": 0.9,
+          "precision": 0.9090909090909091,
+          "f1": 0.9523809523809523,
+          "brier_score": 0.0559088891248228,
+          "threshold": 0.5,
+          "confusion_matrix": {
+            "tn": 9,
+            "fp": 1,
+            "fn": 0,
+            "tp": 10
+          }
+        },
+        "roc_auc_95_percentile_interval": [
+          0.858649237472767,
+          1.0
+        ],
+        "delta_from_expression_baseline": {
+          "roc_auc": -0.020000000000000018,
+          "pr_auc": -0.02111111111111108,
+          "f1": 0.0
+        },
+        "folds_completed": 5,
+        "folds_total": 5,
+        "candidate_features": [
+          {
+            "gene_id": "ENSG00000060718",
+            "folds_selected": 4,
+            "selection_frequency": 0.8,
+            "mean_absolute_coefficient": 0.8967409953295862,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.8128964941569282,
+            "gene_symbol": "COL11A1"
+          },
+          {
+            "gene_id": "ENSG00000167588",
+            "folds_selected": 4,
+            "selection_frequency": 0.8,
+            "mean_absolute_coefficient": 0.7962609675512083,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.9617696160267113,
+            "gene_symbol": "GPD1"
+          },
+          {
+            "gene_id": "ENSG00000104332",
+            "folds_selected": 3,
+            "selection_frequency": 0.6,
+            "mean_absolute_coefficient": 0.8183243617840686,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.9340011129660546,
+            "gene_symbol": "SFRP1"
+          },
+          {
+            "gene_id": "ENSG00000123689",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.7954459389854898,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.9079594903869517,
+            "gene_symbol": "G0S2"
+          },
+          {
+            "gene_id": "ENSG00000189058",
+            "folds_selected": 2,
+            "selection_frequency": 0.4,
+            "mean_absolute_coefficient": 0.6752725788130886,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.731135225375626,
+            "gene_symbol": "APOD"
+          },
+          {
+            "gene_id": "ENSG00000182253",
+            "folds_selected": 1,
+            "selection_frequency": 0.2,
+            "mean_absolute_coefficient": 0.8532249108457376,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.4575959933222037,
+            "gene_symbol": "SYNM"
+          },
+          {
+            "gene_id": "ENSG00000127564",
+            "folds_selected": 1,
+            "selection_frequency": 0.2,
+            "mean_absolute_coefficient": 0.8021557596791863,
+            "selected_as_deg": true,
+            "selected_as_hub": true,
+            "selected_as_drift": false,
+            "mean_drift_score": null,
+            "gene_symbol": "PKMYT1"
+          },
+          {
+            "gene_id": "ENSG00000135063",
+            "folds_selected": 1,
+            "selection_frequency": 0.2,
+            "mean_absolute_coefficient": 0.6240711361798416,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.9288814691151921,
+            "gene_symbol": "ENTREP1"
+          },
+          {
+            "gene_id": "ENSG00000073282",
+            "folds_selected": 1,
+            "selection_frequency": 0.2,
+            "mean_absolute_coefficient": 0.5886118721024448,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.8410789961290795,
+            "gene_symbol": "TP63"
+          },
+          {
+            "gene_id": "ENSG00000148053",
+            "folds_selected": 1,
+            "selection_frequency": 0.2,
+            "mean_absolute_coefficient": 0.5869178922356052,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.9619365609348915,
+            "gene_symbol": "NTRK2"
+          },
+          {
+            "gene_id": "ENSG00000012223",
+            "folds_selected": 1,
+            "selection_frequency": 0.2,
+            "mean_absolute_coefficient": 0.4253500489100044,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.8838063439065109,
+            "gene_symbol": "LTF"
+          },
+          {
+            "gene_id": "ENSG00000154734",
+            "folds_selected": 1,
+            "selection_frequency": 0.2,
+            "mean_absolute_coefficient": 0.3136586676432474,
+            "selected_as_deg": true,
+            "selected_as_hub": false,
+            "selected_as_drift": true,
+            "mean_drift_score": 0.4636060100166945,
+            "gene_symbol": "ADAMTS1"
+          }
+        ]
+      }
+    },
+    "fold_evidence": [
+      {
+        "fold": 1,
+        "experiment": "deg_ranked_expression",
+        "selected_feature_count": 100,
+        "training_significant_degs": 1421,
+        "training_hub_genes": 50,
+        "training_drift_genes": 100,
+        "human_network_edges": 3127,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 1,
+        "experiment": "deg_plus_hubs",
+        "selected_feature_count": 100,
+        "training_significant_degs": 1421,
+        "training_hub_genes": 50,
+        "training_drift_genes": 100,
+        "human_network_edges": 3127,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 1,
+        "experiment": "deg_plus_drift",
+        "selected_feature_count": 150,
+        "training_significant_degs": 1421,
+        "training_hub_genes": 50,
+        "training_drift_genes": 100,
+        "human_network_edges": 3127,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 1,
+        "experiment": "integrated_biomarker_panel",
+        "selected_feature_count": 4,
+        "training_significant_degs": 1421,
+        "training_hub_genes": 50,
+        "training_drift_genes": 100,
+        "human_network_edges": 3127,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 2,
+        "experiment": "deg_ranked_expression",
+        "selected_feature_count": 100,
+        "training_significant_degs": 954,
+        "training_hub_genes": 50,
+        "training_drift_genes": 100,
+        "human_network_edges": 466,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 2,
+        "experiment": "deg_plus_hubs",
+        "selected_feature_count": 100,
+        "training_significant_degs": 954,
+        "training_hub_genes": 50,
+        "training_drift_genes": 100,
+        "human_network_edges": 466,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 2,
+        "experiment": "deg_plus_drift",
+        "selected_feature_count": 150,
+        "training_significant_degs": 954,
+        "training_hub_genes": 50,
+        "training_drift_genes": 100,
+        "human_network_edges": 466,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 2,
+        "experiment": "integrated_biomarker_panel",
+        "selected_feature_count": 6,
+        "training_significant_degs": 954,
+        "training_hub_genes": 50,
+        "training_drift_genes": 100,
+        "human_network_edges": 466,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 3,
+        "experiment": "deg_ranked_expression",
+        "selected_feature_count": 100,
+        "training_significant_degs": 543,
+        "training_hub_genes": 50,
+        "training_drift_genes": 90,
+        "human_network_edges": 7168,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 3,
+        "experiment": "deg_plus_hubs",
+        "selected_feature_count": 100,
+        "training_significant_degs": 543,
+        "training_hub_genes": 50,
+        "training_drift_genes": 90,
+        "human_network_edges": 7168,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 3,
+        "experiment": "deg_plus_drift",
+        "selected_feature_count": 140,
+        "training_significant_degs": 543,
+        "training_hub_genes": 50,
+        "training_drift_genes": 90,
+        "human_network_edges": 7168,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 3,
+        "experiment": "integrated_biomarker_panel",
+        "selected_feature_count": 3,
+        "training_significant_degs": 543,
+        "training_hub_genes": 50,
+        "training_drift_genes": 90,
+        "human_network_edges": 7168,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 4,
+        "experiment": "deg_ranked_expression",
+        "selected_feature_count": 100,
+        "training_significant_degs": 1085,
+        "training_hub_genes": 50,
+        "training_drift_genes": 87,
+        "human_network_edges": 4231,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 4,
+        "experiment": "deg_plus_hubs",
+        "selected_feature_count": 100,
+        "training_significant_degs": 1085,
+        "training_hub_genes": 50,
+        "training_drift_genes": 87,
+        "human_network_edges": 4231,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 4,
+        "experiment": "deg_plus_drift",
+        "selected_feature_count": 137,
+        "training_significant_degs": 1085,
+        "training_hub_genes": 50,
+        "training_drift_genes": 87,
+        "human_network_edges": 4231,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 4,
+        "experiment": "integrated_biomarker_panel",
+        "selected_feature_count": 4,
+        "training_significant_degs": 1085,
+        "training_hub_genes": 50,
+        "training_drift_genes": 87,
+        "human_network_edges": 4231,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 5,
+        "experiment": "deg_ranked_expression",
+        "selected_feature_count": 100,
+        "training_significant_degs": 385,
+        "training_hub_genes": 50,
+        "training_drift_genes": 100,
+        "human_network_edges": 1346,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 5,
+        "experiment": "deg_plus_hubs",
+        "selected_feature_count": 100,
+        "training_significant_degs": 385,
+        "training_hub_genes": 50,
+        "training_drift_genes": 100,
+        "human_network_edges": 1346,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 5,
+        "experiment": "deg_plus_drift",
+        "selected_feature_count": 150,
+        "training_significant_degs": 385,
+        "training_hub_genes": 50,
+        "training_drift_genes": 100,
+        "human_network_edges": 1346,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      },
+      {
+        "fold": 5,
+        "experiment": "integrated_biomarker_panel",
+        "selected_feature_count": 5,
+        "training_significant_degs": 385,
+        "training_hub_genes": 50,
+        "training_drift_genes": 100,
+        "human_network_edges": 1346,
+        "network_status": "AVAILABLE",
+        "drift_status": "AVAILABLE",
+        "network_reason": null,
+        "status": "AVAILABLE"
+      }
+    ],
+    "limitations": [
+      "DEG rankings use Welch tests on normalized log2 expression inside training folds; they are not PyDESeq2 count-model results.",
+      "The 20-sample cohort yields unstable training-fold network estimates; a fold without supported human network edges cannot support hub or cross-species drift features.",
+      "Human fold networks are compared with a fixed mouse cancer network from a separate study; network-density differences may dominate drift scores, so these are not sample-level drift measurements or independent validation.",
+      "Full-cohort Phase 5 biomarker candidates and hub/drift annotations are reported separately and are not used for cross-validation feature selection.",
+      "No result constitutes clinical validation."
+    ]
+  },
+  "feature_groups": {
+    "expression_only": {
+      "status": "EVALUATED",
+      "source": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\processed\\1bb864e8-3d1b-48d9-a5ea-a0ea20dd145e\\1c782941-d15c-4c3a-a291-5172f1d23937\\TCGA-BRCA_normalized.parquet",
+      "features": 44601,
+      "sample_level": true
+    },
+    "differential_expression": {
+      "status": "ANNOTATION_AVAILABLE",
+      "reason": "Saved cohort-level differential-expression results are available as gene annotations; they are not per-sample predictors.",
+      "sources": [
+        "deg/human/all_genes.csv"
+      ],
+      "source": "deg/human/all_genes.csv",
+      "sample_level": false
+    },
+    "network_features": {
+      "status": "ANNOTATION_AVAILABLE",
+      "reason": "Saved network topology is available as cohort-level gene annotation; it is not a per-sample predictor.",
+      "sources": [
+        "networks/human_cancer_nodes.csv",
+        "networks/human_healthy_nodes.csv"
+      ],
+      "source": "networks/human_cancer_nodes.csv",
+      "sample_level": false
+    },
+    "module_features": {
+      "status": "ANNOTATION_AVAILABLE",
+      "reason": "Saved module assignments are available as cohort-level gene annotation; they are not per-sample predictors.",
+      "sources": [
+        "modules/human/module_genes.csv",
+        "modules/human/modules.csv"
+      ],
+      "source": "modules/human/module_genes.csv",
+      "sample_level": false
+    },
+    "orthology_features": {
+      "status": "ANNOTATION_AVAILABLE",
+      "reason": "Saved orthology mappings are available as gene-level cross-species annotations; they are not per-sample predictors.",
+      "sources": [
+        "orthology/orthologs.csv"
+      ],
+      "source": "orthology/orthologs.csv",
+      "sample_level": false
+    },
+    "network_drift_features": {
+      "status": "ANNOTATION_AVAILABLE",
+      "reason": "Saved network drift is available as a cohort-level comparison; it is not a per-sample predictor.",
+      "sources": [
+        "drift/gene_drift.csv"
+      ],
+      "source": "drift/gene_drift.csv",
+      "sample_level": false
+    },
+    "pathway_features": {
+      "status": "ANNOTATION_AVAILABLE",
+      "reason": "Saved pathway enrichment and drift comparisons are available as cohort-level annotations; they are not per-sample predictors.",
+      "sources": [
+        "pathways/enrichment_results.csv",
+        "pathways/key_drifted_pathways.csv"
+      ],
+      "source": "pathways/enrichment_results.csv",
+      "sample_level": false
+    },
+    "morphology_features": {
+      "status": "DESCRIPTIVE_METADATA_AVAILABLE",
+      "reason": "Saved clinical pathology metadata is descriptive. No image-derived, sample-linked morphology features or gene-level morphology association were calculated.",
+      "sources": [
+        "morphology/phenotype_variables.csv",
+        "morphology/morphology_summary.json"
+      ],
+      "source": "morphology/phenotype_variables.csv",
+      "sample_level": false
+    }
+  },
+  "predictive_features": {
+    "status": "AVAILABLE",
+    "ranking_method": "Mean per-model rank and model selection support, derived from fold-local model importance. Raw importance values remain model-specific and are not averaged.",
+    "feature_count": 265,
+    "interpretation": "Genes are exploratory predictive expression features. Phase 3\u20135 values are annotation context only; they are not used as sample-level predictors or clinically validated biomarkers."
+  },
+  "cross_species_analysis": {
+    "status": "ANNOTATIONS_AVAILABLE",
+    "interpretation": "Orthology, saved mouse network presence, and cohort-level drift are annotations for ranked human predictive features. Missing mappings are not evidence of biological species-specificity; no expression-preserving/network-rewired claim is inferred.",
+    "artifact": "ml/cross_species_predictors.csv"
+  },
+  "independent_validation": {
+    "run_id": "1c782941-d15c-4c3a-a291-5172f1d23937",
+    "status": "UNAVAILABLE",
+    "reason": "Not available from current PathDrift data. No independent, matched human validation cohort with compatible labels and measurement provenance is present in this run. The mouse tumor and normal datasets are separate studies with different sample types and platforms; they are not used as an external validation set.",
+    "cross_species_transfer": {
+      "status": "UNAVAILABLE",
+      "reason": "Mouse cohorts do not provide a matched, compatible independent evaluation design."
+    },
+    "permutation_test": {
+      "status": "NOT_RUN",
+      "reason": "A small, exploratory cohort and model comparison are not a prespecified confirmatory test."
+    },
+    "assessed_at": "2026-10-08T11:20:28.565319+00:00"
+  },
+  "model_configuration": {
+    "logistic_regression": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": null,
+      "max_iter": 3000,
+      "multi_class": "deprecated",
+      "n_jobs": null,
+      "penalty": "l2",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "random_forest": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": "balanced",
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 300,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "svm": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 200,
+      "class_weight": "balanced",
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "linear",
+      "max_iter": -1,
+      "probability": true,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "gradient_boosting": {
+      "ccp_alpha": 0.0,
+      "criterion": "friedman_mse",
+      "init": null,
+      "learning_rate": 0.05,
+      "loss": "log_loss",
+      "max_depth": 2,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "n_estimators": 100,
+      "n_iter_no_change": null,
+      "random_state": 42,
+      "subsample": 1.0,
+      "tol": 0.0001,
+      "validation_fraction": 0.1,
+      "verbose": 0,
+      "warm_start": false
+    }
+  },
+  "artifacts": {
+    "summary": "ml/phase6_summary.json",
+    "predictions": "ml/out_of_fold_predictions.csv",
+    "feature_importance": "ml/feature_importance.csv",
+    "feature_evidence": "ml/feature_evidence.csv",
+    "predictive_biomarkers": "ml/predictive_biomarkers.csv",
+    "cross_species_predictors": "ml/cross_species_predictors.csv",
+    "biological_oof_predictions": "ml/biological_oof_predictions.csv",
+    "biological_feature_importance": "ml/biological_feature_importance.csv",
+    "biological_fold_evidence": "ml/biological_fold_evidence.csv",
+    "models": [
+      "ml/models/logistic_regression.joblib",
+      "ml/models/random_forest.joblib",
+      "ml/models/svm.joblib",
+      "ml/models/gradient_boosting.joblib"
+    ],
+    "plots": [
+      "ml/roc_curves.svg",
+      "ml/precision_recall_curves.svg",
+      "ml/calibration_curves.svg"
+    ],
+    "validation": "validation/phase6_validation.json"
+  },
+  "seed": 42,
+  "software": {
+    "python": "3.11.9",
+    "scikit_learn": "1.5.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2"
+  },
+  "completed_at": "2026-10-08T11:20:28.577298+00:00"
+}

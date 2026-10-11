@@ -13,6 +13,24 @@ from app.schemas.schemas import DEGConfig, DEGResultOut, JobOut
 router = APIRouter()
 
 
+@router.get("/project/{project_id}", response_model=list[DEGResultOut])
+async def list_project_deg_results(
+    project_id: str,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    result = await db.execute(
+        select(DEGResult)
+        .join(Analysis, Analysis.id == DEGResult.analysis_id)
+        .where(
+            Analysis.project_id == project_id,
+            Analysis.project.has(owner_id=current_user.id),
+        )
+        .order_by(DEGResult.created_at.desc())
+    )
+    return result.scalars().all()
+
+
 @router.get("/latest/analysis/{analysis_id}", response_model=Optional[DEGResultOut])
 async def get_latest_deg_result(
     analysis_id: str,

@@ -13,7 +13,7 @@ def normalize_gene_ids(series: pd.Series) -> pd.Series:
             normalized.append(value)
             continue
         gene_id = str(value).strip()
-        gene_id = re.sub(r"\.\d+$", "", gene_id)
+        gene_id = re.sub(r"^(ENS(?:G|MUSG)\d+)\.\d+(?=_PAR_Y$|$)", r"\1", gene_id)
         gene_id = gene_id.replace('"', '').replace("'", "")
         normalized.append(gene_id)
     return pd.Series(normalized, index=series.index)

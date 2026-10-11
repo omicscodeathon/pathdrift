@@ -1,0 +1,8 @@
+species,field,evidence_type,tumor_sample_count,observed_sample_count,missing_sample_count,category_counts_json,source_accession,source_file
+human,ajcc_pathologic_stage,CLINICAL_PATHOLOGY_METADATA,8,8,0,"{""Stage IIA"":3,""Stage IIB"":2,""Stage IIIB"":1,""Stage IIIC"":1,""Stage IV"":1}",TCGA-BRCA,data/raw/gdc/TCGA-BRCA_metadata.tsv
+human,primary_diagnosis,CLINICAL_PATHOLOGY_METADATA,8,8,0,"{""Infiltrating duct carcinoma, NOS"":7,""Lobular carcinoma, NOS"":1}",TCGA-BRCA,data/raw/gdc/TCGA-BRCA_metadata.tsv
+human,tumor_grade,CLINICAL_PATHOLOGY_METADATA,8,0,8,{},TCGA-BRCA,data/raw/gdc/TCGA-BRCA_metadata.tsv
+human,morphology,CLINICAL_PATHOLOGY_METADATA,8,8,0,"{""8500\/3"":7,""8520\/3"":1}",TCGA-BRCA,data/raw/gdc/TCGA-BRCA_metadata.tsv
+human,age_at_index_years,CLINICAL_COVARIATE,8,8,0,"{""37"":1,""49"":1,""56"":1,""58"":1,""59"":1,""61"":1,""62"":1,""73"":1}",TCGA-BRCA,data/raw/gdc/TCGA-BRCA_metadata.tsv
+human,sex_at_birth,CLINICAL_COVARIATE,8,8,0,"{""female"":7,""male"":1}",TCGA-BRCA,data/raw/gdc/TCGA-BRCA_metadata.tsv
+human,vital_status,CLINICAL_COVARIATE,8,8,0,"{""Alive"":7,""Dead"":1}",TCGA-BRCA,data/raw/gdc/TCGA-BRCA_metadata.tsv

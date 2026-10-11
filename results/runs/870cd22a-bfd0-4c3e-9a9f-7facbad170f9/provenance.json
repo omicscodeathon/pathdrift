@@ -1,0 +1,487 @@
+{
+  "run_id": "870cd22a-bfd0-4c3e-9a9f-7facbad170f9",
+  "generated_at": "2026-10-05T17:10:47.284303+00:00",
+  "normal_reference_strategy": {
+    "source": "gtex",
+    "tissue": "Breast - Mammary Tissue",
+    "version": "v10",
+    "enabled": false,
+    "primary_strategy": "tcga_adjacent_normal",
+    "rationale": "TCGA solid-tissue-normal samples are the primary within-cohort human reference. GTEx is a separate external sensitivity reference and must not be merged with TCGA as if batches were interchangeable."
+  },
+  "datasets": [
+    {
+      "accession": "TCGA-BRCA",
+      "source": {
+        "project": {
+          "primary_site": [
+            "Breast"
+          ],
+          "dbgap_accession_number": null,
+          "project_id": "TCGA-BRCA",
+          "disease_type": [
+            "Cystic, Mucinous and Serous Neoplasms",
+            "Adenomas and Adenocarcinomas",
+            "Fibroepithelial Neoplasms",
+            "Basal Cell Neoplasms",
+            "Ductal and Lobular Neoplasms",
+            "Epithelial Neoplasms, NOS",
+            "Squamous Cell Neoplasms",
+            "Complex Epithelial Neoplasms",
+            "Adnexal and Skin Appendage Neoplasms"
+          ],
+          "name": "Breast Invasive Carcinoma",
+          "releasable": true,
+          "state": "open",
+          "released": true
+        },
+        "project_id": "TCGA-BRCA",
+        "workflow": "STAR - Counts",
+        "source_files": [
+          {
+            "file_id": "ead53b27-6ad9-4b96-b5d4-0d4f06fb2d13",
+            "file_name": "dadd1789-354a-4abb-8d4e-8556166cf341.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "0948d5b1ea684cd62a6ec7dafbeda026",
+            "file_size": 4235051,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "0e1999e0-9c02-4804-88b6-60b46d100739",
+            "file_name": "db5dab56-838e-4784-a7cf-f05296e356f7.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "331108d6b22c2bddaf114649f714c220",
+            "file_size": 4250358,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "9e056a2a-a643-478a-b96c-85d5221f487a",
+            "file_name": "c6a90de3-979b-46b0-9f84-2875c1e38742.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "1bb465b8dc478393abcc76b84b530f1c",
+            "file_size": 4241593,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "3e8cff80-ed17-479c-8327-ca8e71ee7482",
+            "file_name": "0c814cd9-5b2c-4764-9e6a-6ad0403fcd7d.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "2fbb6954c6dc133c3f618b3a1fae68ba",
+            "file_size": 4249009,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "385ddd6f-c126-4c4f-acde-1ef2d74d3639",
+            "file_name": "616b6b60-8c4a-4d85-9a24-f47df6ad497e.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "7a9d08cffc0b7d4fe898b4ec19539137",
+            "file_size": 4239597,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "91060c43-f1e3-49ea-a3c9-96def417716b",
+            "file_name": "caf3d917-623d-4e2a-ac0a-521415385763.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "81771b1e878f7ba4827671f18b5659d1",
+            "file_size": 4261415,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "84cff855-d17a-4c09-b432-53893ae69c1e",
+            "file_name": "03d891b3-8faf-4384-94ce-2015f1ca5df0.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "a047d3255bf04eed49d33a5f41787b6c",
+            "file_size": 4217372,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "d796de5e-4512-4b3a-93d4-2a006e79084f",
+            "file_name": "da752364-731c-4e77-8d6e-9c91a5b7f68f.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "6f35859fce468db92bf40e73a10a33c7",
+            "file_size": 4248916,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "e12f17ae-dc1f-4e91-93bd-b827ad276dde",
+            "file_name": "a854c368-6e81-4ade-9ea9-afbee1c4c448.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "1132566aa28f06f65623f189d783bc7a",
+            "file_size": 4239792,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "7ba3b335-cd4c-4b44-a4da-44fa1109a6f0",
+            "file_name": "824f5b0a-44d4-4ccf-9277-1ef752462bb3.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "5a849da011ca0a91c11e3b8bde008148",
+            "file_size": 4247739,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "db5aadbb-3042-4c20-8235-ccd19634d9d3",
+            "file_name": "9692b4cc-6c7f-4f88-8854-769568f088ae.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "338c75953ff66fd1d244674f4bd99518",
+            "file_size": 4231203,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "176e739b-87e2-49b7-80e1-c27a6a632576",
+            "file_name": "48077485-61e6-4d16-a74c-ee216a9455f1.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "7460912e5d08c1466dfd702b30171fcc",
+            "file_size": 4238417,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "2c74854f-4afe-48c3-9c81-d64634c14677",
+            "file_name": "4fb219d8-519a-4ce9-a3f1-28fae295424f.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "0fa74219005b91aace12dbed002c6900",
+            "file_size": 4214428,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "4f54add3-c33d-4bc9-9e1f-c75f52d15f1e",
+            "file_name": "2e4316d2-5fe5-4ee1-9b22-73f4c42b6202.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "49fe7f3c7f7fc86f310fe9cb0bcc7ab4",
+            "file_size": 4255418,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "0d11c50a-8648-48ea-a107-e138a1d3e086",
+            "file_name": "bf3ea4a0-bcd6-4e9d-acbb-3416f6ce53b7.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "9e98790b2c61a368f8dc97f0d55baf6f",
+            "file_size": 4233362,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "934935ae-037b-451d-a696-0679b07bd401",
+            "file_name": "90388468-c622-4114-971e-ab178e487493.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "f2cd03ac00df1dea59a90556e3a0aa59",
+            "file_size": 4253559,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "b01d7dfd-b577-48b8-8bf2-3c74bb617601",
+            "file_name": "6732c6de-0725-4a08-a1d7-211338a4363c.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "f93163bffb3fc83f8eb0b8e13a32cb52",
+            "file_size": 4227746,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "d757b1cc-31a6-495a-ae82-c63b031ece49",
+            "file_name": "898f9214-8dab-4b92-9233-70c06c60078c.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "6d8884a50ab2b561dde01f32762bda4b",
+            "file_size": 4258057,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "3448aa6c-0de2-4d47-9bac-19507aee7492",
+            "file_name": "4da20b00-8ed6-41ed-88d9-9969d15761c7.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "ad351b198e1a81ed4956b78b99531179",
+            "file_size": 4260041,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "040d00da-2bc9-49d4-bf6c-b4515b6a2bbf",
+            "file_name": "d4f91697-1c39-4398-bf2f-85217a22ddff.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "6dcbb58195ba2563da2c63430cf3d018",
+            "file_size": 4241540,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          }
+        ],
+        "retrieval_url": "https://api.gdc.cancer.gov/projects/TCGA-BRCA",
+        "source": "GDC",
+        "accession": "TCGA-BRCA",
+        "data_type": "raw_counts",
+        "expression": {
+          "path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\gdc\\TCGA-BRCA_expression.tsv.gz",
+          "sha256": "32f1d5d42c7b65b2ec8826e7406cf3e9aa93027caf459cc8d37345da229571ba",
+          "size_bytes": 1384436,
+          "cached": true,
+          "checksum_verified": true,
+          "retrieval_url": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\pathdrift\\raw\\gdc\\tcga_brca_real_expression.tsv.gz"
+        },
+        "metadata": {
+          "path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\gdc\\TCGA-BRCA_metadata.tsv",
+          "sha256": "28e8544382739e326a1977f36f90f81d51c97fe63aa338670c5a88f0b1e00286",
+          "size_bytes": 8969,
+          "cached": true,
+          "checksum_verified": true,
+          "retrieval_url": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\pathdrift\\raw\\gdc\\tcga_brca_real_metadata.tsv"
+        },
+        "file_ids": [
+          {
+            "file_id": "ead53b27-6ad9-4b96-b5d4-0d4f06fb2d13",
+            "file_name": "dadd1789-354a-4abb-8d4e-8556166cf341.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "0948d5b1ea684cd62a6ec7dafbeda026",
+            "file_size": 4235051,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "0e1999e0-9c02-4804-88b6-60b46d100739",
+            "file_name": "db5dab56-838e-4784-a7cf-f05296e356f7.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "331108d6b22c2bddaf114649f714c220",
+            "file_size": 4250358,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "9e056a2a-a643-478a-b96c-85d5221f487a",
+            "file_name": "c6a90de3-979b-46b0-9f84-2875c1e38742.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "1bb465b8dc478393abcc76b84b530f1c",
+            "file_size": 4241593,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "3e8cff80-ed17-479c-8327-ca8e71ee7482",
+            "file_name": "0c814cd9-5b2c-4764-9e6a-6ad0403fcd7d.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "2fbb6954c6dc133c3f618b3a1fae68ba",
+            "file_size": 4249009,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "385ddd6f-c126-4c4f-acde-1ef2d74d3639",
+            "file_name": "616b6b60-8c4a-4d85-9a24-f47df6ad497e.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "7a9d08cffc0b7d4fe898b4ec19539137",
+            "file_size": 4239597,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "91060c43-f1e3-49ea-a3c9-96def417716b",
+            "file_name": "caf3d917-623d-4e2a-ac0a-521415385763.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "81771b1e878f7ba4827671f18b5659d1",
+            "file_size": 4261415,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "84cff855-d17a-4c09-b432-53893ae69c1e",
+            "file_name": "03d891b3-8faf-4384-94ce-2015f1ca5df0.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "a047d3255bf04eed49d33a5f41787b6c",
+            "file_size": 4217372,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "d796de5e-4512-4b3a-93d4-2a006e79084f",
+            "file_name": "da752364-731c-4e77-8d6e-9c91a5b7f68f.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "6f35859fce468db92bf40e73a10a33c7",
+            "file_size": 4248916,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "e12f17ae-dc1f-4e91-93bd-b827ad276dde",
+            "file_name": "a854c368-6e81-4ade-9ea9-afbee1c4c448.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "1132566aa28f06f65623f189d783bc7a",
+            "file_size": 4239792,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "7ba3b335-cd4c-4b44-a4da-44fa1109a6f0",
+            "file_name": "824f5b0a-44d4-4ccf-9277-1ef752462bb3.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "5a849da011ca0a91c11e3b8bde008148",
+            "file_size": 4247739,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "db5aadbb-3042-4c20-8235-ccd19634d9d3",
+            "file_name": "9692b4cc-6c7f-4f88-8854-769568f088ae.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "338c75953ff66fd1d244674f4bd99518",
+            "file_size": 4231203,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "176e739b-87e2-49b7-80e1-c27a6a632576",
+            "file_name": "48077485-61e6-4d16-a74c-ee216a9455f1.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "7460912e5d08c1466dfd702b30171fcc",
+            "file_size": 4238417,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "2c74854f-4afe-48c3-9c81-d64634c14677",
+            "file_name": "4fb219d8-519a-4ce9-a3f1-28fae295424f.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "0fa74219005b91aace12dbed002c6900",
+            "file_size": 4214428,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "4f54add3-c33d-4bc9-9e1f-c75f52d15f1e",
+            "file_name": "2e4316d2-5fe5-4ee1-9b22-73f4c42b6202.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "49fe7f3c7f7fc86f310fe9cb0bcc7ab4",
+            "file_size": 4255418,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "0d11c50a-8648-48ea-a107-e138a1d3e086",
+            "file_name": "bf3ea4a0-bcd6-4e9d-acbb-3416f6ce53b7.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "9e98790b2c61a368f8dc97f0d55baf6f",
+            "file_size": 4233362,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "934935ae-037b-451d-a696-0679b07bd401",
+            "file_name": "90388468-c622-4114-971e-ab178e487493.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "f2cd03ac00df1dea59a90556e3a0aa59",
+            "file_size": 4253559,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "b01d7dfd-b577-48b8-8bf2-3c74bb617601",
+            "file_name": "6732c6de-0725-4a08-a1d7-211338a4363c.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "f93163bffb3fc83f8eb0b8e13a32cb52",
+            "file_size": 4227746,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "d757b1cc-31a6-495a-ae82-c63b031ece49",
+            "file_name": "898f9214-8dab-4b92-9233-70c06c60078c.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "6d8884a50ab2b561dde01f32762bda4b",
+            "file_size": 4258057,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "3448aa6c-0de2-4d47-9bac-19507aee7492",
+            "file_name": "4da20b00-8ed6-41ed-88d9-9969d15761c7.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "ad351b198e1a81ed4956b78b99531179",
+            "file_size": 4260041,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          },
+          {
+            "file_id": "040d00da-2bc9-49d4-bf6c-b4515b6a2bbf",
+            "file_name": "d4f91697-1c39-4398-bf2f-85217a22ddff.rna_seq.augmented_star_gene_counts.tsv",
+            "md5sum": "6dcbb58195ba2563da2c63430cf3d018",
+            "file_size": 4241540,
+            "data_type": "Gene Expression Quantification",
+            "workflow": "STAR - Counts",
+            "project": "TCGA-BRCA"
+          }
+        ]
+      },
+      "expression_sha256": "32f1d5d42c7b65b2ec8826e7406cf3e9aa93027caf459cc8d37345da229571ba",
+      "metadata_sha256": "28e8544382739e326a1977f36f90f81d51c97fe63aa338670c5a88f0b1e00286",
+      "raw_paths": [
+        "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\gdc\\TCGA-BRCA_expression.tsv.gz",
+        "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\gdc\\TCGA-BRCA_metadata.tsv"
+      ],
+      "processed_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\processed\\870cd22a-bfd0-4c3e-9a9f-7facbad170f9\\TCGA-BRCA_normalized.parquet",
+      "qc_directory": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\results\\runs\\870cd22a-bfd0-4c3e-9a9f-7facbad170f9\\qc\\TCGA-BRCA"
+    },
+    {
+      "accession": "GSE155577",
+      "source": {
+        "accession": "GSE155577",
+        "title": "Gene expression data from epithelial and mesenchymal tumor cells isolated from E-A14 mouse mammary tumors grown in immunodeficient and immunocompetent mice",
+        "summary": "Epithelial-mesenchymal transition (EMT) is a central oncogenic mechanism, contributing to transformation and metastatic dissemination. Several reports described that inflammation and innate immune cells favor EMT induction, contrasting with an understudied role of adaptive immunity in EMT promotion. Using an original murine mammary tumor model, we demonstrated that tumor cells maintain their epithelial phenotype in mice deficient for adaptive immune response but undergo EMT in the presence of T-cell mediated immunity. CD4 but not CD8 T cell depletion prevents EMT, undoubtedly demonstrating that CD4 T cell-mediated immunity favors EMT induction. Immune infiltrate and transcriptomic analyses revealed an inverse correlation between mesenchymal tumor cell and intratumoral neutrophil proportions, due to the reduced ability of mesenchymal cells to recruit neutrophils. Moreover, we demonstrated also the pro-EMT role of neutrophils. Last, transcriptomic database analysis of human breast tumors further strengthens the notion of a cooperation between CD4 T cells and neutrophils in EMT promotion.",
+        "species": "Mus musculus",
+        "platform_id": "15103",
+        "series_sample_count": 26,
+        "retrieval_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE155577",
+        "metadata_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gds&id=200155577&retmode=json",
+        "source": "GEO",
+        "data_type": "normalized",
+        "platform": "15103",
+        "expression": {
+          "path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\geo\\GSE155577_expression.tsv.gz",
+          "sha256": "d5e80e7a36ce35a8b071164a0dd5ee655c10fd4cebe2e65bc088ac87585d1b0e",
+          "size_bytes": 3858169,
+          "cached": true,
+          "checksum_verified": true,
+          "retrieval_url": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\pathdrift\\raw\\geo\\GSE155577_expression.tsv.gz"
+        },
+        "metadata": {
+          "path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\geo\\GSE155577_metadata.tsv",
+          "sha256": "42ec5aad7340c3a0d7a2056294a5ea8c1c46c2382ea4e967910fec245f53c59d",
+          "size_bytes": 10689,
+          "cached": true,
+          "checksum_verified": true,
+          "retrieval_url": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\pathdrift\\raw\\geo\\GSE155577_metadata.tsv"
+        }
+      },
+      "expression_sha256": "d5e80e7a36ce35a8b071164a0dd5ee655c10fd4cebe2e65bc088ac87585d1b0e",
+      "metadata_sha256": "42ec5aad7340c3a0d7a2056294a5ea8c1c46c2382ea4e967910fec245f53c59d",
+      "raw_paths": [
+        "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\geo\\GSE155577_expression.tsv.gz",
+        "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\raw\\geo\\GSE155577_metadata.tsv"
+      ],
+      "processed_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\data\\processed\\870cd22a-bfd0-4c3e-9a9f-7facbad170f9\\GSE155577_normalized.parquet",
+      "qc_directory": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\results\\runs\\870cd22a-bfd0-4c3e-9a9f-7facbad170f9\\qc\\GSE155577"
+    }
+  ],
+  "processing_steps": [
+    "verify remote accession and repository metadata",
+    "verify raw file SHA-256 and expression/metadata sample alignment",
+    "normalize stable Ensembl IDs and aggregate version-equivalent duplicate IDs",
+    "apply configured gene/sample expression and missingness filters",
+    "apply normalization selected from declared data type",
+    "calculate sample QC, PCA, Pearson correlation, hierarchical clustering, and outlier flags"
+  ],
+  "limitations": [
+    "GSE155577 contains mammary tumor samples and no healthy mouse mammary controls.",
+    "The primary human normal reference is TCGA adjacent normal; GTEx remains a separate optional external reference and was not acquired or merged in this run."
+  ]
+}

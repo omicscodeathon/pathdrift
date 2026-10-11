@@ -1,0 +1,1 @@
+"""Real-data acquisition and quality-control components."""

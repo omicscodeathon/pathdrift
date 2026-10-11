@@ -1,0 +1,9 @@
+sample_id	disease_state	label	geo_sample_id	geo_title	geo_source_name	tissue	species
+Ba1	healthy	normal	GSM3230416	normal adult basal cells sample1	WT mammary gland	Mammary gland	Mouse
+Ba2	healthy	normal	GSM3230417	normal adult basal cells sample2	WT mammary gland	Mammary gland	Mouse
+fMaSC1	healthy	normal	GSM3230414	normal E18 fMaSC sample1	WT mammary gland	Mammary gland	Mouse
+fMaSC2	healthy	normal	GSM3230415	normal E18 fMaSC sample2	WT mammary gland	Mammary gland	Mouse
+LP1	healthy	normal	GSM3230418	normal adult luminal progenitor cells sample1	WT mammary gland	Mammary gland	Mouse
+LP2	healthy	normal	GSM3230419	normal adult luminal progenitor cells sample2	WT mammary gland	Mammary gland	Mouse
+ML1	healthy	normal	GSM3230420	normal adult mature luminal cells sample1	WT mammary gland	Mammary gland	Mouse
+ML2	healthy	normal	GSM3230421	normal adult mature luminal cells sample2	WT mammary gland	Mammary gland	Mouse

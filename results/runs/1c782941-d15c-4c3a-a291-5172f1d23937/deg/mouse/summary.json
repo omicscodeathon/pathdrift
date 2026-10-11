@@ -1,0 +1,17 @@
+{
+  "status": "unavailable",
+  "species": "mouse",
+  "comparison": "cancer_vs_healthy",
+  "dataset_id": "d40a5841-0db4-4737-9b68-54cab2c01306",
+  "dataset_accession": "GSE155577",
+  "run_id": "1c782941-d15c-4c3a-a291-5172f1d23937",
+  "case_samples_available": 26,
+  "control_samples_available": 0,
+  "reason": "The configured Phase 2 dataset does not contain both comparison groups; no other study was combined and no differential-expression output was generated.",
+  "exploratory_cross_study": {
+    "status": "COMPLETED",
+    "comparison": "cancer_vs_healthy_cross_study_exploratory",
+    "summary_path": "C:\\Users\\complexb\\Desktop\\PATHDRIFT\\results\\runs\\1c782941-d15c-4c3a-a291-5172f1d23937\\deg\\mouse\\cross_study_exploratory\\summary.json",
+    "warning": "Cancer status is perfectly confounded with GEO study, assay/platform, and processing. The healthy samples are a separate RPKM cohort, so study and condition effects cannot be distinguished by this design. P-values and fold changes are exploratory only and must not be treated as confirmatory cancer-vs-normal findings."
+  }
+}

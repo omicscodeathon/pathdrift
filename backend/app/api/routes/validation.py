@@ -1,16 +1,98 @@
 """
 Validation routes: independent external validation of ML models.
 """
-from fastapi import APIRouter, Depends, HTTPException
+import asyncio
+import json
+import os
+
+from fastapi import APIRouter, Depends, HTTPException, status
+from pydantic import BaseModel, Field
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 
 from app.db.base import get_db
 from app.api.deps import get_current_user
-from app.models import User, MLExperiment, ModelMetric, JobStatusEnum
-from app.schemas.schemas import ModelMetricOut
+from app.models import Analysis, BackgroundJob, DriftAnalysis, JobStatusEnum, MLExperiment, ModelMetric, Project, User
+from app.schemas.schemas import JobOut, ModelMetricOut
 
 router = APIRouter()
+
+
+class ValidationRunRequest(BaseModel):
+    drift_analysis_id: str
+    permutations: int = Field(default=199, ge=19, le=999)
+    random_seed: int = 42
+
+
+@router.post("/runs", response_model=JobOut, status_code=status.HTTP_202_ACCEPTED)
+async def create_validation_run(
+    payload: ValidationRunRequest,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    result = await db.execute(
+        select(DriftAnalysis)
+        .join(Analysis, Analysis.id == DriftAnalysis.analysis_id)
+        .join(Project, Project.id == Analysis.project_id)
+        .where(DriftAnalysis.id == payload.drift_analysis_id, Project.owner_id == current_user.id)
+    )
+    drift = result.scalar_one_or_none()
+    if not drift:
+        raise HTTPException(status_code=404, detail="Drift analysis not found")
+    if drift.status != JobStatusEnum.COMPLETED:
+        raise HTTPException(status_code=409, detail="Complete the drift analysis before validation")
+
+    job = BackgroundJob(analysis_id=drift.analysis_id, task_name="run_scientific_validation")
+    db.add(job)
+    await db.flush()
+    await db.refresh(job)
+    from app.tasks.validation_tasks import run_scientific_validation
+    task = run_scientific_validation.apply_async(
+        args=[job.id, drift.id, payload.permutations, payload.random_seed],
+        queue="analysis",
+    )
+    job.celery_task_id = task.id
+    await db.flush()
+    return job
+
+
+@router.get("/runs/{job_id}")
+async def get_validation_run(
+    job_id: str,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    result = await db.execute(
+        select(BackgroundJob)
+        .join(Analysis, Analysis.id == BackgroundJob.analysis_id)
+        .join(Project, Project.id == Analysis.project_id)
+        .where(
+            BackgroundJob.id == job_id,
+            BackgroundJob.task_name == "run_scientific_validation",
+            Project.owner_id == current_user.id,
+        )
+    )
+    job = result.scalar_one_or_none()
+    if not job:
+        raise HTTPException(status_code=404, detail="Validation run not found")
+
+    report = None
+    if job.status == JobStatusEnum.COMPLETED:
+        if not job.result_ref or not os.path.isfile(job.result_ref):
+            raise HTTPException(status_code=500, detail="Saved validation report is unavailable")
+        try:
+            with open(job.result_ref, "r", encoding="utf-8") as result_file:
+                report = await asyncio.to_thread(json.load, result_file)
+        except (OSError, json.JSONDecodeError) as error:
+            raise HTTPException(status_code=500, detail="Saved validation report could not be read") from error
+    return {
+        "id": job.id,
+        "status": job.status.value,
+        "progress": job.progress,
+        "progress_message": job.progress_message,
+        "error_message": job.error_message,
+        "result": report,
+    }
 
 
 @router.get("/experiments/{exp_id}/comparison")

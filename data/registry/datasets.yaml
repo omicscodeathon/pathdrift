@@ -1,0 +1,651 @@
+registry_version: 1
+updated_at: '2026-10-05T21:22:43.938679+00:00'
+identifier_policy:
+  primary_gene_identifier: Ensembl Gene ID
+  human_pattern: ^ENSG[0-9]+(_PAR_Y)?$
+  mouse_pattern: ^ENSMUSG[0-9]+$
+  gene_symbols: Display labels only; symbol conversion must use an explicit accessioned
+    mapping table.
+  other_identifier_systems: Entrez, UniProt, and STRING IDs must remain separate columns
+    and require an explicit source/versioned mapping before use.
+datasets:
+- accession: TCGA-BRCA
+  source: GDC / TCGA
+  species: Human
+  tissue: Breast
+  disease: Breast Cancer
+  platform: Illumina sequencing; GDC STAR - Counts workflow
+  data_type: RNA-Seq unstranded gene counts
+  genome_build: GRCh38 (GDC STAR - Counts; GENCODE v36 gene model)
+  download_date: '2026-10-04'
+  samples:
+    raw_count: 20
+    analysis_count: 19
+    metadata_path: data/pathdrift/raw/gdc/tcga_brca_real_metadata.tsv
+    records:
+    - sample_id: TCGA-A8-A09E-01A
+      sample_type: Primary Tumor
+      disease_state: cancer
+      case_uuid: dfefb76a-ec6b-4cd2-9d45-2e1e4befc7ea
+      case_submitter_id: TCGA-A8-A09E
+      sample_uuid: b9140410-1ed1-4012-9637-412b7c688d68
+      aliquot_uuid: 1bbb85e8-8f55-44e3-8bd8-58c0a46c43bd
+      aliquot_submitter_id: TCGA-A8-A09E-01A-11R-A00Z-07
+      file_uuid: ead53b27-6ad9-4b96-b5d4-0d4f06fb2d13
+      file_name: dadd1789-354a-4abb-8d4e-8556166cf341.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-A7-A0DC-01A
+      sample_type: Primary Tumor
+      disease_state: cancer
+      case_uuid: cb9f5e50-f49d-4899-8895-9367afcc1015
+      case_submitter_id: TCGA-A7-A0DC
+      sample_uuid: 36cafcfc-cc5e-4203-b018-c2c949e24c12
+      aliquot_uuid: 43bbd0f7-87d7-472f-ad3e-e016df3d5d89
+      aliquot_submitter_id: TCGA-A7-A0DC-01A-11R-A00Z-07
+      file_uuid: 0e1999e0-9c02-4804-88b6-60b46d100739
+      file_name: db5dab56-838e-4784-a7cf-f05296e356f7.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-A7-A0DC-01B
+      sample_type: Primary Tumor
+      disease_state: cancer
+      case_uuid: cb9f5e50-f49d-4899-8895-9367afcc1015
+      case_submitter_id: TCGA-A7-A0DC
+      sample_uuid: 00b54c99-c26d-423a-9871-2552c1603a9c
+      aliquot_uuid: 22fe5cac-0623-4d0a-a158-f15fb5477d8f
+      aliquot_submitter_id: TCGA-A7-A0DC-01B-04R-A22O-07
+      file_uuid: 3e8cff80-ed17-479c-8327-ca8e71ee7482
+      file_name: 0c814cd9-5b2c-4764-9e6a-6ad0403fcd7d.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: false
+    - sample_id: TCGA-A8-A08F-01A
+      sample_type: Primary Tumor
+      disease_state: cancer
+      case_uuid: 0a017f15-1c6b-45e7-8d55-e0a71df1b2e8
+      case_submitter_id: TCGA-A8-A08F
+      sample_uuid: f4f60d69-6c0d-4a73-90fa-ee369de95fdd
+      aliquot_uuid: 523e45c2-4f98-4010-b48e-bdbda62865cf
+      aliquot_submitter_id: TCGA-A8-A08F-01A-11R-A00Z-07
+      file_uuid: 385ddd6f-c126-4c4f-acde-1ef2d74d3639
+      file_name: 616b6b60-8c4a-4d85-9a24-f47df6ad497e.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-A8-A091-01A
+      sample_type: Primary Tumor
+      disease_state: cancer
+      case_uuid: f39edd06-1016-4e8e-a42e-12f7e699ddc5
+      case_submitter_id: TCGA-A8-A091
+      sample_uuid: f26df76e-66bc-4e25-8a27-41b6147dc67b
+      aliquot_uuid: e43cb8f2-6541-4d55-b11c-8288dcf3b78f
+      aliquot_submitter_id: TCGA-A8-A091-01A-11R-A00Z-07
+      file_uuid: 91060c43-f1e3-49ea-a3c9-96def417716b
+      file_name: caf3d917-623d-4e2a-ac0a-521415385763.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-AO-A0JI-01A
+      sample_type: Primary Tumor
+      disease_state: cancer
+      case_uuid: e17c565c-9857-4df3-a352-903b53093c85
+      case_submitter_id: TCGA-AO-A0JI
+      sample_uuid: 630613d2-682f-4a1a-b1fa-95320fb9a9b7
+      aliquot_uuid: fb0cd718-5300-4447-9740-a63308f65d92
+      aliquot_submitter_id: TCGA-AO-A0JI-01A-21R-A056-07
+      file_uuid: e12f17ae-dc1f-4e91-93bd-b827ad276dde
+      file_name: a854c368-6e81-4ade-9ea9-afbee1c4c448.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-A2-A0D4-01A
+      sample_type: Primary Tumor
+      disease_state: cancer
+      case_uuid: 75113445-d2d6-44a0-866c-c9175e6d214b
+      case_submitter_id: TCGA-A2-A0D4
+      sample_uuid: ace39ef3-1b5e-4ad2-a20d-62957e524281
+      aliquot_uuid: 2522bd3d-f6b3-45df-b68f-577ffbf3a819
+      aliquot_submitter_id: TCGA-A2-A0D4-01A-11R-A00Z-07
+      file_uuid: 7ba3b335-cd4c-4b44-a4da-44fa1109a6f0
+      file_name: 824f5b0a-44d4-4ccf-9277-1ef752462bb3.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-AC-A62V-01A
+      sample_type: Primary Tumor
+      disease_state: cancer
+      case_uuid: d5f2b85a-94a9-4168-bbe8-149ec71342b0
+      case_submitter_id: TCGA-AC-A62V
+      sample_uuid: 61db743a-627f-4666-b958-2542dbf3f320
+      aliquot_uuid: 7a356940-c460-4714-a949-42afe6ea5d86
+      aliquot_submitter_id: TCGA-AC-A62V-01A-11R-A31O-07
+      file_uuid: db5aadbb-3042-4c20-8235-ccd19634d9d3
+      file_name: 9692b4cc-6c7f-4f88-8854-769568f088ae.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-D8-A1XB-01A
+      sample_type: Primary Tumor
+      disease_state: cancer
+      case_uuid: d2694b09-7844-4496-865c-5d3d8cd03330
+      case_submitter_id: TCGA-D8-A1XB
+      sample_uuid: 5faa442d-a995-48aa-a52c-a7efe6f56cab
+      aliquot_uuid: 8a2adff0-2527-43fa-ad17-a3081e22f846
+      aliquot_submitter_id: TCGA-D8-A1XB-01A-11R-A14D-07
+      file_uuid: 176e739b-87e2-49b7-80e1-c27a6a632576
+      file_name: 48077485-61e6-4d16-a74c-ee216a9455f1.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-OL-A6VQ-01A
+      sample_type: Primary Tumor
+      disease_state: cancer
+      case_uuid: 34126cd5-cc38-4198-8582-c14fb5db7acb
+      case_submitter_id: TCGA-OL-A6VQ
+      sample_uuid: 863804ba-7fcd-49ce-a544-5a98eb3f2857
+      aliquot_uuid: 10fbe91f-3570-4cc4-9a86-ea660a86a806
+      aliquot_submitter_id: TCGA-OL-A6VQ-01A-12R-A41B-07
+      file_uuid: 2c74854f-4afe-48c3-9c81-d64634c14677
+      file_name: 4fb219d8-519a-4ce9-a3f1-28fae295424f.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-A7-A0DC-11A
+      sample_type: Solid Tissue Normal
+      disease_state: healthy
+      case_uuid: cb9f5e50-f49d-4899-8895-9367afcc1015
+      case_submitter_id: TCGA-A7-A0DC
+      sample_uuid: 5bfd69f5-406a-4b28-b4f4-a6655e03e4db
+      aliquot_uuid: cb3f974e-6bce-4757-a350-aef8e7925086
+      aliquot_submitter_id: TCGA-A7-A0DC-11A-41R-A089-07
+      file_uuid: 9e056a2a-a643-478a-b96c-85d5221f487a
+      file_name: c6a90de3-979b-46b0-9f84-2875c1e38742.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-GI-A2C8-11A
+      sample_type: Solid Tissue Normal
+      disease_state: healthy
+      case_uuid: 33fe5833-d7a0-43d7-a03d-56985ea448a6
+      case_submitter_id: TCGA-GI-A2C8
+      sample_uuid: 2a679581-38ad-4742-8d7b-89015df11e7d
+      aliquot_uuid: 6eaf6c1c-13d6-4293-aaa5-7d9aecf61db7
+      aliquot_submitter_id: TCGA-GI-A2C8-11A-22R-A16F-07
+      file_uuid: 84cff855-d17a-4c09-b432-53893ae69c1e
+      file_name: 03d891b3-8faf-4384-94ce-2015f1ca5df0.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-E2-A1L7-11A
+      sample_type: Solid Tissue Normal
+      disease_state: healthy
+      case_uuid: 791c5768-f0f5-4ab6-86eb-998e5c4b49e3
+      case_submitter_id: TCGA-E2-A1L7
+      sample_uuid: 3b56098e-35ec-4fd3-b14d-c3cc777a94c9
+      aliquot_uuid: 53e9749e-5554-443b-b41e-5efade6fce7a
+      aliquot_submitter_id: TCGA-E2-A1L7-11A-33R-A144-07
+      file_uuid: d796de5e-4512-4b3a-93d4-2a006e79084f
+      file_name: da752364-731c-4e77-8d6e-9c91a5b7f68f.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-BH-A1FE-11B
+      sample_type: Solid Tissue Normal
+      disease_state: healthy
+      case_uuid: 4aa68586-6331-4795-b40c-859386640df6
+      case_submitter_id: TCGA-BH-A1FE
+      sample_uuid: f6813172-e95b-4654-a1c7-06e1181fcd93
+      aliquot_uuid: 64f3f52d-a484-49c6-9048-6eadedd2c2c5
+      aliquot_submitter_id: TCGA-BH-A1FE-11B-14R-A13Q-07
+      file_uuid: 4f54add3-c33d-4bc9-9e1f-c75f52d15f1e
+      file_name: 2e4316d2-5fe5-4ee1-9b22-73f4c42b6202.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-BH-A1F8-11B
+      sample_type: Solid Tissue Normal
+      disease_state: healthy
+      case_uuid: ee554215-bea2-4268-aaf9-784e68cdb969
+      case_submitter_id: TCGA-BH-A1F8
+      sample_uuid: f9e5d9cc-d80e-409d-9b6a-c4de9dc55611
+      aliquot_uuid: c6cc7496-98d2-4181-8517-fbd875fd5623
+      aliquot_submitter_id: TCGA-BH-A1F8-11B-21R-A13Q-07
+      file_uuid: 0d11c50a-8648-48ea-a107-e138a1d3e086
+      file_name: bf3ea4a0-bcd6-4e9d-acbb-3416f6ce53b7.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-BH-A0DP-11A
+      sample_type: Solid Tissue Normal
+      disease_state: healthy
+      case_uuid: 14267783-5624-4fe5-ba81-9d67f1017474
+      case_submitter_id: TCGA-BH-A0DP
+      sample_uuid: e3afa9dd-7494-4ced-adcc-267e91b971df
+      aliquot_uuid: 6ff2976a-2570-409b-afde-b7d2e7f2e4ea
+      aliquot_submitter_id: TCGA-BH-A0DP-11A-12R-A089-07
+      file_uuid: 934935ae-037b-451d-a696-0679b07bd401
+      file_name: 90388468-c622-4114-971e-ab178e487493.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-BH-A0B5-11A
+      sample_type: Solid Tissue Normal
+      disease_state: healthy
+      case_uuid: 9da462b0-93c2-4305-89f6-7199a30399a7
+      case_submitter_id: TCGA-BH-A0B5
+      sample_uuid: 499a5bbb-9c48-4a4a-8472-d6fa35b6a308
+      aliquot_uuid: 35429f42-252a-4a9d-8e99-125f26019418
+      aliquot_submitter_id: TCGA-BH-A0B5-11A-23R-A12P-07
+      file_uuid: b01d7dfd-b577-48b8-8bf2-3c74bb617601
+      file_name: 6732c6de-0725-4a08-a1d7-211338a4363c.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-BH-A1F6-11B
+      sample_type: Solid Tissue Normal
+      disease_state: healthy
+      case_uuid: ad18820b-a804-49c0-ba8a-86c09fa6bce2
+      case_submitter_id: TCGA-BH-A1F6
+      sample_uuid: 84f25e50-b0bb-4f2a-bb94-14019bc7fa95
+      aliquot_uuid: a248476b-7c40-42c6-905b-b9c3ba6b2aed
+      aliquot_submitter_id: TCGA-BH-A1F6-11B-94R-A13Q-07
+      file_uuid: d757b1cc-31a6-495a-ae82-c63b031ece49
+      file_name: 898f9214-8dab-4b92-9233-70c06c60078c.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-BH-A0BV-11A
+      sample_type: Solid Tissue Normal
+      disease_state: healthy
+      case_uuid: 87f03d04-e651-4a6e-aea6-1c946aa46202
+      case_submitter_id: TCGA-BH-A0BV
+      sample_uuid: 21b88cba-4c07-4a15-9794-a981d2875415
+      aliquot_uuid: 452bf9da-c065-4d95-8272-adce3684a9e9
+      aliquot_submitter_id: TCGA-BH-A0BV-11A-31R-A089-07
+      file_uuid: 3448aa6c-0de2-4d47-9bac-19507aee7492
+      file_name: 4da20b00-8ed6-41ed-88d9-9969d15761c7.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+    - sample_id: TCGA-BH-A18V-11A
+      sample_type: Solid Tissue Normal
+      disease_state: healthy
+      case_uuid: 6b960b58-28e1-41c6-bd6e-7e669c6aa4ef
+      case_submitter_id: TCGA-BH-A18V
+      sample_uuid: e85b2b0f-993f-4c37-8ed5-53d384ac18e1
+      aliquot_uuid: 288c81eb-4c43-406b-a5e5-fee452a95afb
+      aliquot_submitter_id: TCGA-BH-A18V-11A-52R-A12D-07
+      file_uuid: 040d00da-2bc9-49d4-bf6c-b4515b6a2bbf
+      file_name: d4f91697-1c39-4398-bf2f-85217a22ddff.rna_seq.augmented_star_gene_counts.tsv
+      included_in_patient_grouped_analysis: true
+  genes:
+    raw_row_count: 60660
+    unique_primary_gene_identifiers: 60660
+    analysis_count_after_preprocessing: 43254
+    primary_identifier: Ensembl Gene ID
+    species_id_pattern: ^ENSG[0-9]+(_PAR_Y)?$
+    primary_identifier_examples:
+    - ENSG00000000003
+    - ENSG00000000005
+    - ENSG00000000419
+    - ENSG00000000457
+    - ENSG00000000460
+    excluded_unmapped_ids: []
+    expression_path: data/pathdrift/raw/gdc/tcga_brca_real_expression.tsv.gz
+    processed_expression_path: data/pathdrift/processed/gdc/tcga_brca_real_preprocessed.parquet
+- accession: GSE155577
+  source: GEO
+  species: Mouse
+  tissue: Mammary tumor
+  disease: Breast Cancer
+  platform: Illumina HiSeq 1000
+  data_type: Study-normalized RNA-Seq expression values
+  genome_build: Not reported in GEO series/sample metadata
+  download_date: '2026-10-04'
+  samples:
+    raw_count: 26
+    analysis_count: 24
+    metadata_path: data/pathdrift/raw/geo/GSE155577_metadata.tsv
+    records:
+    - expression_column: sample56
+      geo_sample_id: GSM4706428
+      biosample_accession: SAMN15702901
+      sra_accession: SRX8870461
+      title: E-A14 cell line_rep2
+      origin: cultured tumor cell line
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: E-A14 tumor cells | strain: FVB/N | treatment:
+        In vitro cell culture | cell selection method: N/A (cell culture suspension)
+        | collection time points: N/A (E-A14 injected cells)'
+    - expression_column: sample55
+      geo_sample_id: GSM4706427
+      biosample_accession: SAMN15702902
+      sra_accession: SRX8870460
+      title: E-A14 cell line_rep1
+      origin: cultured tumor cell line
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: E-A14 tumor cells | strain: FVB/N | treatment:
+        In vitro cell culture | cell selection method: N/A (cell culture suspension)
+        | collection time points: N/A (E-A14 injected cells)'
+    - expression_column: sample01
+      geo_sample_id: GSM4706403
+      biosample_accession: SAMN15702900
+      sra_accession: SRX8870452
+      title: Her2(+)EpCAM(+) mammary tumor cells - CD4 and CD8-depleted  - Day20_rep1
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: CD4 and CD8 double depletion | cell selection method: cell
+        sorting based on Her2-positive and EpCAM-positive expression | collection
+        time points: 20 days after E-A14 tumor cell injection'
+    - expression_column: sample02
+      geo_sample_id: GSM4706404
+      biosample_accession: SAMN15703355
+      sra_accession: SRX8870453
+      title: Her2(+)EpCAM(+) mammary tumor cells - CD4 and CD8-depleted  - Day20_rep2
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: CD4 and CD8 double depletion | cell selection method: cell
+        sorting based on Her2-positive and EpCAM-positive expression | collection
+        time points: 20 days after E-A14 tumor cell injection'
+    - expression_column: sample03
+      geo_sample_id: GSM4706405
+      biosample_accession: SAMN15703354
+      sra_accession: SRX8870454
+      title: Her2(+)EpCAM(+) mammary tumor cells - CD4 and CD8-depleted  - Day20_rep3
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: CD4 and CD8 double depletion | cell selection method: cell
+        sorting based on Her2-positive and EpCAM-positive expression | collection
+        time points: 20 days after E-A14 tumor cell injection'
+    - expression_column: sample04
+      geo_sample_id: GSM4706406
+      biosample_accession: SAMN15703353
+      sra_accession: SRX8870455
+      title: Her2(+)EpCAM(+) mammary tumor cells - CD4 and CD8-depleted  - Day20_rep4
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: CD4 and CD8 double depletion | cell selection method: cell
+        sorting based on Her2-positive and EpCAM-positive expression | collection
+        time points: 20 days after E-A14 tumor cell injection'
+    - expression_column: sample05
+      geo_sample_id: GSM4706407
+      biosample_accession: SAMN15703352
+      sra_accession: SRX8870456
+      title: Her2(+)EpCAM(+) mammary tumor cells - CD4 and CD8-depleted  - Day20_rep5
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: CD4 and CD8 double depletion | cell selection method: cell
+        sorting based on Her2-positive and EpCAM-positive expression | collection
+        time points: 20 days after E-A14 tumor cell injection'
+    - expression_column: sample06
+      geo_sample_id: GSM4706408
+      biosample_accession: SAMN15703351
+      sra_accession: SRX8870457
+      title: Her2(+)EpCAM(+) mammary tumor cells - CD4 and CD8-depleted  - Day20_rep6
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: CD4 and CD8 double depletion | cell selection method: cell
+        sorting based on Her2-positive and EpCAM-positive expression | collection
+        time points: 20 days after E-A14 tumor cell injection'
+    - expression_column: sample07
+      geo_sample_id: GSM4706409
+      biosample_accession: SAMN15703350
+      sra_accession: SRX8870458
+      title: Her2(+)EpCAM(-) mammary tumor cells - CD4 and CD8-depleted  - Day20_rep1
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: CD4 and CD8 double depletion | cell selection method: cell
+        sorting based on Her2-positive and EpCAM-negative expression | collection
+        time points: 20 days after E-A14 tumor cell injection'
+    - expression_column: sample08
+      geo_sample_id: GSM4706410
+      biosample_accession: SAMN15703349
+      sra_accession: SRX8870459
+      title: Her2(+)EpCAM(-) mammary tumor cells - CD4 and CD8-depleted  - Day20_rep2
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: CD4 and CD8 double depletion | cell selection method: cell
+        sorting based on Her2-positive and EpCAM-negative expression | collection
+        time points: 20 days after E-A14 tumor cell injection'
+    - expression_column: sample09
+      geo_sample_id: GSM4706411
+      biosample_accession: SAMN15703348
+      sra_accession: SRX8870462
+      title: Her2(+)EpCAM(-) mammary tumor cells - CD4 and CD8-depleted  - Day20_rep3
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: CD4 and CD8 double depletion | cell selection method: cell
+        sorting based on Her2-positive and EpCAM-negative expression | collection
+        time points: 20 days after E-A14 tumor cell injection'
+    - expression_column: sample10
+      geo_sample_id: GSM4706412
+      biosample_accession: SAMN15702917
+      sra_accession: SRX8870463
+      title: Her2(+)EpCAM(-) mammary tumor cells - CD4 and CD8-depleted  - Day20_rep4
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: CD4 and CD8 double depletion | cell selection method: cell
+        sorting based on Her2-positive and EpCAM-negative expression | collection
+        time points: 20 days after E-A14 tumor cell injection'
+    - expression_column: sample11
+      geo_sample_id: GSM4706413
+      biosample_accession: SAMN15702916
+      sra_accession: SRX8870464
+      title: Her2(+)EpCAM(-) mammary tumor cells - CD4 and CD8-depleted  - Day20_rep5
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: CD4 and CD8 double depletion | cell selection method: cell
+        sorting based on Her2-positive and EpCAM-negative expression | collection
+        time points: 20 days after E-A14 tumor cell injection'
+    - expression_column: sample12
+      geo_sample_id: GSM4706414
+      biosample_accession: SAMN15702915
+      sra_accession: SRX8870465
+      title: Her2(+)EpCAM(-) mammary tumor cells - CD4 and CD8-depleted  - Day20_rep6
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: CD4 and CD8 double depletion | cell selection method: cell
+        sorting based on Her2-positive and EpCAM-negative expression | collection
+        time points: 20 days after E-A14 tumor cell injection'
+    - expression_column: sample38
+      geo_sample_id: GSM4706416
+      biosample_accession: SAMN15702913
+      sra_accession: SRX8870467
+      title: Her2(+)EpCAM(+) mammary tumor cells - IgG control-depleted  - Day47_rep2
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: Rat IgG2a and Rat IgG2b double depletion | cell selection
+        method: cell sorting based on Her2-positive and EpCAM-positive expression
+        | collection time points: 47 days after E-A14 tumor cell injection'
+    - expression_column: sample39
+      geo_sample_id: GSM4706417
+      biosample_accession: SAMN15702912
+      sra_accession: SRX8870468
+      title: Her2(+)EpCAM(+) mammary tumor cells - IgG control-depleted  - Day47_rep3
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: Rat IgG2a and Rat IgG2b double depletion | cell selection
+        method: cell sorting based on Her2-positive and EpCAM-positive expression
+        | collection time points: 47 days after E-A14 tumor cell injection'
+    - expression_column: sample37
+      geo_sample_id: GSM4706415
+      biosample_accession: SAMN15702914
+      sra_accession: SRX8870466
+      title: Her2(+)EpCAM(+) mammary tumor cells - IgG control-depleted  - Day47_rep1
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: Rat IgG2a and Rat IgG2b double depletion | cell selection
+        method: cell sorting based on Her2-positive and EpCAM-positive expression
+        | collection time points: 47 days after E-A14 tumor cell injection'
+    - expression_column: sample40
+      geo_sample_id: GSM4706418
+      biosample_accession: SAMN15702911
+      sra_accession: SRX8870469
+      title: Her2(+)EpCAM(+) mammary tumor cells - IgG control-depleted  - Day47_rep4
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: Rat IgG2a and Rat IgG2b double depletion | cell selection
+        method: cell sorting based on Her2-positive and EpCAM-positive expression
+        | collection time points: 47 days after E-A14 tumor cell injection'
+    - expression_column: sample41
+      geo_sample_id: GSM4706419
+      biosample_accession: SAMN15702910
+      sra_accession: SRX8870470
+      title: Her2(+)EpCAM(+) mammary tumor cells - IgG control-depleted  - Day47_rep5
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: Rat IgG2a and Rat IgG2b double depletion | cell selection
+        method: cell sorting based on Her2-positive and EpCAM-positive expression
+        | collection time points: 47 days after E-A14 tumor cell injection'
+    - expression_column: sample42
+      geo_sample_id: GSM4706420
+      biosample_accession: SAMN15702909
+      sra_accession: SRX8870471
+      title: Her2(+)EpCAM(+) mammary tumor cells - IgG control-depleted  - Day47_rep6
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: Rat IgG2a and Rat IgG2b double depletion | cell selection
+        method: cell sorting based on Her2-positive and EpCAM-positive expression
+        | collection time points: 47 days after E-A14 tumor cell injection'
+    - expression_column: sample44
+      geo_sample_id: GSM4706422
+      biosample_accession: SAMN15702907
+      sra_accession: SRX8870473
+      title: Her2(+)EpCAM(-) mammary tumor cells - IgG control-depleted  - Day47_rep2
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: Rat IgG2a and Rat IgG2b double depletion | cell selection
+        method: cell sorting based on Her2-positive and EpCAM-negative expression
+        | collection time points: 47 days after E-A14 tumor cell injection'
+    - expression_column: sample45
+      geo_sample_id: GSM4706423
+      biosample_accession: SAMN15702906
+      sra_accession: SRX8870474
+      title: Her2(+)EpCAM(-) mammary tumor cells - IgG control-depleted  - Day47_rep3
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: Rat IgG2a and Rat IgG2b double depletion | cell selection
+        method: cell sorting based on Her2-positive and EpCAM-negative expression
+        | collection time points: 47 days after E-A14 tumor cell injection'
+    - expression_column: sample43
+      geo_sample_id: GSM4706421
+      biosample_accession: SAMN15702908
+      sra_accession: SRX8870472
+      title: Her2(+)EpCAM(-) mammary tumor cells - IgG control-depleted  - Day47_rep1
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: Rat IgG2a and Rat IgG2b double depletion | cell selection
+        method: cell sorting based on Her2-positive and EpCAM-negative expression
+        | collection time points: 47 days after E-A14 tumor cell injection'
+    - expression_column: sample46
+      geo_sample_id: GSM4706424
+      biosample_accession: SAMN15702905
+      sra_accession: SRX8870475
+      title: Her2(+)EpCAM(-) mammary tumor cells - IgG control-depleted  - Day47_rep4
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: Rat IgG2a and Rat IgG2b double depletion | cell selection
+        method: cell sorting based on Her2-positive and EpCAM-negative expression
+        | collection time points: 47 days after E-A14 tumor cell injection'
+    - expression_column: sample47
+      geo_sample_id: GSM4706425
+      biosample_accession: SAMN15702904
+      sra_accession: SRX8870476
+      title: Her2(+)EpCAM(-) mammary tumor cells - IgG control-depleted  - Day47_rep5
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: Rat IgG2a and Rat IgG2b double depletion | cell selection
+        method: cell sorting based on Her2-positive and EpCAM-negative expression
+        | collection time points: 47 days after E-A14 tumor cell injection'
+    - expression_column: sample48
+      geo_sample_id: GSM4706426
+      biosample_accession: SAMN15702903
+      sra_accession: SRX8870477
+      title: Her2(+)EpCAM(-) mammary tumor cells - IgG control-depleted  - Day47_rep6
+      origin: in-vivo mammary tumor cells
+      source_name: Mammary tumor cells
+      characteristics: 'cell type: tumor cells isolated from E-A14 tumors | strain:
+        FVB/N | treatment: Rat IgG2a and Rat IgG2b double depletion | cell selection
+        method: cell sorting based on Her2-positive and EpCAM-negative expression
+        | collection time points: 47 days after E-A14 tumor cell injection'
+  genes:
+    raw_row_count: 47730
+    unique_primary_gene_identifiers: 47729
+    analysis_count_after_preprocessing: 47729
+    primary_identifier: Ensembl Gene ID
+    species_id_pattern: ^ENSMUSG[0-9]+$
+    primary_identifier_examples:
+    - ENSMUSG00000000001
+    - ENSMUSG00000000003
+    - ENSMUSG00000000028
+    - ENSMUSG00000000031
+    - ENSMUSG00000000037
+    excluded_unmapped_ids:
+    - RatActivatedNeu
+    expression_path: data/pathdrift/raw/geo/GSE155577_expression.tsv.gz
+    processed_expression_path: data/pathdrift/processed/geo/gse155577_real_preprocessed.parquet
+- accession: GSE116385
+  source: GEO
+  species: Mouse
+  tissue: Mammary gland
+  disease: Breast Cancer
+  platform: Illumina sequencing (GPL17021)
+  data_type: Study-provided RPKM expression values; mouse gene symbols
+  genome_build: Not reported in GEO series metadata
+  download_date: '2026-10-05'
+  samples:
+    raw_count: 8
+    analysis_count: 8
+    metadata_path: data/pathdrift/raw/geo/GSE116385/GSE116385_metadata.tsv
+    records:
+    - expression_column: Ba1
+      geo_sample_id: GSM3230416
+      title: normal adult basal cells sample1
+      disease_state: healthy
+      source_name: WT mammary gland
+      tissue: Mammary gland
+    - expression_column: Ba2
+      geo_sample_id: GSM3230417
+      title: normal adult basal cells sample2
+      disease_state: healthy
+      source_name: WT mammary gland
+      tissue: Mammary gland
+    - expression_column: fMaSC1
+      geo_sample_id: GSM3230414
+      title: normal E18 fMaSC sample1
+      disease_state: healthy
+      source_name: WT mammary gland
+      tissue: Mammary gland
+    - expression_column: fMaSC2
+      geo_sample_id: GSM3230415
+      title: normal E18 fMaSC sample2
+      disease_state: healthy
+      source_name: WT mammary gland
+      tissue: Mammary gland
+    - expression_column: LP1
+      geo_sample_id: GSM3230418
+      title: normal adult luminal progenitor cells sample1
+      disease_state: healthy
+      source_name: WT mammary gland
+      tissue: Mammary gland
+    - expression_column: LP2
+      geo_sample_id: GSM3230419
+      title: normal adult luminal progenitor cells sample2
+      disease_state: healthy
+      source_name: WT mammary gland
+      tissue: Mammary gland
+    - expression_column: ML1
+      geo_sample_id: GSM3230420
+      title: normal adult mature luminal cells sample1
+      disease_state: healthy
+      source_name: WT mammary gland
+      tissue: Mammary gland
+    - expression_column: ML2
+      geo_sample_id: GSM3230421
+      title: normal adult mature luminal cells sample2
+      disease_state: healthy
+      source_name: WT mammary gland
+      tissue: Mammary gland
+  genes:
+    raw_row_count: 24391
+    unique_primary_gene_identifiers: 24391
+    analysis_count_after_preprocessing: 24391
+    primary_identifier: Mouse gene symbol (source-provided)
+    species_id_pattern: null
+    primary_identifier_examples:
+    - 0610005C13Rik
+    - 0610007P14Rik
+    - 0610009B22Rik
+    - 0610009L18Rik
+    - 0610009O20Rik
+    excluded_unmapped_ids: []
+    expression_path: data/pathdrift/raw/geo/GSE116385/GSE116385_expression.tsv.gz
+    processed_expression_path: data/pathdrift/processed/geo/gse116385_real_preprocessed.tsv.gz

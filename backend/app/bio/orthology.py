@@ -18,6 +18,7 @@ because human/mouse gene symbols are not always equivalent.
 import pandas as pd
 import numpy as np
 import httpx
+import re
 import structlog
 from typing import Optional, List, Tuple
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -28,6 +29,28 @@ from app.models import OrthologyMapping
 logger = structlog.get_logger(__name__)
 
 ENSEMBL_REST_URL = "https://rest.ensembl.org"
+
+
+def validate_one_to_one_mappings(mapping: pd.DataFrame) -> pd.DataFrame:
+    """Return one-to-one mappings or fail on ambiguous source data."""
+    required = {"human_ensembl_id", "mouse_ensembl_id", "orthology_type"}
+    missing = required - set(mapping.columns)
+    if missing:
+        raise ValueError(f"Orthology mapping is missing required columns: {sorted(missing)}")
+
+    one_to_one = mapping.loc[mapping["orthology_type"] == "ortholog_one2one"].copy()
+    duplicate_human = one_to_one.loc[
+        one_to_one["human_ensembl_id"].duplicated(keep=False), "human_ensembl_id"
+    ].dropna().unique().tolist()
+    duplicate_mouse = one_to_one.loc[
+        one_to_one["mouse_ensembl_id"].duplicated(keep=False), "mouse_ensembl_id"
+    ].dropna().unique().tolist()
+    if duplicate_human or duplicate_mouse:
+        raise ValueError(
+            "Ambiguous ortholog_one2one source data; refusing arbitrary selection. "
+            f"Duplicate human IDs: {duplicate_human[:10]}; duplicate mouse IDs: {duplicate_mouse[:10]}"
+        )
+    return one_to_one
 
 
 class OrthologyEngine:
@@ -72,6 +95,9 @@ class OrthologyEngine:
                     "mouse_symbol": r.mouse_symbol,
                     "orthology_type": r.orthology_type,
                     "confidence": r.confidence,
+                    "source_version": r.source_version,
+                    "ensembl_release": int(re.search(r"release\s+(\d+)", r.source_version or "", re.IGNORECASE).group(1))
+                    if re.search(r"release\s+(\d+)", r.source_version or "", re.IGNORECASE) else None,
                 }
                 for r in rows
             ]
@@ -106,6 +132,9 @@ class OrthologyEngine:
         mapping_used : pd.DataFrame
             The orthology mapping applied (for reproducibility record).
         """
+        if not one_to_one_only:
+            raise ValueError("Cross-species matrix alignment requires one_to_one_only=True; multi-mapping rows are not aligned arbitrarily")
+
         human_ids = human_expr.index.tolist()
         mapping = await self.map_human_to_mouse(
             human_ids, one_to_one_only=one_to_one_only, min_confidence=min_confidence
@@ -118,6 +147,7 @@ class OrthologyEngine:
                 "and that genes use Ensembl IDs (ENSG...)."
             )
 
+        mapping = validate_one_to_one_mappings(mapping)
         # Only keep pairs where both genes are present
         mapping = mapping[
             mapping["human_ensembl_id"].isin(human_expr.index)
@@ -129,10 +159,6 @@ class OrthologyEngine:
                 "No orthologous genes found in both expression matrices. "
                 "Check that gene identifiers are Ensembl IDs."
             )
-
-        # Deduplicate: one human → one mouse only
-        mapping = mapping.drop_duplicates(subset="human_ensembl_id")
-        mapping = mapping.drop_duplicates(subset="mouse_ensembl_id")
 
         human_aligned = human_expr.loc[mapping["human_ensembl_id"].values].copy()
         mouse_aligned = mouse_expr.loc[mapping["mouse_ensembl_id"].values].copy()

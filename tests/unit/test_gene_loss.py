@@ -5,7 +5,7 @@ import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'backend'))
 
-from app.bio.gene_loss import GeneLossRiskModel, summarize_image
+from app.bio.gene_loss import GeneLossRiskModel, expression_loss_evidence, module_disruption_evidence, summarize_image
 
 
 def test_summarize_image_returns_signal_metrics():
@@ -34,3 +34,39 @@ def test_gene_loss_model_predicts_risk_for_gene_sets():
     assert len(scores) == len(genes)
     assert scores["GENE_C"]["probability"] >= 0
     assert scores["GENE_C"]["predicted_loss"] in {True, False}
+
+
+def test_expression_loss_only_includes_significant_downregulated_genes():
+    import pandas as pd
+
+    results = pd.DataFrame({
+        "gene_id": ["G_DOWN", "G_UP", "G_NOT_SIGNIFICANT"],
+        "log2fc": [-1.4, 1.2, -0.2],
+        "padj": [0.01, 0.01, 0.8],
+        "significant": [True, True, False],
+    })
+
+    evidence = expression_loss_evidence(results)
+
+    assert list(evidence) == ["G_DOWN"]
+    assert evidence["G_DOWN"]["log2fc"] == -1.4
+
+
+def test_module_disruption_matches_modules_by_gene_overlap_not_module_label():
+    import pandas as pd
+
+    normal_features = pd.DataFrame({
+        "gene_id": ["G1", "G2", "G3", "G4"],
+        "module": ["M1", "M1", "M1", "M2"],
+    })
+    disease_features = pd.DataFrame({
+        "gene_id": ["G1", "G2", "G3", "G4"],
+        "module": ["M7", "M7", "M8", "M3"],
+    })
+
+    evidence = module_disruption_evidence(normal_features, disease_features)
+
+    assert set(evidence) == {"G3"}
+    assert evidence["G3"]["normal_module"] == "M1"
+    assert evidence["G3"]["matched_disease_module"] == "M7"
+    assert evidence["G3"]["disease_module"] == "M8"

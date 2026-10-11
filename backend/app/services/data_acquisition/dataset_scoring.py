@@ -4,15 +4,18 @@ from typing import Any, Dict, Iterable, List, Tuple
 
 
 def score_geo_dataset(dataset: Dict[str, Any]) -> Tuple[int, List[str]]:
-    """Transparent scoring heuristic for GEO candidate datasets."""
+    """Transparent fit score for public transcriptomic candidates."""
     score = 0
     reasons: List[str] = []
+    species = str(dataset.get("species") or "").lower()
+    condition = str(dataset.get("condition") or "").lower()
+    data_type = str(dataset.get("data_type") or "").lower()
 
     checks = [
-        ("species", dataset.get("species") == "Mouse" or dataset.get("species") == "mouse", "Mouse"),
+        ("species", species in {"human", "mouse"}, f"{species.title()} species" if species else "Species"),
         ("tissue", "mammary" in (dataset.get("tissue") or "").lower() or "breast" in (dataset.get("tissue") or "").lower(), "Mammary tissue"),
-        ("disease", dataset.get("condition") in {"Cancer", "Tumor", "Breast cancer", "Disease"}, "Cancer / disease state"),
-        ("rna_seq", dataset.get("data_type") in {"RNA-seq", "rna_seq", "RNAseq"}, "RNA-seq"),
+        ("disease", any(term in condition for term in ("cancer", "tumor", "disease")), "Cancer / disease state"),
+        ("rna_seq", any(term in data_type for term in ("rna", "seq", "count", "expression")), "Expression data"),
         ("controls", dataset.get("normal_controls") is True, "Normal controls"),
         ("replicates", dataset.get("biological_replicates") is True, "Biological replicates"),
         ("metadata", dataset.get("metadata_available") is True, "Metadata available"),

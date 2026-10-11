@@ -6,6 +6,7 @@ from collections import defaultdict
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 import numpy as np
+import pandas as pd
 
 
 def summarize_image(image: np.ndarray | list | str | None) -> Dict[str, float | int]:
@@ -155,3 +156,76 @@ def build_ppi_network(genes: Sequence[str], interactions: Sequence[Tuple[str, st
         if left in graph and right in graph
     ]
     return {"nodes": nodes, "edges": edges}
+
+
+def module_disruption_evidence(
+    normal_features: pd.DataFrame,
+    disease_features: pd.DataFrame,
+) -> Dict[str, Dict[str, object]]:
+    """Find genes whose module membership changes after matching communities by Jaccard overlap."""
+    required_columns = {"gene_id", "module"}
+    if not required_columns.issubset(normal_features.columns) or not required_columns.issubset(disease_features.columns):
+        return {}
+
+    normal_assignments = normal_features[["gene_id", "module"]].dropna(subset=["gene_id"]).copy()
+    disease_assignments = disease_features[["gene_id", "module"]].dropna(subset=["gene_id"]).copy()
+    normal_assignments["gene_id"] = normal_assignments["gene_id"].astype(str)
+    disease_assignments["gene_id"] = disease_assignments["gene_id"].astype(str)
+    normal_assignments["module"] = normal_assignments["module"].fillna("M0").astype(str)
+    disease_assignments["module"] = disease_assignments["module"].fillna("M0").astype(str)
+
+    normal_modules = {
+        module_id: set(group["gene_id"])
+        for module_id, group in normal_assignments.groupby("module")
+    }
+    disease_modules = {
+        module_id: set(group["gene_id"])
+        for module_id, group in disease_assignments.groupby("module")
+    }
+    disease_module_by_gene = dict(zip(disease_assignments["gene_id"], disease_assignments["module"]))
+
+    evidence = {}
+    for normal_module, normal_genes in normal_modules.items():
+        matching_module = None
+        best_jaccard = 0.0
+        for disease_module, disease_genes in disease_modules.items():
+            union = normal_genes | disease_genes
+            similarity = len(normal_genes & disease_genes) / len(union) if union else 0.0
+            if similarity > best_jaccard:
+                matching_module = disease_module
+                best_jaccard = similarity
+
+        for gene_id in normal_genes:
+            disease_module = disease_module_by_gene.get(gene_id)
+            if disease_module != matching_module:
+                evidence[gene_id] = {
+                    "normal_module": normal_module,
+                    "matched_disease_module": matching_module,
+                    "disease_module": disease_module,
+                    "jaccard_similarity": best_jaccard,
+                }
+    return evidence
+
+
+def expression_loss_evidence(deg_results: pd.DataFrame) -> Dict[str, Dict[str, float]]:
+    """Select genes already called significantly downregulated by the saved DEG analysis."""
+    if deg_results.empty:
+        return {}
+    results = deg_results.copy()
+    if "gene_id" in results.columns:
+        results = results.set_index("gene_id")
+    results.index = results.index.astype(str)
+    if not {"log2fc", "padj"}.issubset(results.columns):
+        return {}
+
+    log2fc = pd.to_numeric(results["log2fc"], errors="coerce")
+    padj = pd.to_numeric(results["padj"], errors="coerce")
+    if "significant" in results.columns:
+        significant = results["significant"].fillna(False).astype(bool)
+    else:
+        significant = padj <= 0.05
+    loss_rows = results.loc[significant & log2fc.lt(0) & padj.notna()]
+    return {
+        gene_id: {"log2fc": float(log2fc.loc[gene_id]), "padj": float(padj.loc[gene_id])}
+        for gene_id in loss_rows.index
+    }

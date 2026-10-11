@@ -1,0 +1,14 @@
+{
+  "run_id": "1c782941-d15c-4c3a-a291-5172f1d23937",
+  "status": "UNAVAILABLE",
+  "reason": "Not available from current PathDrift data. No independent, matched human validation cohort with compatible labels and measurement provenance is present in this run. The mouse tumor and normal datasets are separate studies with different sample types and platforms; they are not used as an external validation set.",
+  "cross_species_transfer": {
+    "status": "UNAVAILABLE",
+    "reason": "Mouse cohorts do not provide a matched, compatible independent evaluation design."
+  },
+  "permutation_test": {
+    "status": "NOT_RUN",
+    "reason": "A small, exploratory cohort and model comparison are not a prespecified confirmatory test."
+  },
+  "assessed_at": "2026-10-08T11:20:28.565319+00:00"
+}

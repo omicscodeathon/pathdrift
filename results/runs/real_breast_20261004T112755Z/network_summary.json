@@ -1,0 +1,47 @@
+{
+  "human_healthy": {
+    "n_nodes": 300,
+    "n_edges": 3615,
+    "density": 0.08060200668896321,
+    "avg_clustering": 0.47395672871299366,
+    "avg_degree": 24.1,
+    "is_connected": false,
+    "n_connected_components": 22,
+    "name": "human_healthy",
+    "n_samples": 10,
+    "n_genes_selected": 300,
+    "top_n_genes": 300
+  },
+  "human_cancer": {
+    "n_nodes": 300,
+    "n_edges": 121,
+    "density": 0.002697881828316611,
+    "avg_clustering": 0.08460578627821042,
+    "avg_degree": 0.8066666666666666,
+    "is_connected": false,
+    "n_connected_components": 214,
+    "name": "human_cancer",
+    "n_samples": 10,
+    "n_genes_selected": 300,
+    "top_n_genes": 300
+  },
+  "mouse_tumor": {
+    "n_nodes": 300,
+    "n_edges": 18952,
+    "density": 0.42256410256410254,
+    "avg_clustering": 0.6210404208352189,
+    "avg_degree": 126.34666666666666,
+    "is_connected": false,
+    "n_connected_components": 3,
+    "name": "mouse_tumor",
+    "n_samples": 26,
+    "n_genes_selected": 300,
+    "top_n_genes": 300
+  },
+  "module_counts": {
+    "human_healthy": 28,
+    "human_cancer": 216,
+    "mouse_tumor": 5
+  },
+  "interpretation": "Exploratory correlations; small per-state sample counts limit edge stability."
+}

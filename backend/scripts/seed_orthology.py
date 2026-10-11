@@ -90,7 +90,19 @@ def _try_ensembl_rest_fallback(client: httpx.Client) -> list:
     return []  # Let caller handle bundled file fallback
 
 
-def fetch_bulk_homologies(client: httpx.Client) -> pd.DataFrame:
+def fetch_current_ensembl_release(client: httpx.Client) -> int:
+    response = client.get(
+        f"{ENSEMBL_REST}/info/data",
+        headers={"Accept": "application/json"},
+    )
+    response.raise_for_status()
+    releases = response.json().get("releases", [])
+    if not releases:
+        raise RuntimeError("Ensembl REST did not report a data release")
+    return int(max(releases))
+
+
+def fetch_bulk_homologies(client: httpx.Client, ensembl_release: int) -> pd.DataFrame:
     """
     Fetch bulk human–mouse orthology data from Ensembl BioMart.
     This is the most reliable method for getting all one-to-one orthologues.
@@ -135,16 +147,17 @@ def fetch_bulk_homologies(client: httpx.Client) -> pd.DataFrame:
         for row in reader:
             human_id = row.get("Gene stable ID", "").strip()
             mouse_id = row.get("Mouse gene stable ID", "").strip()
-            if not human_id or not mouse_id:
+            orthology_type = row.get("Mouse homology type", "").strip()
+            if not human_id or not mouse_id or orthology_type != "ortholog_one2one":
                 continue
             rows.append({
                 "human_ensembl_id": human_id,
                 "mouse_ensembl_id": mouse_id,
                 "human_symbol": row.get("Gene name", "").strip() or None,
                 "mouse_symbol": row.get("Mouse gene name", "").strip() or None,
-                "orthology_type": row.get("Mouse homology type", "ortholog_one2one").strip(),
-                "confidence": float(row.get("Mouse orthology confidence [0 low, 1 high]", "1") or 1),
-                "source_version": "ensembl_biomart",
+                "orthology_type": orthology_type,
+                "confidence": float(row.get("Mouse orthology confidence [0 low, 1 high]", "0") or 0),
+                "ensembl_release": ensembl_release,
             })
 
         print(f"  Retrieved {len(rows)} ortholog pairs from BioMart")
@@ -161,6 +174,9 @@ def upsert_mappings(db, df: pd.DataFrame):
     from app.models.models import now_utc
     engine = db.bind
     records = df.to_dict(orient="records")
+    for record in records:
+        release = record.pop("ensembl_release", None)
+        record["source_version"] = f"Ensembl Compara release {release}" if release is not None else "Ensembl Compara release unknown"
 
     stmt = pg_insert(OrthologyMapping.__table__).values(records)
     stmt = stmt.on_conflict_do_update(
@@ -188,7 +204,8 @@ def main():
         headers={"Content-Type": "application/json"},
         timeout=60,
     ) as client:
-        df = fetch_bulk_homologies(client)
+        ensembl_release = fetch_current_ensembl_release(client)
+        df = fetch_bulk_homologies(client, ensembl_release)
 
     if df.empty:
         print("\nWARNING: No orthology data retrieved from BioMart or Ensembl REST API.")
@@ -219,14 +236,21 @@ def main():
                 "Mouse orthology confidence [0 low, 1 high]": "confidence",
             }
             df = df.rename(columns={k: v for k, v in col_map.items() if k in df.columns})
-            df = df[df.get("orthology_type", pd.Series(["ortholog_one2one"])).isin(
-                ["ortholog_one2one", "ortholog_one2many"])]
+            df = df[df.get("orthology_type", pd.Series(dtype=str)).eq("ortholog_one2one")]
             df["confidence"] = pd.to_numeric(df.get("confidence", 1), errors="coerce").fillna(1.0)
-            df["source_version"] = "bundled"
+            df["ensembl_release"] = ensembl_release
         else:
             print(f"\nNo bundled file found at: {bundled_path}")
             print("Seeding aborted. Please download orthology data manually (see instructions above).")
             return
+
+    from app.bio.orthology import validate_one_to_one_mappings
+    df = validate_one_to_one_mappings(df)
+    if df.empty:
+        print("No ortholog_one2one records available; refusing to seed ambiguous mappings.")
+        db.close()
+        return
+    df["ensembl_release"] = ensembl_release
 
     # Add UUIDs
     df["id"] = [str(uuid.uuid4()) for _ in range(len(df))]
@@ -237,9 +261,7 @@ def main():
                  "mouse_symbol", "orthology_type", "confidence", "source_version", "loaded_at"]
     df = df[[c for c in keep_cols if c in df.columns]]
     df = df.dropna(subset=["human_ensembl_id", "mouse_ensembl_id"])
-    df = df.drop_duplicates(subset=["human_ensembl_id", "mouse_ensembl_id"])
-
-    print(f"Upserting {len(df)} one-to-one ortholog pairs...")
+    print(f"Upserting {len(df)} unique one-to-one ortholog pairs from Ensembl release {ensembl_release}...")
     upsert_mappings(db, df)
     print("Orthology seeding complete.")
     db.close()

@@ -1,0 +1,15 @@
+Dataset: demo_preprocessing
+Species: human
+Input data type: normalized
+Genes before: 40
+Genes after: 40
+Samples before: 12
+Samples after: 12
+Duplicate genes removed: 0
+Low-expression genes removed: 0
+Missing values handled: 0
+PCA components: 3
+Hierarchical clustering: True
+Batch effects: {"detected": false, "method": "none", "reason": "no metadata"}
+Sample QC: {"passed": true, "removed": [], "min_library_size": 60.0}
+Gene QC: {"passed": true, "removed": [], "min_variance": 0.42424242424242425}

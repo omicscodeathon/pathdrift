@@ -154,9 +154,9 @@ class PreprocessingPipeline:
         log.n_samples_before = df.shape[1]
         log.add_step(f"Input: {df.shape[0]} genes × {df.shape[1]} samples")
 
-        # Step 1 — Gene ID normalization (strip whitespace)
-        df.index = df.index.astype(str).str.strip()
-        log.add_step("Gene identifiers stripped of whitespace")
+        # Step 1 — Normalize Ensembl IDs so they match orthology resources.
+        df.index = df.index.astype(str).str.strip().str.replace(r"\.\d+(?=_PAR_Y$|$)", "", regex=True)
+        log.add_step("Gene identifiers stripped of whitespace and Ensembl version suffixes")
 
         # Step 2 — Convert to numeric
         df = df.apply(pd.to_numeric, errors="coerce")
@@ -232,10 +232,18 @@ class PreprocessingPipeline:
                 log.add_step(f"Variance filter: removed {n_var_removed} low-variance genes (threshold={self.min_gene_variance})")
 
         # Step 8 — Outlier detection
+        # Skip the expensive PCA-based scan for large matrices to preserve runtime while
+        # still keeping the feature available for smaller exploratory datasets.
         if self.outlier_detection and df.shape[1] > 3:
-            df, outliers = self._detect_outliers(df, log)
-            log.outlier_samples = outliers
-            log.removed_samples.extend(outliers)
+            if df.shape[0] > 20000 or df.shape[1] > 250:
+                log.add_warning(
+                    "Outlier detection skipped automatically for a large matrix to keep preprocessing fast; "
+                    "set outlier_detection=True only for smaller runs."
+                )
+            else:
+                df, outliers = self._detect_outliers(df, log)
+                log.outlier_samples = outliers
+                log.removed_samples.extend(outliers)
 
         # Step 9 — Batch correction
         if self.batch_correct and metadata_df is not None:

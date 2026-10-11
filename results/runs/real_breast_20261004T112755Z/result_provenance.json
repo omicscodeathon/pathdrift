@@ -1,0 +1,93 @@
+{
+  "run_id": "real_breast_20261004T112755Z",
+  "results": [
+    {
+      "result": "human_deg.tsv",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "human_deg.parquet",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "human_pathways.tsv",
+      "accessions": [
+        "TCGA-BRCA",
+        "GO_Biological_Process_2023"
+      ]
+    },
+    {
+      "result": "human_deg_symbol_display_mapping.tsv",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "report.html",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "networks/human_healthy/edges.parquet",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "networks/human_healthy/nodes_modules.parquet",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "networks/human_cancer/edges.parquet",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "networks/human_cancer/nodes_modules.parquet",
+      "accessions": [
+        "TCGA-BRCA"
+      ]
+    },
+    {
+      "result": "networks/mouse_tumor/edges.parquet",
+      "accessions": [
+        "GSE155577"
+      ]
+    },
+    {
+      "result": "networks/mouse_tumor/nodes_modules.parquet",
+      "accessions": [
+        "GSE155577"
+      ]
+    },
+    {
+      "result": "orthology_one_to_one.tsv",
+      "accessions": [
+        "Ensembl Compara release 116"
+      ]
+    },
+    {
+      "result": "cross_species_alignment.json",
+      "accessions": [
+        "TCGA-BRCA",
+        "GSE155577",
+        "Ensembl Compara release 116"
+      ]
+    },
+    {
+      "result": "network_summary.json",
+      "accessions": [
+        "TCGA-BRCA",
+        "GSE155577"
+      ]
+    }
+  ]
+}

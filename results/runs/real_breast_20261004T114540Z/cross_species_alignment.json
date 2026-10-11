@@ -1,0 +1,13 @@
+{
+  "scope": "exploratory tumor-network alignment; not differential drift",
+  "n_one_to_one_orthologs_in_networks": 22,
+  "n_human_edges_mapped_to_mouse_ids": 1,
+  "n_mouse_edges": 18952,
+  "n_shared_edges": 1,
+  "edge_jaccard": 5.276487969607429e-05,
+  "orthology_source": {
+    "database": "Ensembl Compara/BioMart",
+    "release": 116,
+    "mapping_type": "ortholog_one2one"
+  }
+}

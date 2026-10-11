@@ -150,6 +150,8 @@ class NetworkConstructor:
 
         if self.correlation_method == "pearson":
             for i in range(n):
+                if i and i % 25 == 0:
+                    logger.info("network_correlation_progress", genes_processed=i, total_genes=n, n_samples=X.shape[1])
                 for j in range(i + 1, n):
                     if np.std(X[i]) == 0 or np.std(X[j]) == 0:
                         continue
@@ -158,6 +160,8 @@ class NetworkConstructor:
                     pvals[i, j] = pvals[j, i] = p
         elif self.correlation_method == "spearman":
             for i in range(n):
+                if i and i % 25 == 0:
+                    logger.info("network_correlation_progress", genes_processed=i, total_genes=n, n_samples=X.shape[1])
                 for j in range(i + 1, n):
                     r, p = spearmanr(X[i], X[j])
                     corr[i, j] = corr[j, i] = r
