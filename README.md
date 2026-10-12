@@ -88,7 +88,7 @@ concept. The web app's **Analyze dataset** action automates supported
 single-dataset stages; it does not by itself perform every cross-species or
 model-validation stage shown in the research workflow.
 
-![PathDrift end-to-end workflow](frontend/public/Fig2_End_to_End_Workflow.png)
+![PathDrift end-to-end workflow](frontend/public/Mermaid-preview.png)
 
 ### Web application: automated single-dataset workflow
 

@@ -166,9 +166,13 @@ function AcquisitionDatasetQC({ dataset }: { dataset: AcquisitionQCDataset }) {
             </Paper>
 
             <Paper variant="outlined" sx={{ p: { xs: 1.5, md: 2 } }}>
-              <Typography variant="h6" fontWeight={700}>Sample correlation</Typography>
+              <Typography variant="h6" fontWeight={700}>Sample-to-sample correlation heatmap</Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                Correlation matrix across {correlation?.samples.length ?? 0} samples.
+                Rows and columns identify samples; each cell shows the Pearson correlation
+                between their QC-normalized expression profiles (color scale: Pearson r, −1 to 1).
+                The diagonal is each sample correlated with itself. This is a sample-similarity
+                heatmap, not a gene-expression or protein-interaction heatmap. Hover over a cell
+                to see both sample IDs and the correlation value.
               </Typography>
               {correlation?.samples.length ? <Plot
                 data={[{
